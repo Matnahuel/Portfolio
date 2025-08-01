@@ -21,7 +21,6 @@ header {
     top: 0;
     z-index: 1000;
 }
-
 header nav {
     display: flex;
     justify-content: space-between;
@@ -186,7 +185,57 @@ section {
 .social-links a:hover {
     color: #007BFF;
 }
+/* Información Adicional */
+.additional-info-container {
+    margin-top: 20px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
 
+.additional-info-container h3 {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.additional-info-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.additional-info-container li {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.additional-info-container i {
+    color: #007bff;
+    font-size: 16px;
+}
+/*Descargar cv*/
+/* Botón de Descargar CV */
+.cv-download-button {
+    background-color: #880404;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.cv-download-button:hover {
+    background-color: #0056b3;
+}
 /* Sección Sobre Mí */
 #about {
     background-color: #1a1a1a;
@@ -297,7 +346,75 @@ section {
     margin-top: 15px;
     margin-bottom: 5px;
 }
-/* Sección de Idiomas (diseño horizontal) */
+
+/* Sección de Certificaciones */
+#certifications {
+    padding: 50px 20px;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+.certifications-header {
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos a los extremos */
+    align-items: center; /* Centra verticalmente los elementos */
+    margin-bottom: 20px;
+}
+
+.certifications-title-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.certifications-icon {
+    font-size: 24px;
+    color: #007bff;
+}
+
+.certifications-header h2 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.certifications-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.certifications-button:hover {
+    background-color: #0056b3;
+}
+
+.certifications-list {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.certification-item {
+    background-color: #242424;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.certification-item p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+/* Sección de Idiomas */
 #languages {
     padding: 30px 20px;
     background-color: #1a1a1a;
