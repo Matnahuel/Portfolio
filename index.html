@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,247 +7,252 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
     <header>
         <nav>
-            <h1><a href="https://matnahuel.github.io/Portfolio" style="text-decoration: none; color:inherit;">
-                    Bienvenid@ a mi Curriculum Vitae</a>
+            <h1>
+                <a href="#profile-card" style="text-decoration: none; color:inherit;">
+                    Bienvenid@ a mi Curriculum Vitae
+                </a>
             </h1>
-            <ul>
+            <ul id="nav-links">
                 <li><a href="#about">Sobre Mí</a></li>
                 <li><a href="#habtec">Habilidades</a></li>
                 <li><a href="#projects">Proyectos</a></li>
             </ul>
+            <button id="hamburger" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </nav>
     </header>
 
-    <section class="profile-card-container">
-        <div class="profile-card" id="profile-card">
-            <button class="toggle-button" id="toggle-profile">Ver todo</button>
-            <div class="profile-header">
-                <img src="./assets/img/yo1.jpeg" alt="Foto de perfil de Matías Carabajal" class="profile-picture">
-                <div class="profile-info">
-                    <h3>Matías Nahuel Carabajal</h3>
-                    <p class="role">Desarrollador Web</p>
+    <main>
+        <section class="profile-card-container">
+            <div class="profile-card" id="profile-card">
+                <button class="toggle-button" id="toggle-profile">Ver todo</button>
+                <div class="profile-header">
+                    <img src="./assets/img/yo1.jpeg" alt="Foto de perfil de Matías Carabajal" class="profile-picture">
+                    <div class="profile-info">
+                        <h3>Matías Nahuel Carabajal</h3>
+                        <p class="role">Desarrollador Web</p>
+                    </div>
+                </div>
+                <div class="profile-details hidden">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-info">
+                            <span>EMAIL</span>
+                            <a href="mailto:matias.carabajal@estudiantes.unahur.edu.ar">
+                                <p>matias.carabajal@estudiantes.unahur.edu.ar</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-info">
+                            <span>TELÉFONO</span>
+                            <a href="https://wa.me/+5491130022107">
+                                <p>+549 11 3002 2107</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-info">
+                            <span>UBICACIÓN</span>
+                            <a href="https://www.google.com/maps">
+                                <p>Rafael Castillo, La Matanza, BA, Argentina</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/matiasncarabajal/" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Matnahuel" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                    <div class="additional-info-container">
+                        <h3>Info adicional</h3>
+                        <ul>
+                            <li><i class="fas fa-car-side"></i>Licencia de conducir clase B2.</li>
+                            <li><i class="fas fa-graduation-cap"></i>Cursando la última materia.</li>
+                            <li><i class="fas fa-calendar-check"></i>Egreso Diciembre 2025.</li>
+                            <li><i class="fas fa-car"></i>Vehículo propio.</li>
+                        </ul>
+                    </div>
+                    <a href="./assets/cv/CV-MatiasNahuel-Carabajal-2025.pdf" download class="cv-download-button">Descargar
+                        CV</a>
                 </div>
             </div>
-            <div class="profile-details hidden">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <div class="contact-info">
-                        <span>EMAIL</span>
-                        <a href="mailto:matias.carabajal@estudiantes.unahur.edu.ar">
-                            <p>matias.carabajal@estudiantes.unahur.edu.ar</p>
-                        </a>
+        </section>
+
+        <section id="about">
+            <h2>Sobre Mí</h2>
+            <p class="about-me-text">
+                ¡Hola! Soy Matías Nahuel Carabajal, un desarrollador web en formación con una sólida base en tecnologías
+                Front-end y Back-end. Mi pasión por la tecnología y el aprendizaje constante me llevó a adquirir
+                conocimientos en desarrollo web.
+                <br>
+                <b><i>Soy estudiante avanzado de la Tecnicatura Universitaria en Programación de la Universidad Nacional de
+                    Hurlingham.</i></b> Busco mi primera experiencia laboral para aplicar mis conocimientos en
+                desarrollo y contribuir a
+                proyectos innovadores con código limpio y soluciones eficientes. Mi perfil autodidacta y proactivo me
+                impulsa a crecer continuamente en un entorno dinámico.
+            </p>
+
+            <h3>LO QUE ESTOY HACIENDO</h3>
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <div class="service-content">
+                        <h4>Desarrollo Web</h4>
+                        <p>Brindar servicios de desarrollo web de alta calidad, creando soluciones Front-end y Back-end
+                            robustas y eficientes.</p>
                     </div>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <div class="contact-info">
-                        <span>TELÉFONO</span>
-                        <a href="https://wa.me/+5491130022107">
-                            <p>+549 11 3002 2107</p>
-                        </a>
+
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <div class="service-content">
+                        <h4>Diseño Responsivo</h4>
+                        <p>Crear interfaces de usuario que se adapten a cualquier dispositivo, utilizando tecnologías como
+                            CSS, Bootstrap y Tailwind.</p>
                     </div>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div class="contact-info">
-                        <span>UBICACIÓN</span>
-                        <a href="https://maps.app.goo.gl/x9F1nYzeAojEws7C9">
-                            <p>Rafael Castillo, La Matanza, BA, Argentina</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/matiasncarabajal/" target="_blank"><i
-                            class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/Matnahuel" target="_blank"><i class="fab fa-github"></i></a>
-                </div>
-                <div class="additional-info-container">
-                    <h3>Info adicional</h3>
+            </div>
+        </section>
+
+        <section id="habtec">
+            <div class="habtec-header">
+                <i class="fas fa-boxes"></i>
+                <h2>Mis habilidades técnicas</h2>
+            </div>
+            <div class="habtec-grid">
+                <div class="habtec-column">
                     <ul>
-                        <li><i class="fas fa-car-side"></i>Licencia de conducir clase B2.</li>
-                        <li><i class="fas fa-graduation-cap"></i>Cursando la última materia.</li>
-                        <li><i class="fas fa-calendar-check"></i>Egreso Diciembre 2025.</li>
-                        <li><i class="fas fa-car"></i>Vehículo propio.</li>
+                        <li><span class="categoria">Lenguajes</span></li>
+                        <li>JavaScript</li>
+                        <li>Python</li>
+                        <li>TypeScript</li>
+                        <li>HTML</li>
+                        <li>Java</li>
+                    </ul>
+                    <ul>
+                        <li><span class="categoria">Frameworks</span></li>
+                        <li>React</li>
+                        <li>Bootstrap</li>
+                        <li>Tailwind</li>
+                        <li>CSS</li>
                     </ul>
                 </div>
-            </div>
-            <div class="profile-details hidden">
-                <a href="./assets/cv/CV-MatiasNahuel-Carabajal-2025.pdf" download class="cv-download-button">Descargar
-                    CV</a>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="about">
-        <h2>Sobre Mí</h2>
-        <p class="about-me-text">
-            ¡Hola! Soy Matías Nahuel Carabajal, un desarrollador web en formación con una sólida base en tecnologías
-            Front-end y Back-end. Mi pasión por la tecnología y el aprendizaje constante me llevó a adquirir
-            conocimientos en desarrollo web.
-            <br>
-            <b><i>Soy estudiante avanzado de la Tecnicatura Universitaria en Programación de la Universidad Nacional de
-                    Hurlingham.</i></b> Busco mi primera experiencia laboral para aplicar mis conocimientos en
-            desarrollo y contribuir a
-            proyectos innovadores con código limpio y soluciones eficientes. Mi perfil autodidacta y proactivo me
-            impulsa a crecer continuamente en un entorno dinámico.
-        </p>
-
-        <h3>LO QUE ESTOY HACIENDO</h3>
-        <div class="services-container">
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-code"></i></div>
-                <div class="service-content">
-                    <h4>Desarrollo Web</h4>
-                    <p>Brindar servicios de desarrollo web de alta calidad, creando soluciones Front-end y Back-end
-                        robustas y eficientes.</p>
+                <div class="habtec-column">
+                    <ul>
+                        <li><span class="categoria">Bases de Datos</span></li>
+                        <li>MySQL</li>
+                        <li>PostgreSQL</li>
+                        <li>MongoDB</li>
+                    </ul>
+                    <ul>
+                        <li><span class="categoria">Herramientas</span></li>
+                        <li>Git</li>
+                        <li>GitHub</li>
+                        <li>Postman</li>
+                        <li>Figma</li>
+                    </ul>
+                    <p>Y puedo aprender más...</p>
                 </div>
             </div>
+        </section>
 
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
-                <div class="service-content">
-                    <h4>Diseño Responsivo</h4>
-                    <p>Crear interfaces de usuario que se adapten a cualquier dispositivo, utilizando tecnologías como
-                        CSS, Bootstrap y Tailwind.</p>
+        <section id="certifications">
+            <div class="certifications-header">
+                <i class="fas fa-award certifications-icon"></i>
+                <h2>Certificaciones</h2>
+                <a href="https://www.linkedin.com/in/matiasncarabajal/details/certifications/" target="_blank"
+                    class="certifications-button">Ver certificaciones</a>
+            </div>
+
+            <div class="certifications-list">
+                <div class="certification-item">
+                    <p><strong>Procesamiento de datos con Python.</strong> ProgramAR/Ticmas, Certificado.</p>
+                </div>
+                <div class="certification-item">
+                    <p><strong>JavaScript.</strong> CEIT/UNAHUR, Certificado.</p>
+                </div>
+                <div class="certification-item">
+                    <p><strong>Desarrollador Front-end.</strong> ProgramAR/Ticmas, Certificado.</p>
+                </div>
+                <div class="certification-item">
+                    <p><strong>Project Management.</strong> CEIT/UNAHUR, Certificado.</p>
+                </div>
+                <div class="certification-item">
+                    <p><strong>ReactJS.</strong> TalentoTech, Certificado.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="habtec">
-        <div class="habtec-header">
-            <i class="fas fa-boxes"></i>
-            <h2>Mis habilidades técnicas</h2>
-        </div>
-        <div class="habtec-grid">
-            <div class="habtec-column">
-                <ul>
-                    <li><span class="categoria">Lenguajes</span></li>
-                    <li>JavaScript</li>
-                    <li>Python</li>
-                    <li>TypeScript</li>
-                    <li>HTML</li>
-                    <li>Java</li>
-                </ul>
-                <ul>
-                    <li><span class="categoria">Frameworks</span></li>
-                    <li>React</li>
-                    <li>Bootstrap</li>
-                    <li>Tailwind</li>
-                    <li>CSS</li>
-                </ul>
+        <section id="languages">
+            <div class="languages-header">
+                <div class="lang-icon-circle">
+                    <i class="fas fa-language lang-icon"></i>
+                </div>
+                <h2>Idiomas</h2>
             </div>
-            <div class="habtec-column">
-                <ul>
-                    <li><span class="categoria">Bases de Datos</span></li>
-                    <li>MySQL</li>
-                    <li>PostgreSQL</li>
-                    <li>MongoDB</li>
-                </ul>
-                <ul>
-                    <li><span class="categoria">Herramientas</span></li>
-                    <li>Git</li>
-                    <li>GitHub</li>
-                    <li>Postman</li>
-                    <li>Figma</li>
-                </ul>
-                <p>Y puedo aprender más...</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="certifications">
-        <div class="certifications-header">
-            <i class="fas fa-award certifications-icon"></i>
-            <h2>Certificaciones</h2>
-            <a href="https://www.linkedin.com/in/matiasncarabajal/details/certifications/" target="_blank"
-                class="certifications-button">Ver certificaciones</a>
-        </div>
-
-        <div class="certifications-list">
-            <div class="certification-item">
-                <p><strong>Procesamiento de datos con Python.</strong> ProgramAR/Ticmas, Certificado.</p>
-            </div>
-            <div class="certification-item">
-                <p><strong>JavaScript.</strong> CEIT/UNAHUR, Certificado.</p>
-            </div>
-            <div class="certification-item">
-                <p><strong>Desarrollador Front-end.</strong> ProgramAR/Ticmas, Certificado.</p>
-            </div>
-            <div class="certification-item">
-                <p><strong>Project Management.</strong> CEIT/UNAHUR, Certificado.</p>
-            </div>
-            <div class="certification-item">
-                <p><strong>ReactJS.</strong> TalentoTech, Certificado.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="languages">
-        <div class="languages-header">
-            <div class="lang-icon-circle">
-                <i class="fas fa-language lang-icon"></i>
-            </div>
-            <h2>Languajes</h2>
-        </div>
-        <div class="languages-horizontal-grid">
-            <div class="language-column">
-                <span class="language-name">Español</span>
-                <span class="language-level">Nativo</span>
-            </div>
-            <div class="language-column">
-                <span class="language-name">Inglés</span>
-                <span class="language-level">A2 Pre-Intermedio</span>
-            </div>
-            <div class="language-column">
-                <span class="language-name">Portugés</span>
-                <span class="language-level">A1 Básico</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2>Proyectos</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <img src="./assets/img/proyecto.jpg" alt="Captura de pantalla del Proyecto 1">
-                <h3>CIUTEAM-Anti-Social-Net </h3>
-                <p>Es el desarrollo del proyecto final de la materia Construcción de interfaces de la Tecnicatura
-                    Universitaria en Programación con unos agregados extras para subirla a github.</p>
-                <div class="project-links">
-                    <a href="https://github.com/Matnahuel/CIUTEAM-Anti-Social-Net" target="_blank">Repositorio</a>
+            <div class="languages-horizontal-grid">
+                <div class="language-column">
+                    <span class="language-name">Español</span>
+                    <span class="language-level">Nativo</span>
+                </div>
+                <div class="language-column">
+                    <span class="language-name">Inglés</span>
+                    <span class="language-level">A2 Pre-Intermedio</span>
+                </div>
+                <div class="language-column">
+                    <span class="language-name">Portugués</span>
+                    <span class="language-level">A1 Básico</span>
                 </div>
             </div>
-        </div>
-        <hr>
-        <div class="projects-grid">
-            <div class="project-card">
-                <img src="./assets/img/proyecto.jpg" alt="Captura de pantalla del Proyecto 1">
-                <h3>WalMat---Tienda-Oficial </h3>
-                <p>WalMat es una tienda e-commerce, es parte de mi proyecto final para la certificacion en mi curso de
-                    React en TalentoTech</p>
-                <div class="project-links">
-                    <a href="https://github.com/Matnahuel/WalMat---Tienda-Oficial" target="_blank">Repositorio</a>
+        </section>
+
+        <section id="projects">
+            <h2>Proyectos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="./assets/img/proyecto.jpg" alt="Captura de pantalla del Proyecto 1">
+                    <h3>CIUTEAM-Anti-Social-Net</h3>
+                    <p>Es el desarrollo del proyecto final de la materia Construcción de interfaces de la Tecnicatura
+                        Universitaria en Programación con unos agregados extras para subirla a github.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Matnahuel/CIUTEAM-Anti-Social-Net" target="_blank">Repositorio</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <hr>
-        <div class="projects-grid">
-            <div class="project-card">
-                <img src="./assets/img/proyecto.jpg" alt="Captura de pantalla del Proyecto 1">
-                <h3>App-notas</h3>
-                <p>Es un proyecto personal de un anotador.</p>
-                <div class="project-links">
-                    <a href="https://github.com/Matnahuel/app-notas" target="_blank">Repositorio</a>
+            <hr>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="./assets/img/proyecto.jpg" alt="Captura de pantalla del Proyecto 1">
+                    <h3>WalMat---Tienda-Oficial</h3>
+                    <p>WalMat es una tienda e-commerce, es parte de mi proyecto final para la certificacion en mi curso de
+                        React en TalentoTech</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Matnahuel/WalMat---Tienda-Oficial" target="_blank">Repositorio</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+            <hr>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="./assets/img/proyecto.jpg" alt="Captura de pantalla del Proyecto 1">
+                    <h3>App-notas</h3>
+                    <p>Es un proyecto personal de un anotador.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Matnahuel/app-notas" target="_blank">Repositorio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>© 2025 Matias Nahuel Carabajal. Todos los derechos reservados.</p>
@@ -256,5 +260,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>
