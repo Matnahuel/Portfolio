@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matias Nahuel Carabajal - Desarrollador Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Matias Nahuel Carabajal</h1>
+            <ul>
+                <li><a href="#about">Sobre Mí</a></li>
+                <li><a href="#habtec">Habilidades</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="profile-card-container">
+        <div class="profile-card" id="profile-card">
+            <button class="toggle-button" id="toggle-profile">Ver todo</button>
+            <div class="profile-header">
+                <img src="./assets/img/yo1.jpeg" alt="Foto de perfil de Matías Carabajal" class="profile-picture">
+                <div class="profile-info">
+                    <h3>Matías Nahuel Carabajal</h3>
+                    <p class="role">Desarrollador Web</p>
+                </div>
+            </div>
+            <div class="profile-details hidden">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="contact-info">
+                        <span>EMAIL</span>
+                        <a href="mailto:matias.carabajal@estudiantes.unahur.edu.ar">
+                            <p>matias.carabajal@estudiantes.unahur.edu.ar</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div class="contact-info">
+                        <span>TELÉFONO</span>
+                        <a href="https://wa.me/+5491130022107">
+                            <p>+549 11 3002 2107</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="contact-info">
+                        <span>UBICACIÓN</span>
+                        <a href="https://maps.app.goo.gl/x9F1nYzeAojEws7C9">
+                            <p>Rafael Castillo, La Matanza, BA, Argentina</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/matiasncarabajal/" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Matnahuel" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>Sobre Mí</h2>
+        <p class="about-me-text">
+            ¡Hola! Soy Matías Nahuel Carabajal, un desarrollador web en formación con una sólida base en tecnologías
+            Front-end y Back-end. Mi pasión por la tecnología y el aprendizaje constante me llevó a adquirir
+            conocimientos en desarrollo web.
+            <br>
+            Soy estudiante avanzado de la Tecnicatura Universitaria en Programación de la Universidad Nacional de
+            Hurlingham. Busco mi primera experiencia laboral para aplicar mis conocimientos en desarrollo y contribuir a
+            proyectos innovadores con código limpio y soluciones eficientes. Mi perfil autodidacta y proactivo me
+            impulsa a crecer continuamente en un entorno dinámico.
+        </p>
+
+        <h3>Lo Que Estoy Haciendo</h3>
+        <div class="services-container">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-code"></i></div>
+                <div class="service-content">
+                    <h4>Desarrollo Web</h4>
+                    <p>Brindar servicios de desarrollo web de alta calidad, creando soluciones Front-end y Back-end
+                        robustas y eficientes.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                <div class="service-content">
+                    <h4>Diseño Responsivo</h4>
+                    <p>Crear interfaces de usuario que se adapten a cualquier dispositivo, utilizando tecnologías como
+                        CSS, Bootstrap y Tailwind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="habtec">
+        <div class="habtec-header">
+            <i class="fas fa-boxes"></i>
+            <h2>Mis habilidades técnicas</h2>
+        </div>
+        <div class="habtec-grid">
+            <div class="habtec-column">
+                <ul>
+                    <li><span class="categoria">Lenguajes</span></li>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>TypeScript</li>
+                    <li>HTML</li>
+                    <li>Java</li>
+                </ul>
+                <ul>
+                    <li><span class="categoria">Frameworks</span></li>
+                    <li>React</li>
+                    <li>Bootstrap</li>
+                    <li>Tailwind</li>
+                    <li>CSS</li>
+                </ul>
+            </div>
+            <div class="habtec-column">
+                <ul>
+                    <li><span class="categoria">Bases de Datos</span></li>
+                    <li>MySQL</li>
+                    <li>PostgreSQL</li>
+                    <li>MongoDB</li>
+                </ul>
+                <ul>
+                    <li><span class="categoria">Herramientas</span></li>
+                    <li>Git</li>
+                    <li>GitHub</li>
+                    <li>Postman</li>
+                    <li>Figma</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Proyectos</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="./assets/img/proyecto.jpg" alt="Captura de pantalla del Proyecto 1">
+                <h3>Nombre del Proyecto 1</h3>
+                <p>Descripción del proyecto, tecnologías utilizadas y funcionalidad principal.</p>
+                <div class="project-links">
+                    <a href="#" target="_blank">Código (GitHub)</a>
+                    <a href="#" target="_blank">Demo en vivo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Matias Nahuel Carabajal. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

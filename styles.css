@@ -1,0 +1,338 @@
+/* Estilos generales */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+a {
+    color: #007BFF;
+}
+
+/* Encabezado y Navegación */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header nav h1 {
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 100px 20px 50px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* Sección de Perfil */
+.profile-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #1a1a1a;
+    margin-top: 80px;
+}
+
+.profile-card {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    background-color: #242424;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.profile-card.expanded {
+    display: block;
+    width: 100%;
+}
+
+.toggle-button {
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-card.expanded .profile-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.profile-info h3 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.profile-info .role {
+    margin: 5px 0 0;
+    font-size: 16px;
+    color: #aaa;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    display: block;
+}
+
+.profile-details.hidden {
+    display: none;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.profile-card.expanded .profile-details {
+    display: flex;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-item i {
+    font-size: 20px;
+    color: #007BFF;
+}
+
+.contact-info span {
+    font-size: 12px;
+    color: #888;
+    display: block;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+.social-links a {
+    color: #f0f0f0;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #007BFF;
+}
+
+/* Sección Sobre Mí */
+#about {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+#about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#about .about-me-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+#about h3 {
+    font-size: 24px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.services-container {
+    display: grid;
+    gap: 20px;
+}
+
+.service-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    background-color: #242424;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.service-icon {
+    font-size: 32px;
+    color: #007bff;
+}
+
+.service-content h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+.service-content p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Sección de Habilidades Técnicas */
+#habtec {
+    padding: 50px 20px;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+.habtec-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.habtec-header i {
+    font-size: 24px;
+    color: #007bff;
+}
+
+.habtec-header h2 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.habtec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.habtec-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.habtec-column li {
+    font-size: 16px;
+    line-height: 2.2;
+    color: #ccc;
+}
+
+.habtec-column .categoria {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    border-bottom: 2px solid #007bff;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+/* Estilos para los proyectos */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #242424;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: #f0f0f0;
+}
+
+.project-card img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.btn {
+    background: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #1a1a1a;
+    border-top: 1px solid #333;
+    color: #ccc;
+}
