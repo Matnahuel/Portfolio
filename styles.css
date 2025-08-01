@@ -620,4 +620,10 @@ footer {
         padding: 6px 12px;
         font-size: 12px;
     }
+    
+    /* Habilidades Técnicas en 2 columnas para móvil */
+    .habtec-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
 }
