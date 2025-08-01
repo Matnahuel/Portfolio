@@ -202,6 +202,9 @@ section {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: grid; /* Cambiamos a grid para el diseño en columnas */
+    grid-template-columns: repeat(2, 1fr); /* Crea 2 columnas de igual tamaño */
+    gap: 15px; /* Espacio entre los elementos de la lista */
 }
 
 .additional-info-container li {
@@ -210,7 +213,7 @@ section {
     color: #ccc;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .additional-info-container i {
