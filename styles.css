@@ -55,7 +55,7 @@ header nav ul li a {
 
 /* Estilos para el botón de hamburguesa (oculto en escritorio) */
 #hamburger {
-    display: none; /* Oculto por defecto */
+    display: none;
     flex-direction: column;
     justify-content: space-around;
     width: 30px;
@@ -514,11 +514,16 @@ section {
     margin-top: 5px;
 }
 
-/* Estilos proyectos */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+/*PROYECTOS Y CARRUSELES*/
+#projects h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 .project-card {
@@ -530,12 +535,18 @@ section {
     color: #f0f0f0;
 }
 
-.project-card img {
-    max-width: 100%;
-    border-radius: 4px;
+.project-card h3 {
+    margin-top: 20px;
+    font-size: 24px;
 }
 
-.btn {
+.project-card p {
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.project-links a {
     background: #007BFF;
     color: #fff;
     padding: 10px 20px;
@@ -543,8 +554,186 @@ section {
     border-radius: 5px;
     display: inline-block;
     margin-top: 20px;
+    transition: background-color 0.3s ease;
 }
 
+.project-links a:hover {
+    background-color: #0056b3;
+}
+
+/*Carrusel */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-images {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+/*Ampliar Imágenes*/
+.carousel-image-wrapper {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.expand-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.carousel-image-wrapper:hover .expand-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0s 0.3s;
+    z-index: 2000;
+}
+
+.modal.show {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 100vh;
+    display: block;
+    margin: auto;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2001;
+    transition: color 0.3s;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #bbb;
+}
+
+.modal .modal-carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 24px;
+    z-index: 2001;
+    transition: background-color 0.3s;
+}
+
+.modal .modal-carousel-button.prev-button {
+    left: 20px;
+}
+
+.modal .modal-carousel-button.next-button {
+    right: 20px;
+}
+
+.modal .modal-carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/*footer*/
 footer {
     padding: 20px;
     text-align: center;
@@ -554,7 +743,7 @@ footer {
 }
 
 
-/* Media Query para móvil (unificada) */
+/* Media Query para celulares*/
 @media (max-width: 768px) {
     header nav ul {
         display: none;
@@ -571,8 +760,8 @@ footer {
     #nav-links {
         position: fixed;
         right: 0;
-        top: 60px; /* Ajusta este valor para que el menú comience debajo del header */
-        height: calc(100vh - 60px); /* Ocupa el resto de la pantalla */
+        top: 60px;
+        height: calc(100vh - 60px);
         width: 100%;
         background-color: #333;
         flex-direction: column;
@@ -581,12 +770,12 @@ footer {
         gap: 30px;
         transform: translateX(100%);
         transition: transform 0.3s ease-in;
-        display: none; /* Asegura que esté oculto por defecto */
+        display: none;
     }
 
     #nav-links.active {
         transform: translateX(0);
-        display: flex; /* Muestra el menú cuando está activo */
+        display: flex; 
     }
 
     #nav-links li {
@@ -625,5 +814,18 @@ footer {
     .habtec-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+    }
+
+    .modal .modal-carousel-button {
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    .modal .modal-carousel-button.prev-button {
+        left: 10px;
+    }
+
+    .modal .modal-carousel-button.next-button {
+        right: 10px;
     }
 }
