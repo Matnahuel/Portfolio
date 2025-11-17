@@ -3,74 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matias Nahuel Carabajal - Desarrollador Web</title>
+    <meta name="description" content="Portfolio de Matías Nahuel Carabajal - Desarrollador Web Full Stack especializado en JavaScript, Python, React y tecnologías modernas">
+    <title>Matias Nahuel Carabajal - Desarrollador Web Full Stack</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</
+
+head>
 <body>
-    <header>
-        <nav>
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
+    <header role="banner">
+        <nav role="navigation" aria-label="Navegación principal">
             <h1>
-                <a href="#profile-card" style="text-decoration: none; color:inherit;">
-                    Bienvenid@ a mi Curriculum Vitae
+                <a href="#profile-card" aria-label="Ir al inicio del portfolio" style="text-decoration: none; color:inherit;">
+                    Matías Carabajal | Portfolio
                 </a>
             </h1>
-            <ul id="nav-links">
-                <li><a href="#about">Sobre Mí</a></li>
-                <li><a href="#habtec">Habilidades</a></li>
-                <li><a href="#projects">Proyectos</a></li>
+            <ul id="nav-links" role="menubar">
+                <li role="none"><a href="#about" role="menuitem">Sobre Mí</a></li>
+                <li role="none"><a href="#habtec" role="menuitem">Habilidades</a></li>
+                <li role="none"><a href="#certifications" role="menuitem">Certificaciones</a></li>
+                <li role="none"><a href="#projects" role="menuitem">Proyectos</a></li>
             </ul>
-            <button id="hamburger" aria-label="Toggle navigation menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <button id="hamburger" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-links">
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
             </button>
         </nav>
     </header>
 
-    <main>
-        <section class="profile-card-container">
+    <main id="main-content" role="main">
+        <section class="profile-card-container" aria-label="Información de perfil">
             <div class="profile-card" id="profile-card">
-                <button class="toggle-button" id="toggle-profile">Ver todo</button>
+                <button class="toggle-button" id="toggle-profile" aria-label="Mostrar información completa del perfil" aria-expanded="false">Ver todo</button>
                 <div class="profile-header">
-                    <img src="./assets/img/yo1.jpeg" alt="Foto de perfil de Matías Carabajal" class="profile-picture">
+                    <img src="./assets/img/yo1.jpeg" alt="Foto de perfil de Matías Nahuel Carabajal, Desarrollador Web Full Stack" class="profile-picture">
                     <div class="profile-info">
                         <h3>Matías Nahuel Carabajal</h3>
-                        <p class="role">Desarrollador Web</p>
+                        <p class="role">Desarrollador Web Full Stack</p>
                     </div>
                 </div>
-                <div class="profile-details hidden">
+                <div class="profile-details hidden" role="region" aria-label="Detalles de contacto">
                     <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
                         <div class="contact-info">
                             <span>EMAIL</span>
-                            <a href="mailto:matias.carabajal@estudiantes.unahur.edu.ar">
+                            <a href="mailto:matias.carabajal@estudiantes.unahur.edu.ar" aria-label="Enviar correo electrónico a Matías Carabajal">
                                 <p>matias.carabajal@estudiantes.unahur.edu.ar</p>
                             </a>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-phone"></i>
+                        <i class="fas fa-phone" aria-hidden="true"></i>
                         <div class="contact-info">
                             <span>TELÉFONO</span>
-                            <a href="https://wa.me/+5491130022107">
+                            <a href="https://wa.me/+5491130022107" aria-label="Contactar por WhatsApp al número +549 11 3002 2107" target="_blank" rel="noopener noreferrer">
                                 <p>+549 11 3002 2107</p>
                             </a>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         <div class="contact-info">
                             <span>UBICACIÓN</span>
-                            <a href="https://www.google.com/maps">
+                            <a href="https://www.google.com/maps" aria-label="Ver ubicación en Google Maps" target="_blank" rel="noopener noreferrer">
                                 <p>Rafael Castillo, La Matanza, BA, Argentina</p>
                             </a>
                         </div>
                     </div>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/matiasncarabajal/" target="_blank"><i
-                                class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/Matnahuel" target="_blank"><i class="fab fa-github"></i></a>
+                    <div class="social-links" role="list" aria-label="Enlaces a redes sociales">
+                        <a href="https://www.linkedin.com/in/matiasncarabajal/" target="_blank" rel="noopener noreferrer" aria-label="Visitar perfil de LinkedIn de Matías Carabajal" role="listitem">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <span class="sr-only">LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/Matnahuel" target="_blank" rel="noopener noreferrer" aria-label="Visitar perfil de GitHub de Matías Carabajal" role="listitem">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <span class="sr-only">GitHub</span>
+                        </a>
                     </div>
                     <div class="additional-info-container">
                         <h3>Info adicional</h3>
@@ -81,24 +96,33 @@
                             <li><i class="fas fa-car"></i>Vehículo propio.</li>
                         </ul>
                     </div>
-                    <a href="./assets/cv/CV-MatiasNahuel-Carabajal-2025.pdf" download class="cv-download-button">Descargar
+                    <a href="./assets/cv/CV-MatiasNahuel-Carabajal-2025.pdf" download class="cv-download-button" aria-label="Descargar curriculum vitae de Matías Carabajal en formato PDF">Descargar
                         CV</a>
                 </div>
             </div>
         </section>
 
-        <section id="about">
-            <h2>Sobre Mí</h2>
+        <section id="about" aria-labelledby="about-heading">
+            <h2 id="about-heading">Sobre Mí</h2>
             <p class="about-me-text">
-                ¡Hola! Soy Matías Nahuel Carabajal, un desarrollador web en formación con una sólida base en tecnologías
-                Front-end y Back-end. Mi pasión por la tecnología y el aprendizaje constante me llevó a adquirir
-                conocimientos en desarrollo web.
-                <br>
-                <b><i>Soy estudiante avanzado de la Tecnicatura Universitaria en Programación de la Universidad Nacional de
-                    Hurlingham.</i></b> Busco mi primera experiencia laboral para aplicar mis conocimientos en
-                desarrollo y contribuir a
-                proyectos innovadores con código limpio y soluciones eficientes. Mi perfil autodidacta y proactivo me
-                impulsa a crecer continuamente en un entorno dinámico.
+                ¡Hola! Soy <strong>Matías Nahuel Carabajal</strong>, un <strong>Desarrollador Web Full Stack</strong> con 
+                experiencia en tecnologías modernas de Front-end y Back-end. Mi pasión por crear soluciones digitales 
+                innovadoras y mi compromiso con el código limpio y las mejores prácticas me han llevado a desarrollar 
+                proyectos que combinan funcionalidad, diseño y rendimiento.
+                <br><br>
+                <strong>Soy estudiante avanzado de la Tecnicatura Universitaria en Programación de la Universidad Nacional 
+                de Hurlingham</strong>, con egreso previsto para Diciembre 2025. A lo largo de mi formación, he adquirido 
+                competencias sólidas en JavaScript, Python, React, bases de datos relacionales y no relacionales, y 
+                metodologías ágiles de desarrollo.
+                <br><br>
+                Me especializo en construir aplicaciones web escalables y responsivas, desde la arquitectura hasta la 
+                implementación. Tengo experiencia práctica desarrollando proyectos full-stack, trabajando con APIs REST, 
+                implementando testing automatizado y utilizando herramientas de control de versiones como Git.
+                <br><br>
+                Busco oportunidades para aplicar mis conocimientos en un entorno profesional, contribuyendo a equipos 
+                dinámicos donde pueda seguir aprendiendo y aportar valor con soluciones técnicas de calidad. Mi enfoque 
+                proactivo, capacidad de aprendizaje rápido y atención al detalle me permiten adaptarme rápidamente a 
+                nuevos desafíos tecnológicos.
             </p>
 
             <h3>LO QUE ESTOY HACIENDO</h3>
@@ -123,10 +147,10 @@
             </div>
         </section>
 
-        <section id="habtec">
+        <section id="habtec" aria-labelledby="habtec-heading">
             <div class="habtec-header">
-                <i class="fas fa-boxes"></i>
-                <h2>Mis habilidades técnicas</h2>
+                <i class="fas fa-boxes" aria-hidden="true"></i>
+                <h2 id="habtec-heading">Mis habilidades técnicas</h2>
             </div>
             <div class="habtec-grid">
                 <div class="habtec-column">
@@ -165,12 +189,12 @@
             </div>
         </section>
 
-        <section id="certifications">
+        <section id="certifications" aria-labelledby="certifications-heading">
             <div class="certifications-header">
-                <i class="fas fa-award certifications-icon"></i>
-                <h2>Certificaciones</h2>
-                <a href="https://www.linkedin.com/in/matiasncarabajal/details/certifications/" target="_blank"
-                    class="certifications-button">Ver certificaciones</a>
+                <i class="fas fa-award certifications-icon" aria-hidden="true"></i>
+                <h2 id="certifications-heading">Certificaciones</h2>
+                <a href="https://www.linkedin.com/in/matiasncarabajal/details/certifications/" target="_blank" rel="noopener noreferrer"
+                    class="certifications-button" aria-label="Ver todas las certificaciones en LinkedIn">Ver certificaciones</a>
             </div>
 
             <div class="certifications-list">
@@ -189,15 +213,21 @@
                 <div class="certification-item">
                     <p><strong>ReactJS.</strong> TalentoTech, Certificado.</p>
                 </div>
+                <div class="certification-item">
+                    <p><strong>Introducción a Python.</strong> UNAHUR/CTTP, Certificado.</p>
+                </div>
+                <div class="certification-item">
+                    <p><strong>Testing 2 (Automatizado).</strong> UNAHUR/CTTP, Certificado.</p>
+                </div>
             </div>
         </section>
 
-        <section id="languages">
+        <section id="languages" aria-labelledby="languages-heading">
             <div class="languages-header">
-                <div class="lang-icon-circle">
+                <div class="lang-icon-circle" aria-hidden="true">
                     <i class="fas fa-language lang-icon"></i>
                 </div>
-                <h2>Idiomas</h2>
+                <h2 id="languages-heading">Idiomas</h2>
             </div>
             <div class="languages-horizontal-grid">
                 <div class="language-column">
@@ -215,16 +245,54 @@
             </div>
         </section>
 
-        <section id="projects">
-            <h2>Proyectos</h2>
+        <section id="projects" aria-labelledby="projects-heading">
+            <h2 id="projects-heading">Proyectos</h2>
             <div class="projects-container">
                 </div>
         </section>
     </main>
 
-    <footer>
-        <p>© 2025 Matias Nahuel Carabajal. Todos los derechos reservados.</p>
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Matías Nahuel Carabajal</h3>
+                <p>Desarrollador Web Full Stack</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <div class="footer-links" role="list">
+                    <a href="mailto:matias.carabajal@estudiantes.unahur.edu.ar" aria-label="Enviar correo electrónico a Matías Carabajal" role="listitem">
+                        <i class="fas fa-envelope" aria-hidden="true"></i> Email
+                    </a>
+                    <a href="https://wa.me/+5491130022107" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp al número +549 11 3002 2107" role="listitem">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <div class="footer-social-links" role="list" aria-label="Enlaces a redes sociales">
+                    <a href="https://www.linkedin.com/in/matiasncarabajal/" target="_blank" rel="noopener noreferrer" aria-label="Visitar perfil de LinkedIn de Matías Carabajal" role="listitem">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        <span class="sr-only">LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/Matnahuel" target="_blank" rel="noopener noreferrer" aria-label="Visitar perfil de GitHub de Matías Carabajal" role="listitem">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                        <span class="sr-only">GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Matias Nahuel Carabajal. Todos los derechos reservados.</p>
+        </div>
     </footer>
+
+    <!-- Botón Volver Arriba -->
+    <button id="back-to-top" class="back-to-top" aria-label="Volver al inicio de la página">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+        <span class="sr-only">Volver arriba</span>
+    </button>
 
     <script src="script.js"></script>
 </body>

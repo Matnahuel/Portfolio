@@ -8,12 +8,15 @@ document.addEventListener("DOMContentLoaded", () => {
     //el menú de hamburguesa
     if (hamburger && navLinks) {
         hamburger.addEventListener("click", () => {
+            const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
+            hamburger.setAttribute("aria-expanded", !isExpanded);
             navLinks.classList.toggle("active");
             // Cierra el menú si se hace clic en un enlace
             const links = navLinks.querySelectorAll('a');
             links.forEach(link => {
                 link.addEventListener('click', () => {
                     navLinks.classList.remove('active');
+                    hamburger.setAttribute("aria-expanded", "false");
                 });
             });
         });
@@ -22,7 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
     //mostrar/ocultar los detalles del perfil
     if (toggleButton && profileCard && profileDetails) {
         toggleButton.addEventListener('click', () => {
+            const isExpanded = toggleButton.getAttribute("aria-expanded") === "true";
             profileDetails.classList.toggle('hidden');
+            toggleButton.setAttribute("aria-expanded", !isExpanded);
 
             if (profileDetails.classList.contains('hidden')) {
                 toggleButton.textContent = 'Ver todo';
@@ -80,32 +85,32 @@ document.addEventListener("DOMContentLoaded", () => {
         let carouselHtml = '';
         project.screenshots.forEach((screenshot, imgIndex) => {
             carouselHtml += `
-                <div class="carousel-image-wrapper">
-                    <img src="${screenshot}" alt="Captura de pantalla de ${project.title} ${imgIndex + 1}">
-                    <div class="expand-overlay">Ampliar</div>
+                <div class="carousel-image-wrapper" role="listitem">
+                    <img src="${screenshot}" alt="Captura de pantalla ${imgIndex + 1} del proyecto ${project.title}" loading="lazy">
+                    <div class="expand-overlay" aria-hidden="true">Ampliar</div>
                 </div>
             `;
         });
         
         //tarjeta de proyecto
         const projectHTML = `
-            <div class="carousel-container">
-                <div class="carousel-images">
+            <div class="carousel-container" role="region" aria-label="Galería de imágenes del proyecto ${project.title}">
+                <div class="carousel-images" role="list">
                     ${carouselHtml}
                 </div>
                 ${project.screenshots.length > 1 ? `
-                    <button class="carousel-button prev-button" aria-label="Imagen anterior">
-                        <i class="fas fa-chevron-left"></i>
+                    <button class="carousel-button prev-button" aria-label="Ver imagen anterior del proyecto ${project.title}">
+                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
                     </button>
-                    <button class="carousel-button next-button" aria-label="Imagen siguiente">
-                        <i class="fas fa-chevron-right"></i>
+                    <button class="carousel-button next-button" aria-label="Ver imagen siguiente del proyecto ${project.title}">
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
                     </button>
                 ` : ''}
             </div>
             <h3>${project.title}</h3>
             <p>${project.description}</p>
             <div class="project-links">
-                <a href="${project.repoUrl}" target="_blank">Repositorio</a>
+                <a href="${project.repoUrl}" target="_blank" rel="noopener noreferrer" aria-label="Ver repositorio de ${project.title} en GitHub">Repositorio</a>
             </div>
         `;
 
@@ -224,4 +229,26 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
+
+    // Botón Volver Arriba
+    const backToTopButton = document.getElementById("back-to-top");
+    
+    if (backToTopButton) {
+        // Mostrar/ocultar botón según el scroll
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add("show");
+            } else {
+                backToTopButton.classList.remove("show");
+            }
+        });
+
+        // Scroll suave al hacer clic
+        backToTopButton.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    }
 });
