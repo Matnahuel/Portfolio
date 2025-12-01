@@ -72,6 +72,11 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.02em;
 }
 
+h2 {
+    font-size: clamp(2rem, 5vw, 2.625rem);
+}
+
+
 a {
     color: var(--primary-color);
     text-decoration: none;
@@ -1216,8 +1221,12 @@ footer {
 }
 
 
-/* Media Query para celulares*/
+/* Media Query para Tabletas */
 @media (max-width: 768px) {
+    header nav {
+        padding: 0 20px;
+    }
+    
     header nav ul {
         display: none;
     }
@@ -1233,17 +1242,18 @@ footer {
     #nav-links {
         position: fixed;
         right: 0;
-        top: 60px;
+        top: 60px; /* Ajustar a la altura del header */
         height: calc(100vh - 60px);
         width: 100%;
-        background-color: #333;
+        background-color: #1f1f1f;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 30px;
         transform: translateX(100%);
-        transition: transform 0.3s ease-in;
-        display: none;
+        transition: transform 0.3s ease-in-out;
+        display: none; /* Ocultar por defecto */
+        z-index: 999;
     }
 
     #nav-links.active {
@@ -1259,10 +1269,22 @@ footer {
         font-size: 24px;
         color: #fff;
     }
-
+    
+    section {
+        padding: 100px 20px 40px;
+    }
+    
     .profile-card {
         flex-direction: column;
         text-align: center;
+        padding: 25px;
+    }
+
+    .toggle-button {
+        top: 15px;
+        right: 15px;
+        padding: 6px 12px;
+        font-size: 13px;
     }
 
     .profile-header {
@@ -1276,36 +1298,32 @@ footer {
     .profile-details {
         text-align: left;
     }
-    
-    /* Regla para achicar el botón de certificaciones solo en móvil */
-    .certifications-button {
-        padding: 6px 12px;
-        font-size: 12px;
+
+    #about h2,
+    .habtec-header h2,
+    .certifications-header h2,
+    .languages-header h2,
+    #projects h2 {
+        font-size: 36px;
     }
     
-    /* Habilidades Técnicas en 2 columnas para móvil */
-    .habtec-grid {
+    .certifications-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .certifications-button {
+        align-self: flex-start;
+    }
+
+    .languages-horizontal-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
 
-    .modal .modal-carousel-button {
-        padding: 10px;
-        font-size: 20px;
-    }
-
-    .modal .modal-carousel-button.prev-button {
-        left: 10px;
-    }
-
-    .modal .modal-carousel-button.next-button {
-        right: 10px;
-    }
-
-    /* Footer responsive */
     .footer-content {
         grid-template-columns: 1fr;
-        gap: 30px;
         text-align: center;
     }
 
@@ -1317,12 +1335,108 @@ footer {
         justify-content: center;
     }
 
-    /* Botón volver arriba en móvil */
     .back-to-top {
         bottom: 20px;
         right: 20px;
         width: 45px;
         height: 45px;
         font-size: 18px;
+    }
+}
+
+/* Media Query para Celulares Pequeños */
+@media (max-width: 480px) {
+    body {
+        line-height: 1.6;
+    }
+
+    section {
+        padding: 80px 15px 30px;
+    }
+
+    header nav h1 {
+        font-size: 16px;
+    }
+
+    .profile-card {
+        padding: 20px;
+    }
+
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-info h3 {
+        font-size: 24px;
+    }
+
+    .profile-info .role {
+        font-size: 16px;
+    }
+
+    .additional-info-container ul {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    #about h2,
+    .habtec-header h2,
+    .certifications-header h2,
+    .languages-header h2,
+    #projects h2 {
+        font-size: 30px;
+    }
+
+    .about-me-text {
+        font-size: 16px;
+    }
+
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .habtec-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .habtec-column {
+        margin-bottom: 20px;
+    }
+
+    .languages-horizontal-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        border: none;
+        padding: 0;
+    }
+
+    .language-column {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 10px;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+
+    .carousel-container {
+        height: 250px;
+    }
+
+    .modal .modal-carousel-button {
+        padding: 8px;
+        font-size: 18px;
+    }
+
+    .modal .modal-carousel-button.prev-button {
+        left: 5px;
+    }
+
+    .modal .modal-carousel-button.next-button {
+        right: 5px;
     }
 }
