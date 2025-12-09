@@ -323,7 +323,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Matías Nahuel Carabajal</h3>
-                <p data-translate-key="footer-job-title">Desarrollador Web Full Stack</p>
+                <p data-translate-key="footer-job-title">Desarrollador Full Stack</p>
             </div>
             <div class="footer-section">
                 <h4 data-translate-key="footer-contact-title">Contacto</h4>
@@ -352,6 +352,38 @@
                         <span class="sr-only">GitHub</span>
                     </a>
                 </div>
+            </div>
+            <div class="footer-section footer-feedback-section" aria-labelledby="feedback-heading">
+                <h4 id="feedback-heading">Si llegaste hasta acá, me interesa tu devolución para poder seguir mejorando.</h4>
+
+                <form id="feedback-form"
+                      action="https://formspree.io/f/{YOUR_FORMSPREE_ID}"
+                      method="POST"
+                      novalidate
+                      aria-label="Formulario de opinión">
+                    <label for="feedback-email" class="sr-only">Correo electrónico</label>
+                    <input
+                        id="feedback-email"
+                        name="email"
+                        type="email"
+                        placeholder="Ingresar correo"
+                        required
+                        aria-required="true">
+
+                    <label for="feedback-message" class="sr-only">Sugerencia</label>
+                    <textarea
+                        id="feedback-message"
+                        name="message"
+                        placeholder="Me interesa tu opinion..."
+                        rows="3"
+                        minlength="5"
+                        required
+                        aria-required="true"></textarea>
+
+                    <button type="submit" class="btn-footer" aria-label="Enviar opinión">Enviar</button>
+
+                    <div id="feedback-status" role="status" aria-live="polite" class="feedback-status"></div>
+                </form>
             </div>
         </div>
         <div class="footer-bottom">

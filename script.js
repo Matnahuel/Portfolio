@@ -442,3 +442,57 @@ document.addEventListener('keydown', function (e) {
         e.preventDefault();
     }
 });
+
+// Feedback form: validación y envío usando Formspree (o endpoint configurado en el atributo action)
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('feedback-form');
+    if (!form) return;
+
+    const email = document.getElementById('feedback-email');
+    const message = document.getElementById('feedback-message');
+    const status = document.getElementById('feedback-status');
+
+    const validText = (el) => {
+        return el && el.value && /\S/.test(el.value) && el.value.trim().length >= 5;
+    };
+
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        status.textContent = '';
+
+        // Validación nativa de email
+        if (!email.checkValidity()) {
+            email.reportValidity();
+            return;
+        }
+
+        // Validación de texto: no solo espacios y longitud mínima
+        if (!validText(message)) {
+            message.setCustomValidity('Por favor ingresa un texto válido de al menos 5 caracteres.');
+            message.reportValidity();
+            message.setCustomValidity('');
+            return;
+        }
+
+        // Enviar datos
+        const formData = new FormData(form);
+        try {
+            const res = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (res.ok) {
+                status.textContent = 'Mensaje enviado. ¡Gracias!';
+                form.reset();
+            } else {
+                let data;
+                try { data = await res.json(); } catch (err) { }
+                status.textContent = (data && data.error) ? data.error : 'Error al enviar el mensaje. Intenta nuevamente.';
+            }
+        } catch (err) {
+            status.textContent = 'Error de red al enviar el mensaje.';
+        }
+    });
+});
