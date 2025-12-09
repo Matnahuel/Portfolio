@@ -1,16 +1,42 @@
 /* Estilos generales */
 :root {
+    /* Modo Claro (Default) */
+    --primary-color: #007BFF;
+    --primary-hover: #0056b3;
+    --secondary-color: #6c63ff;
+    --accent-color: #007BFF; /* Mantenemos un azul fuerte para el acento */
+    --bg-color: #f4f4f9;
+    --bg-card: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #555555;
+    --text-muted: #777777;
+    --border-color: #dddddd;
+    --header-bg: rgba(255, 255, 255, 0.9);
+    --header-text: #1a1a1a;
+    --three-bg: #f4f4f9;
+    --footer-bg: linear-gradient(180deg, #ffffff 0%, #f4f4f9 100%);
+}
+
+body.dark-mode {
+    /* Modo Oscuro */
     --primary-color: #007BFF;
     --primary-hover: #0056b3;
     --secondary-color: #6c63ff;
     --accent-color: #00d4ff;
-    --bg-dark: #0f0f0f;
+    --bg-color: #0f0f0f;
     --bg-card: #1a1a1a;
-    --bg-card-hover: #242424;
     --text-primary: #ffffff;
     --text-secondary: #b0b0b0;
     --text-muted: #888888;
     --border-color: #2a2a2a;
+    --header-bg: rgba(26, 26, 26, 0.95);
+    --header-text: #ffffff;
+    --three-bg: #0f0f0f;
+    --footer-bg: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+}
+
+/* --- Variables de Sombra (no cambian con el tema) --- */
+:root {
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
@@ -18,18 +44,39 @@
     --gradient-accent: linear-gradient(135deg, #00d4ff 0%, #007BFF 100%);
 }
 
+#three-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--three-bg);
+    transition: background-color 0.3s ease;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
     margin: 0;
     line-height: 1.7;
-    background-color: var(--bg-dark);
+    background-color: var(--bg-color);
     color: var(--text-primary);
     scroll-behavior: smooth;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main, footer {
+    position: relative;
+    z-index: 1;
 }
 
 /* Skip Link para accesibilidad */
@@ -113,15 +160,15 @@ a:not(.skip-link):focus {
 
 /* Encabezado y Navegación */
 header {
-    background: rgba(26, 26, 26, 0.95);
+    background: var(--header-bg);
     backdrop-filter: blur(10px);
-    color: #fff;
+    color: var(--header-text);
     padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
 }
 
@@ -132,6 +179,12 @@ header nav {
     max-width: 960px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+.nav-left, .nav-center, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 header nav h1 {
@@ -168,7 +221,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #fff;
+    color: var(--header-text);
     text-decoration: none;
     font-weight: 500;
     position: relative;
@@ -202,6 +255,65 @@ header nav ul li a:focus {
     border-radius: 4px;
 }
 
+/* Estilos para el botón de tema */
+#theme-toggle {
+    background: none;
+    border: none;
+    color: var(--header-text);
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Estilos para el selector de idioma --- */
+.language-selector-container {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0 8px;
+    transition: all 0.3s ease;
+}
+
+.language-selector-container:hover {
+    border-color: var(--primary-color);
+}
+
+.language-selector-container i {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-right: 6px;
+}
+
+#language-selector {
+    background-color: transparent;
+    border: none;
+    color: var(--header-text);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 8px 4px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+#language-selector:focus {
+    outline: none;
+}
+
+#language-selector option {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+}
+
 /* Estilos para el botón de hamburguesa (oculto en escritorio) */
 #hamburger {
     display: none;
@@ -231,7 +343,7 @@ header nav ul li a:focus {
 #hamburger .bar {
     width: 100%;
     height: 3px;
-    background-color: #fff;
+    background-color: var(--header-text);
     border-radius: 5px;
     transition: all 0.3s linear;
 }
@@ -261,7 +373,7 @@ section {
     justify-content: center;
     align-items: center;
     padding: 40px 20px;
-    background: linear-gradient(180deg, var(--bg-dark) 0%, #1a1a1a 100%);
+    background: linear-gradient(180deg, var(--bg-color) 0%, var(--bg-card) 100%);
     margin-top: 80px;
 }
 
@@ -269,12 +381,12 @@ section {
     position: relative;
     width: 100%;
     max-width: 960px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #242424 100%);
+    background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 16px;
     padding: 30px;
-    box-shadow: var(--shadow-lg);
-    color: #f0f0f0;
+    box-shadow: var(--shadow-md);
+    color: var(--text-primary);
     display: flex;
     align-items: center;
     gap: 20px;
@@ -333,8 +445,8 @@ section {
 }
 
 .profile-picture {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     border-radius: 16px;
     object-fit: cover;
     border: 3px solid var(--primary-color);
@@ -345,6 +457,11 @@ section {
 .profile-picture:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 30px rgba(0, 123, 255, 0.5);
+}
+
+.profile-card.expanded .profile-picture {
+    width: 180px;
+    height: 180px;
 }
 
 .profile-info h3 {
@@ -377,7 +494,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    border-top: 1px solid #333;
+    border-top: 1px solid var(--border-color);
     padding-top: 20px;
     margin-top: 20px;
 }
@@ -406,7 +523,7 @@ section {
 
 .contact-info span {
     font-size: 12px;
-    color: #888;
+    color: var(--text-muted);
     display: block;
 }
 
@@ -414,7 +531,7 @@ section {
     display: flex;
     gap: 15px;
     margin-top: 20px;
-    border-top: 1px solid #333;
+    border-top: 1px solid var(--border-color);
     padding-top: 20px;
 }
 
@@ -440,13 +557,13 @@ section {
 /* Información Adicional */
 .additional-info-container {
     margin-top: 20px;
-    border-top: 1px solid #333;
+    border-top: 1px solid var(--border-color);
     padding-top: 20px;
 }
 
 .additional-info-container h3 {
     font-size: 18px;
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: 15px;
 }
 
@@ -462,7 +579,7 @@ section {
 .additional-info-container li {
     font-size: 16px;
     line-height: 1.8;
-    color: #ccc;
+    color: var(--text-secondary);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -504,8 +621,8 @@ section {
 
 /* Sección Sobre Mí */
 #about {
-    background-color: #1a1a1a;
-    color: #f0f0f0;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
 }
 
 #about h2 {
@@ -549,7 +666,7 @@ section {
     align-items: center;
     gap: 20px;
     padding: 30px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #242424 100%);
+    background: var(--bg-color);
     border: 1px solid var(--border-color);
     border-radius: 16px;
     box-shadow: var(--shadow-md);
@@ -576,20 +693,20 @@ section {
 .service-content h4 {
     margin: 0;
     font-size: 18px;
-    color: #fff;
+    color: var(--text-primary);
 }
 
 .service-content p {
     margin: 5px 0 0;
     font-size: 14px;
-    color: #ccc;
+    color: var(--text-secondary);
 }
 
 /* Sección de Habilidades Técnicas */
 #habtec {
     padding: 50px 20px;
-    background-color: #1a1a1a;
-    color: #f0f0f0;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
 }
 
 .habtec-header {
@@ -629,13 +746,13 @@ section {
 .habtec-column li {
     font-size: 16px;
     line-height: 2.2;
-    color: #ccc;
+    color: var(--text-secondary);
 }
 
 .habtec-column .categoria {
     font-size: 20px;
     font-weight: 600;
-    color: #fff;
+    color: var(--text-primary);
     border-bottom: 3px solid;
     border-image: var(--gradient-primary) 1;
     display: inline-block;
@@ -650,11 +767,24 @@ section {
     border-bottom: 3px solid var(--primary-color);
 }
 
+.habtec-column .sub-categoria {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 /* Sección de Certificaciones */
 #certifications {
     padding: 50px 20px;
-    background-color: #1a1a1a;
-    color: #f0f0f0;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
 }
 
 .certifications-header {
@@ -716,7 +846,7 @@ section {
 }
 
 .certification-item {
-    background: linear-gradient(135deg, #1a1a1a 0%, #242424 100%);
+    background: var(--bg-color);
     padding: 20px;
     border-radius: 12px;
     box-shadow: var(--shadow-sm);
@@ -734,14 +864,14 @@ section {
     margin: 0;
     font-size: 16px;
     line-height: 1.5;
-    color: #ccc;
+    color: var(--text-secondary);
 }
 
 /* Sección de Idiomas */
 #languages {
     padding: 30px 20px;
-    background-color: #1a1a1a;
-    color: #f0f0f0;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
 }
 
 .languages-header {
@@ -754,7 +884,7 @@ section {
 .lang-icon-circle {
     width: 30px;
     height: 30px;
-    background-color: #2a2a2a;
+    background-color: var(--bg-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -783,8 +913,8 @@ section {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .language-column {
@@ -797,13 +927,13 @@ section {
 .language-name {
     font-weight: bold;
     font-size: 16px;
-    color: #fff;
+    color: var(--text-primary);
     display: block;
 }
 
 .language-level {
     font-size: 14px;
-    color: #999;
+    color: var(--text-muted);
     display: block;
     margin-top: 5px;
 }
@@ -825,13 +955,13 @@ section {
 }
 
 .project-card {
-    background: linear-gradient(135deg, #1a1a1a 0%, #242424 100%);
+    background: var(--bg-card);
     padding: 30px;
     border-radius: 16px;
     box-shadow: var(--shadow-md);
     border: 1px solid var(--border-color);
     text-align: center;
-    color: #f0f0f0;
+    color: var(--text-primary);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -848,7 +978,7 @@ section {
 
 .project-card p {
     font-size: 16px;
-    color: #ccc;
+    color: var(--text-secondary);
     line-height: 1.5;
 }
 
@@ -1064,7 +1194,7 @@ section {
 /*footer*/
 footer {
     padding: 50px 20px 20px;
-    background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+    background: var(--footer-bg);
     border-top: 1px solid var(--border-color);
     color: var(--text-secondary);
     margin-top: 60px;
@@ -1245,7 +1375,7 @@ footer {
         top: 60px; /* Ajustar a la altura del header */
         height: calc(100vh - 60px);
         width: 100%;
-        background-color: #1f1f1f;
+        background-color: var(--bg-card);
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -1267,7 +1397,7 @@ footer {
 
     #nav-links li a {
         font-size: 24px;
-        color: #fff;
+        color: var(--text-primary);
     }
     
     section {

@@ -1,60 +1,95 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Matías Nahuel Carabajal - Desarrollador Web Full Stack especializado en JavaScript, Python, React y tecnologías modernas">
+    <meta name="description"
+        content="Portfolio de Matías Nahuel Carabajal - Desarrollador Web Full Stack especializado en JavaScript, Python, React y tecnologías modernas">
     <title>Matias Nahuel Carabajal - Desarrollador Full Stack</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-</
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.164/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164/examples/jsm/"
+            }
+        }
+    </script>
+</head>
 
-head>
 <body>
+    <div id="three-container"></div>
     <!-- Skip to main content link -->
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-    
+
     <header role="banner">
         <nav role="navigation" aria-label="Navegación principal">
-            <h1>
-                <a href="#profile-card" aria-label="Ir al inicio del portfolio" style="text-decoration: none; color:inherit;">
-                    Matías Carabajal | Portfolio
-                </a>
-            </h1>
-            <ul id="nav-links" role="menubar">
-                <li role="none"><a href="#about" role="menuitem">Sobre Mí</a></li>
-                <li role="none"><a href="#habtec" role="menuitem">Habilidades</a></li>
-                <li role="none"><a href="#certifications" role="menuitem">Certificaciones</a></li>
-                <li role="none"><a href="#projects" role="menuitem">Proyectos</a></li>
-            </ul>
-            <button id="hamburger" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-links">
-                <span class="bar" aria-hidden="true"></span>
-                <span class="bar" aria-hidden="true"></span>
-                <span class="bar" aria-hidden="true"></span>
-            </button>
+            <div class="nav-left">
+                <ul id="nav-links" role="menubar">
+                    <li role="none"><a href="#about" role="menuitem">Sobre Mí</a></li>
+                    <li role="none"><a href="#habtec" role="menuitem">Habilidades</a></li>
+                    <li role="none"><a href="#certifications" role="menuitem">Certificaciones</a></li>
+                    <li role="none"><a href="#projects" role="menuitem">Proyectos</a></li>
+                </ul>
+                <button id="hamburger" aria-label="Abrir menú de navegación" aria-expanded="false"
+                    aria-controls="nav-links">
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="nav-center">
+                <div class="language-selector-container">
+                    <i class="fas fa-globe" aria-hidden="true"></i>
+                    <select id="language-selector" aria-label="Seleccionar idioma">
+                        <option value="esp">ESP</option>
+                        <option value="eng">ENG</option>
+                    </select>
+                </div>
+                <button id="theme-toggle" aria-label="Activar modo oscuro" aria-live="polite">
+                    <i class="far fa-moon" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="nav-right">
+                <h1>
+                    <a href="#profile-card" aria-label="Ir al inicio del portfolio"
+                        style="text-decoration: none; color:inherit;">
+                        Matías Carabajal | Portfolio
+                    </a>
+                </h1>
+            </div>
         </nav>
     </header>
 
     <main id="main-content" role="main">
         <section class="profile-card-container" aria-label="Información de perfil">
             <div class="profile-card" id="profile-card">
-                <button class="toggle-button" id="toggle-profile" aria-label="Mostrar información completa del perfil" aria-expanded="false">Ver todo</button>
+                <button class="toggle-button" id="toggle-profile" aria-label="Mostrar información completa del perfil"
+                    aria-expanded="false" data-translate-key="see-all">Ver todo</button>
                 <div class="profile-header">
-                    <img src="./assets/img/yo1.jpeg" alt="Foto de perfil de Matías Nahuel Carabajal, Desarrollador Web Full Stack" class="profile-picture">
+                    <img src="./assets/img/yo1.jpeg"
+                        alt="Foto de perfil de Matías Nahuel Carabajal, Desarrollador Web Full Stack"
+                        class="profile-picture">
                     <div class="profile-info">
                         <h3>Matías Nahuel Carabajal</h3>
-                        <p class="role">Desarrollador Full Stack</p>
+                        <p class="title" data-translate-key="university-technician">Técnico Universitario en Programación</p>
+                        <p class="role" data-translate-key="full-stack-developer">Desarrollador Full Stack</p>
                     </div>
                 </div>
                 <div class="profile-details hidden" role="region" aria-label="Detalles de contacto">
                     <div class="contact-item">
                         <i class="fas fa-envelope" aria-hidden="true"></i>
                         <div class="contact-info">
-                            <span>EMAIL</span>
-                            <a href="mailto:matias.carabajal@estudiantes.unahur.edu.ar" aria-label="Enviar correo electrónico a Matías Carabajal">
+                            <span data-translate-key="email-label">EMAIL</span>
+                            <a href="mailto:matias.carabajal@estudiantes.unahur.edu.ar"
+                                aria-label="Enviar correo electrónico a Matías Carabajal">
                                 <p>matias.carabajal@estudiantes.unahur.edu.ar</p>
                             </a>
                         </div>
@@ -62,8 +97,10 @@ head>
                     <div class="contact-item">
                         <i class="fas fa-phone" aria-hidden="true"></i>
                         <div class="contact-info">
-                            <span>TELÉFONO</span>
-                            <a href="https://wa.me/+5491130022107" aria-label="Contactar por WhatsApp al número +549 11 3002 2107" target="_blank" rel="noopener noreferrer">
+                            <span data-translate-key="phone-label">TELÉFONO</span>
+                            <a href="https://wa.me/+5491130022107"
+                                aria-label="Contactar por WhatsApp al número +549 11 3002 2107" target="_blank"
+                                rel="noopener noreferrer">
                                 <p>+549 11 3002 2107</p>
                             </a>
                         </div>
@@ -71,67 +108,69 @@ head>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         <div class="contact-info">
-                            <span>UBICACIÓN</span>
-                            <a href="https://www.google.com/maps" aria-label="Ver ubicación en Google Maps" target="_blank" rel="noopener noreferrer">
+                            <span data-translate-key="location-label">UBICACIÓN</span>
+                            <a href="https://www.google.com/maps" aria-label="Ver ubicación en Google Maps"
+                                target="_blank" rel="noopener noreferrer">
                                 <p>Rafael Castillo, La Matanza, BA, Argentina</p>
                             </a>
                         </div>
                     </div>
                     <div class="social-links" role="list" aria-label="Enlaces a redes sociales">
-                        <a href="https://www.linkedin.com/in/matiasncarabajal/" target="_blank" rel="noopener noreferrer" aria-label="Visitar perfil de LinkedIn de Matías Carabajal" role="listitem">
+                        <a href="https://www.linkedin.com/in/matiasncarabajal/" target="_blank"
+                            rel="noopener noreferrer" aria-label="Visitar perfil de LinkedIn de Matías Carabajal"
+                            role="listitem">
                             <i class="fab fa-linkedin" aria-hidden="true"></i>
                             <span class="sr-only">LinkedIn</span>
                         </a>
-                        <a href="https://github.com/Matnahuel" target="_blank" rel="noopener noreferrer" aria-label="Visitar perfil de GitHub de Matías Carabajal" role="listitem">
+                        <a href="https://github.com/Matnahuel" target="_blank" rel="noopener noreferrer"
+                            aria-label="Visitar perfil de GitHub de Matías Carabajal" role="listitem">
                             <i class="fab fa-github" aria-hidden="true"></i>
                             <span class="sr-only">GitHub</span>
                         </a>
                     </div>
                     <div class="additional-info-container">
-                        <h3>Info adicional</h3>
+                        <h3 data-translate-key="additional-info-title">Info adicional</h3>
                         <ul>
-                            <li><i class="fas fa-car-side"></i>Licencia de conducir clase B2.</li>
-                            <li><i class="fas fa-graduation-cap"></i>Cursando la última materia.</li>
-                            <li><i class="fas fa-calendar-check"></i>Egreso Diciembre 2025.</li>
-                            <li><i class="fas fa-car"></i>Vehículo propio.</li>
+                            <li data-translate-key="driving-license"><i class="fas fa-car-side"></i>Licencia de conducir clase B2.</li>
+                            <li data-translate-key="own-vehicle"><i class="fas fa-car"></i>Vehículo propio.</li>
                         </ul>
                     </div>
-                    <a href="./assets/cv/CV_Matias_Carabajal.pdf" download class="cv-download-button" aria-label="Descargar curriculum vitae de Matías Carabajal en formato PDF">Descargar
-                        CV</a>
+                    <a href="./assets/cv/CV_Matias_Carabajal.pdf" download class="cv-download-button"
+                        aria-label="Descargar curriculum vitae de Matías Carabajal en formato PDF"
+                        data-translate-key="download-cv">Descargar CV</a>
                 </div>
             </div>
         </section>
 
         <section id="about" aria-labelledby="about-heading">
-            <h2 id="about-heading">Sobre Mí</h2>
-            <p class="about-me-text">
-                ¡Hola! Soy <strong>Matías Nahuel Carabajal</strong>, un <strong>Desarrollador Full Stack</strong> con 
-                experiencia en tecnologías modernas de Front-end y Back-end. Mi pasión por crear soluciones digitales 
-                innovadoras y mi compromiso con el código limpio y las mejores prácticas me han llevado a desarrollar 
-                proyectos que combinan funcionalidad, diseño y rendimiento.
+            <h2 id="about-heading" data-translate-key="about-me-title">Sobre Mí</h2>
+            <p class="about-me-text" data-translate-key="about-me-text">
+                ¡Hola! Soy <strong>Matías Nahuel Carabajal, Desarrollador Full Stack</strong> con experiencia en tecnologías modernas de
+                frontend y backend. Me apasiona crear soluciones digitales innovadoras y escribir código limpio,
+                siguiendo buenas prácticas para lograr proyectos que combinan funcionalidad, diseño y rendimiento.
                 <br><br>
-                <strong>Soy estudiante avanzado de la Tecnicatura Universitaria en Programación de la Universidad Nacional 
-                de Hurlingham</strong>, con egreso previsto para Diciembre 2025. A lo largo de mi formación, he adquirido 
-                competencias sólidas en JavaScript, Python, React, bases de datos relacionales y no relacionales, y 
-                metodologías ágiles de desarrollo.
+                <strong>Soy Técnico Universitario en Programación y actualmente curso la Licenciatura en Informática en
+                    la Universidad Nacional de Hurlingham.</strong>A lo largo de mi formación adquirí competencias en
+                JavaScript, Python, React, bases de datos relacionales y no relacionales, además de metodologías ágiles
+                de desarrollo.
                 <br><br>
-                Me especializo en construir aplicaciones web escalables y responsivas, desde la arquitectura hasta la 
-                implementación. Tengo experiencia práctica desarrollando proyectos full-stack, trabajando con APIs REST, 
-                implementando testing automatizado y utilizando herramientas de control de versiones como Git.
+                Me especializo en el desarrollo de software escalable y responsive, desde la arquitectura hasta la
+                implementación. Tengo experiencia práctica en proyectos full stack, trabajando con APIs REST, testing
+                automatizado y herramientas de control de versiones como Git
                 <br><br>
-                Busco oportunidades para aplicar mis conocimientos en un entorno profesional, contribuyendo a equipos 
-                dinámicos donde pueda seguir aprendiendo y aportar valor con soluciones técnicas de calidad. Mi enfoque 
-                proactivo, capacidad de aprendizaje rápido y atención al detalle me permiten adaptarme rápidamente a 
-                nuevos desafíos tecnológicos.
+                Busco oportunidades para aplicar mis conocimientos en un entorno profesional, contribuyendo a equipos
+                dinámicos donde pueda seguir aprendiendo y aportar valor mediante soluciones técnicas de calidad. Mi
+                enfoque proactivo, la rápida capacidad de aprendizaje y la atención al detalle me permiten adaptarme con
+                facilidad a nuevos desafíos tecnológicos.
             </p>
 
-            <h3>LO QUE ESTOY HACIENDO</h3>
+            <h3 data-translate-key="what-im-doing-title">LO QUE ESTOY HACIENDO</h3>
             <div class="services-container">
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-code"></i></div>
                     <div class="service-content">
-                        <h4>Desarrollo Web</h4>
-                        <p>Brindar servicios de desarrollo web de alta calidad, creando soluciones Front-end y Back-end
+                        <h4 data-translate-key="web-development-title">Desarrollo Web</h4>
+                        <p data-translate-key="web-development-text">Brindar servicios de desarrollo web de alta calidad, creando soluciones Front-end y Back-end
                             robustas y eficientes.</p>
                     </div>
                 </div>
@@ -139,8 +178,9 @@ head>
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
                     <div class="service-content">
-                        <h4>Diseño Responsivo</h4>
-                        <p>Crear interfaces de usuario que se adapten a cualquier dispositivo, utilizando tecnologías como
+                        <h4 data-translate-key="responsive-design-title">Diseño Responsivo</h4>
+                        <p data-translate-key="responsive-design-text">Crear interfaces de usuario que se adapten a cualquier dispositivo, utilizando tecnologías
+                            como
                             CSS, Bootstrap y Tailwind.</p>
                     </div>
                 </div>
@@ -148,16 +188,17 @@ head>
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-building-columns"></i></div>
                     <div class="service-content">
-                        <h4>Pasantia en INTA</h4>
-                        <p>Integrante del proyecto de reformulación de Frontend-Backend de la Red SIGA.</p>
+                        <h4 data-translate-key="inta-internship-title">Pasantia en INTA</h4>
+                        <p data-translate-key="inta-internship-text">Integrante del proyecto de reformulación de Frontend-Backend de la Red SIGA.</p>
                     </div>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
                     <div class="service-content">
-                        <h4>Desarrollo de aplicacion</h4>
-                        <p>Proyecto final para terminar la Tecnicatura Universitaria en Programación, App administrativa para un centro de salud.</p>
+                        <h4 data-translate-key="app-development-title">Desarrollo de aplicacion</h4>
+                        <p data-translate-key="app-development-text">Proyecto final para terminar la Tecnicatura Universitaria en Programación, App administrativa
+                            para un centro de salud.</p>
                     </div>
                 </div>
             </div>
@@ -166,41 +207,49 @@ head>
         <section id="habtec" aria-labelledby="habtec-heading">
             <div class="habtec-header">
                 <i class="fas fa-boxes" aria-hidden="true"></i>
-                <h2 id="habtec-heading">Mis habilidades técnicas</h2>
+                <h2 id="habtec-heading" data-translate-key="technical-skills-title">Mis habilidades técnicas</h2>
             </div>
             <div class="habtec-grid">
                 <div class="habtec-column">
                     <ul>
-                        <li><span class="categoria">Lenguajes</span></li>
-                        <li>JavaScript</li>
-                        <li>Python</li>
-                        <li>TypeScript</li>
-                        <li>HTML</li>
-                        <li>Java</li>
+                        <li><span class="categoria" data-translate-key="languages-category">Lenguajes</span></li>
+                        <ul style="margin-left: 20px;">
+                            <li><span class="sub-categoria">Frontend</span></li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>TypeScript</li>
+                        </ul>
+                        <ul style="margin-left: 20px;">
+                            <li><span class="sub-categoria">Backend</span></li>
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>JavaScript</li>
+                            <li>NodeJS</li>
+                        </ul>
                     </ul>
                     <ul>
-                        <li><span class="categoria">Frameworks</span></li>
+                        <li><span class="categoria" data-translate-key="frameworks-category">Frameworks</span></li>
                         <li>React</li>
                         <li>Bootstrap</li>
                         <li>Tailwind</li>
-                        <li>CSS</li>
                     </ul>
                 </div>
                 <div class="habtec-column">
                     <ul>
-                        <li><span class="categoria">Bases de Datos</span></li>
+                        <li><span class="categoria" data-translate-key="databases-category">Bases de Datos</span></li>
                         <li>MySQL</li>
                         <li>PostgreSQL</li>
                         <li>MongoDB</li>
                     </ul>
                     <ul>
-                        <li><span class="categoria">Herramientas</span></li>
+                        <li><span class="categoria" data-translate-key="tools-category">Herramientas</span></li>
                         <li>Git</li>
                         <li>GitHub</li>
                         <li>Postman</li>
                         <li>Figma</li>
                     </ul>
-                    <p>Y puedo aprender más...</p>
+                    <p data-translate-key="learning-more">Y puedo aprender más...</p>
                 </div>
             </div>
         </section>
@@ -208,32 +257,34 @@ head>
         <section id="certifications" aria-labelledby="certifications-heading">
             <div class="certifications-header">
                 <i class="fas fa-award certifications-icon" aria-hidden="true"></i>
-                <h2 id="certifications-heading">Certificaciones</h2>
-                <a href="https://www.linkedin.com/in/matiasncarabajal/details/certifications/" target="_blank" rel="noopener noreferrer"
-                    class="certifications-button" aria-label="Ver todas las certificaciones en LinkedIn">Ver certificaciones</a>
+                <h2 id="certifications-heading" data-translate-key="certifications-title">Certificaciones</h2>
+                <a href="https://www.linkedin.com/in/matiasncarabajal/details/certifications/" target="_blank"
+                    rel="noopener noreferrer" class="certifications-button"
+                    aria-label="Ver todas las certificaciones en LinkedIn"
+                    data-translate-key="see-certifications">Ver certificaciones</a>
             </div>
 
             <div class="certifications-list">
                 <div class="certification-item">
-                    <p><strong>Procesamiento de datos con Python.</strong> ProgramAR/Ticmas, Certificado.</p>
+                    <p data-translate-key="cert-python-data-processing"><strong>Procesamiento de datos con Python.</strong> ProgramAR/Ticmas, Certificado.</p>
                 </div>
                 <div class="certification-item">
-                    <p><strong>JavaScript.</strong> CEIT/UNAHUR, Certificado.</p>
+                    <p data-translate-key="cert-javascript"><strong>JavaScript.</strong> CEIT/UNAHUR, Certificado.</p>
                 </div>
                 <div class="certification-item">
-                    <p><strong>Desarrollador Front-end.</strong> ProgramAR/Ticmas, Certificado.</p>
+                    <p data-translate-key="cert-frontend-dev"><strong>Desarrollador Front-end.</strong> ProgramAR/Ticmas, Certificado.</p>
                 </div>
                 <div class="certification-item">
-                    <p><strong>Project Management.</strong> CEIT/UNAHUR, Certificado.</p>
+                    <p data-translate-key="cert-project-management"><strong>Project Management.</strong> CEIT/UNAHUR, Certificado.</p>
                 </div>
                 <div class="certification-item">
-                    <p><strong>ReactJS.</strong> TalentoTech, Certificado.</p>
+                    <p data-translate-key="cert-reactjs"><strong>ReactJS.</strong> TalentoTech, Certificado.</p>
                 </div>
                 <div class="certification-item">
-                    <p><strong>Introducción a Python.</strong> UNAHUR/CTTP, Certificado.</p>
+                    <p data-translate-key="cert-python-intro"><strong>Introducción a Python.</strong> UNAHUR/CTTP, Certificado.</p>
                 </div>
                 <div class="certification-item">
-                    <p><strong>Testing 2 (Automatizado).</strong> UNAHUR/CTTP, Certificado.</p>
+                    <p data-translate-key="cert-automated-testing"><strong>Testing 2 (Automatizado).</strong> UNAHUR/CTTP, Certificado.</p>
                 </div>
             </div>
         </section>
@@ -243,28 +294,28 @@ head>
                 <div class="lang-icon-circle" aria-hidden="true">
                     <i class="fas fa-language lang-icon"></i>
                 </div>
-                <h2 id="languages-heading">Idiomas</h2>
+                <h2 id="languages-heading" data-translate-key="languages-title">Idiomas</h2>
             </div>
             <div class="languages-horizontal-grid">
                 <div class="language-column">
-                    <span class="language-name">Español</span>
-                    <span class="language-level">Nativo</span>
+                    <span class="language-name" data-translate-key="language-spanish">Español</span>
+                    <span class="language-level" data-translate-key="language-spanish-level">Nativo</span>
                 </div>
                 <div class="language-column">
-                    <span class="language-name">Inglés</span>
-                    <span class="language-level">A2 Pre-Intermedio</span>
+                    <span class="language-name" data-translate-key="language-english">Inglés</span>
+                    <span class="language-level" data-translate-key="language-english-level">A2 Pre-Intermedio</span>
                 </div>
                 <div class="language-column">
-                    <span class="language-name">Portugués</span>
-                    <span class="language-level">A1 Básico</span>
+                    <span class="language-name" data-translate-key="language-portuguese">Portugués</span>
+                    <span class="language-level" data-translate-key="language-portuguese-level">A1 Básico</span>
                 </div>
             </div>
         </section>
 
         <section id="projects" aria-labelledby="projects-heading">
-            <h2 id="projects-heading">Proyectos</h2>
+            <h2 id="projects-heading" data-translate-key="projects-title">Proyectos</h2>
             <div class="projects-container">
-                </div>
+            </div>
         </section>
     </main>
 
@@ -272,27 +323,31 @@ head>
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Matías Nahuel Carabajal</h3>
-                <p>Desarrollador Web Full Stack</p>
+                <p data-translate-key="footer-job-title">Desarrollador Web Full Stack</p>
             </div>
             <div class="footer-section">
-                <h4>Contacto</h4>
+                <h4 data-translate-key="footer-contact-title">Contacto</h4>
                 <div class="footer-links" role="list">
-                    <a href="mailto:matias.carabajal@estudiantes.unahur.edu.ar" aria-label="Enviar correo electrónico a Matías Carabajal" role="listitem">
+                    <a href="mailto:matias.carabajal@estudiantes.unahur.edu.ar"
+                        aria-label="Enviar correo electrónico a Matías Carabajal" role="listitem">
                         <i class="fas fa-envelope" aria-hidden="true"></i> Email
                     </a>
-                    <a href="https://wa.me/+5491130022107" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp al número +549 11 3002 2107" role="listitem">
+                    <a href="https://wa.me/+5491130022107" target="_blank" rel="noopener noreferrer"
+                        aria-label="Contactar por WhatsApp al número +549 11 3002 2107" role="listitem">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
                     </a>
                 </div>
             </div>
             <div class="footer-section">
-                <h4>Redes Sociales</h4>
+                <h4 data-translate-key="footer-social-title">Redes Sociales</h4>
                 <div class="footer-social-links" role="list" aria-label="Enlaces a redes sociales">
-                    <a href="https://www.linkedin.com/in/matiasncarabajal/" target="_blank" rel="noopener noreferrer" aria-label="Visitar perfil de LinkedIn de Matías Carabajal" role="listitem">
+                    <a href="https://www.linkedin.com/in/matiasncarabajal/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Visitar perfil de LinkedIn de Matías Carabajal" role="listitem">
                         <i class="fab fa-linkedin" aria-hidden="true"></i>
                         <span class="sr-only">LinkedIn</span>
                     </a>
-                    <a href="https://github.com/Matnahuel" target="_blank" rel="noopener noreferrer" aria-label="Visitar perfil de GitHub de Matías Carabajal" role="listitem">
+                    <a href="https://github.com/Matnahuel" target="_blank" rel="noopener noreferrer"
+                        aria-label="Visitar perfil de GitHub de Matías Carabajal" role="listitem">
                         <i class="fab fa-github" aria-hidden="true"></i>
                         <span class="sr-only">GitHub</span>
                     </a>
@@ -300,16 +355,18 @@ head>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Matias Nahuel Carabajal. Todos los derechos reservados.</p>
+            <p data-translate-key="footer-rights-reserved">© 2025 Matias Nahuel Carabajal. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <!-- Botón Volver Arriba -->
     <button id="back-to-top" class="back-to-top" aria-label="Volver al inicio de la página">
         <i class="fas fa-arrow-up" aria-hidden="true"></i>
-        <span class="sr-only">Volver arriba</span>
+        <span class="sr-only" data-translate-key="back-to-top">Volver arriba</span>
     </button>
 
     <script src="script.js"></script>
+    <script type="module" src="three-experience.js"></script>
 </body>
+
 </html>
