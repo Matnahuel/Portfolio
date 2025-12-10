@@ -443,6 +443,30 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
+// Featured Project Preview - Click to open in new tab
+document.addEventListener('DOMContentLoaded', function () {
+    const featuredOverlay = document.querySelector('.featured-overlay');
+    if (featuredOverlay) {
+        featuredOverlay.addEventListener('click', function () {
+            const url = this.getAttribute('data-url');
+            if (url) {
+                window.open(url, '_blank', 'noopener,noreferrer');
+            }
+        });
+
+        // Keyboard accessibility for the overlay
+        featuredOverlay.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const url = this.getAttribute('data-url');
+                if (url) {
+                    window.open(url, '_blank', 'noopener,noreferrer');
+                }
+            }
+        });
+    }
+});
+
 // Feedback form: validación y envío usando Formspree (o endpoint configurado en el atributo action)
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('feedback-form');
