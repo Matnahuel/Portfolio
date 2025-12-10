@@ -44,21 +44,6 @@ body.dark-mode {
     --gradient-accent: linear-gradient(135deg, #00d4ff 0%, #007BFF 100%);
 }
 
-#three-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--three-bg);
-    transition: background-color 0.3s ease;
-}
-
-canvas {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
 * {
     box-sizing: border-box;
 }
