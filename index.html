@@ -35,6 +35,7 @@
                     <li role="none"><a href="#habtec" role="menuitem">Habilidades</a></li>
                     <li role="none"><a href="#certifications" role="menuitem">Certificaciones</a></li>
                     <li role="none"><a href="#projects" role="menuitem">Proyectos</a></li>
+                    <li role="none"><a href="#" id="services-trigger" role="menuitem" data-translate-key="my-services-title">Mis Servicios</a></li>
                 </ul>
                 <button id="hamburger" aria-label="Abrir menú de navegación" aria-expanded="false"
                     aria-controls="nav-links">
@@ -192,6 +193,66 @@
                 </div>
             </div>
         </section>
+
+        <!-- Modal de Servicios -->
+        <div id="services-modal" class="services-modal" role="dialog" aria-labelledby="services-modal-heading" aria-hidden="true">
+            <div class="services-modal-overlay"></div>
+            <div class="services-modal-content">
+                <button id="services-modal-close" class="services-modal-close" aria-label="Cerrar modal de servicios">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <h2 id="services-modal-heading" data-translate-key="my-services-title">Mis Servicios</h2>
+                <p class="services-intro">
+                    <span data-translate-key="services-intro">Ofrecer soluciones profesionales adaptadas a tus necesidades. Ofrezco servicios integrales para dar vida a tus ideas.</span><br>
+                    <span class="services-instruction" data-translate-key="select-service-instruction">(Selecciona el servicio que necesites)</span>
+                </p>
+                
+                <div class="services-grid">
+                    <div class="service-box" data-service="Desarrollo Web">
+                        <div class="service-icon-large">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 data-translate-key="web-dev-service-title">Desarrollo Web</h3>
+                        <p data-translate-key="web-dev-service-desc">Sitios web personalizados construidos con tecnologías modernas. Diseño responsivo, optimización y una experiencia de usuario fluida.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> <span data-translate-key="web-dev-feature-1">Desarrollo Frontend</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate-key="web-dev-feature-2">Integración Backend</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate-key="web-dev-feature-3">Diseño Responsive</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate-key="web-dev-feature-4">Optimización del Rendimiento</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="service-box" data-service="Diseño UI/UX">
+                        <div class="service-icon-large">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 data-translate-key="ui-ux-service-title">Diseño UI/UX</h3>
+                        <p data-translate-key="ui-ux-service-desc">Crear interfaces de usuario intuitivas y atractivas que mejoren la experiencia de usuario.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> <span data-translate-key="ui-ux-feature-1">Sistema de Diseño</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate-key="ui-ux-feature-2">Prototipado</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate-key="ui-ux-feature-3">Experiencia de Usuario</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate-key="ui-ux-feature-4">Diseño de Interfaces</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="service-box" data-service="Desarrollo de Software">
+                        <div class="service-icon-large">
+                            <i class="fas fa-gears"></i>
+                        </div>
+                        <h3 data-translate-key="software-dev-service-title">Desarrollo de Software</h3>
+                        <p data-translate-key="software-dev-service-desc">Soluciones de software personalizadas para satisfacer las necesidades específicas de tu negocio.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> <span data-translate-key="software-dev-feature-1">Aplicaciones de Escritorio</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate-key="software-dev-feature-2">Integración de Sistemas</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate-key="software-dev-feature-3">Desarrollo de APIs</span></li>
+                            <li><i class="fas fa-check"></i> <span data-translate-key="software-dev-feature-4">Diseño de Bases de Datos</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <section id="habtec" aria-labelledby="habtec-heading">
             <div class="habtec-header">
@@ -453,6 +514,20 @@
             <div class="footer-section">
                 <h3>Matías Nahuel Carabajal</h3>
                 <p data-translate-key="footer-job-title">Desarrollador Full Stack</p>
+                <div class="footer-action-buttons">
+                    <a href="mailto:matias.carabajal@estudiantes.unahur.edu.ar?subject=Propuesta%20de%20Trabajo&body=Hola%20Matías,%0A%0AMe%20interesa%20discutir%20una%20oportunidad%20de%20trabajo%20contigo.%0A%0ASaludos"
+                        class="btn-footer-hire"
+                        aria-label="Enviar propuesta de trabajo a Matías Carabajal"
+                        data-translate-key="hire-me">
+                        <i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar Propuesta
+                    </a>
+                    <a href="https://calendly.com/matias-carabajal-estudiantes/30min" target="_blank" rel="noopener noreferrer"
+                        class="btn-footer-calendar"
+                        aria-label="Agendar una entrevista con Matías Carabajal"
+                        data-translate-key="schedule-interview">
+                        <i class="fas fa-calendar-alt" aria-hidden="true"></i> Agendar Entrevista
+                    </a>
+                </div>
             </div>
             <div class="footer-section">
                 <h4 data-translate-key="footer-contact-title">Contacto</h4>
@@ -514,7 +589,6 @@
                     <div id="feedback-status" role="status" aria-live="polite" class="feedback-status"></div>
                 </form>
             </div>
-        </div>
         <div class="footer-bottom">
             <p data-translate-key="footer-rights-reserved">© 2025 Matias Nahuel Carabajal. Todos los derechos reservados.</p>
         </div>

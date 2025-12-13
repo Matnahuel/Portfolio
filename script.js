@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
             'driving-license': 'Licencia de conducir clase B2.',
             'own-vehicle': 'Vehículo propio.',
             'download-cv': 'Descargar CV',
+            'hire-me': 'Enviar Propuesta',
+            'schedule-interview': 'Agendar Entrevista',
+            'footer-cta-title': '¿Interesado en trabajar juntos?',
             'about-me-title': 'Sobre Mí',
             'about-me-text': `¡Hola! Soy <strong>Matías Nahuel Carabajal, Desarrollador Full Stack</strong> con experiencia en tecnologías modernas de frontend y backend. Me apasiona crear soluciones digitales innovadoras y escribir código limpio, siguiendo buenas prácticas para lograr proyectos que combinan funcionalidad, diseño y rendimiento.<br><br><strong>Soy Técnico Universitario en Programación y actualmente curso la Licenciatura en Informática en la Universidad Nacional de Hurlingham.</strong> A lo largo de mi formación adquirí competencias en JavaScript, Python, React, bases de datos relacionales y no relacionales, además de metodologías ágiles de desarrollo.<br><br>Me especializo en el desarrollo de software escalable y responsive, desde la arquitectura hasta la implementación. Tengo experiencia práctica en proyectos full stack, trabajando con APIs REST, testing automatizado y herramientas de control de versiones como Git.<br><br>Busco oportunidades para aplicar mis conocimientos en un entorno profesional, contribuyendo a equipos dinámicos donde pueda seguir aprendiendo y aportar valor mediante soluciones técnicas de calidad. Mi enfoque proactivo, la rápida capacidad de aprendizaje y la atención al detalle me permiten adaptarme con facilidad a nuevos desafíos tecnológicos.`,
             'what-im-doing-title': 'LO QUE ESTOY HACIENDO',
@@ -31,6 +34,27 @@ document.addEventListener("DOMContentLoaded", () => {
             'inta-internship-text': 'Integrante del proyecto de reformulación de Frontend-Backend de la Red SIGA.',
             'app-development-title': 'Desarrollo de aplicación',
             'app-development-text': 'Proyecto final para terminar la Tecnicatura Universitaria en Programación, App administrativa para un centro de salud.',
+            'my-services-title': 'Mis Servicios',
+            'services-intro': 'Ofrecer soluciones profesionales adaptadas a tus necesidades. Ofrezco servicios integrales para dar vida a tus ideas.',
+            'select-service-instruction': '(Selecciona el servicio que necesites)',
+            'web-dev-service-title': 'Desarrollo Web',
+            'web-dev-service-desc': 'Sitios web personalizados construidos con tecnologías modernas. Diseño responsivo, optimización y una experiencia de usuario fluida.',
+            'web-dev-feature-1': 'Desarrollo Frontend',
+            'web-dev-feature-2': 'Integración Backend',
+            'web-dev-feature-3': 'Diseño Responsive',
+            'web-dev-feature-4': 'Optimización del Rendimiento',
+            'ui-ux-service-title': 'Diseño UI/UX',
+            'ui-ux-service-desc': 'Crear interfaces de usuario intuitivas y atractivas que mejoren la experiencia de usuario.',
+            'ui-ux-feature-1': 'Sistema de Diseño',
+            'ui-ux-feature-2': 'Prototipado',
+            'ui-ux-feature-3': 'Experiencia de Usuario',
+            'ui-ux-feature-4': 'Diseño de Interfaces',
+            'software-dev-service-title': 'Desarrollo de Software',
+            'software-dev-service-desc': 'Soluciones de software personalizadas para satisfacer las necesidades específicas de tu negocio.',
+            'software-dev-feature-1': 'Aplicaciones de Escritorio',
+            'software-dev-feature-2': 'Integración de Sistemas',
+            'software-dev-feature-3': 'Desarrollo de APIs',
+            'software-dev-feature-4': 'Diseño de Bases de Datos',
             'technical-skills-title': 'Mis habilidades técnicas',
             'languages-category': 'Lenguajes',
             'frameworks-category': 'Frameworks',
@@ -72,6 +96,9 @@ document.addEventListener("DOMContentLoaded", () => {
             'driving-license': 'Driver\'s license class B2.',
             'own-vehicle': 'Own vehicle.',
             'download-cv': 'Download CV',
+            'hire-me': 'Send Proposal',
+            'schedule-interview': 'Schedule Interview',
+            'footer-cta-title': 'Interested in working together?',
             'about-me-title': 'About Me',
             'about-me-text': `Hello! I'm <strong>Matías Nahuel Carabajal, a Full Stack Developer</strong> with experience in modern frontend and backend technologies. I am passionate about creating innovative digital solutions and writing clean code, following best practices to build projects that combine functionality, design, and performance.<br><br><strong>I am a University Technician in Programming and am currently pursuing a a Degree in Computer Science at the National University of Hurlingham.</strong> Throughout my education, I have acquired skills in JavaScript, Python, React, relational and non-relational databases, as well as agile development methodologies.<br><br>I specialize in developing scalable and responsive software, from architecture to implementation. I have hands-on experience in full-stack projects, working with REST APIs, automated testing, and version control tools like Git.<br><br>I am looking for opportunities to apply my knowledge in a professional environment, contributing to dynamic teams where I can continue to learn and add value through high-quality technical solutions. My proactive approach, quick learning ability, and attention to detail allow me to easily adapt to new technological challenges.`,
             'what-im-doing-title': 'WHAT I AM DOING',
@@ -83,6 +110,27 @@ document.addEventListener("DOMContentLoaded", () => {
             'inta-internship-text': 'Member of the Frontend-Backend reformulation project for the SIGA Network.',
             'app-development-title': 'Application Development',
             'app-development-text': 'Final project to complete the University Technicature in Programming, an administrative App for a health center.',
+            'my-services-title': 'My Services',
+            'services-intro': 'Offering professional solutions tailored to your needs. I offer comprehensive services to bring your ideas to life.',
+            'select-service-instruction': '(Select the service you need)',
+            'web-dev-service-title': 'Web Development',
+            'web-dev-service-desc': 'Custom websites built with modern technologies. Responsive design, optimization and a smooth user experience.',
+            'web-dev-feature-1': 'Frontend Development',
+            'web-dev-feature-2': 'Backend Integration',
+            'web-dev-feature-3': 'Responsive Design',
+            'web-dev-feature-4': 'Performance Optimization',
+            'ui-ux-service-title': 'UI/UX Design',
+            'ui-ux-service-desc': 'Creating intuitive and attractive user interfaces that improve the user experience.',
+            'ui-ux-feature-1': 'Design System',
+            'ui-ux-feature-2': 'Prototyping',
+            'ui-ux-feature-3': 'User Experience',
+            'ui-ux-feature-4': 'Interface Design',
+            'software-dev-service-title': 'Software Development',
+            'software-dev-service-desc': 'Custom software solutions to meet your specific business needs.',
+            'software-dev-feature-1': 'Desktop Applications',
+            'software-dev-feature-2': 'Systems Integration',
+            'software-dev-feature-3': 'API Development',
+            'software-dev-feature-4': 'Database Design',
             'technical-skills-title': 'My Technical Skills',
             'languages-category': 'Languages',
             'frameworks-category': 'Frameworks',
@@ -282,6 +330,67 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
+
+    // --- LÓGICA DEL MODAL DE SERVICIOS ---
+    const servicesTrigger = document.getElementById('services-trigger');
+    const servicesModal = document.getElementById('services-modal');
+    const servicesModalClose = document.getElementById('services-modal-close');
+    const servicesModalOverlay = document.querySelector('.services-modal-overlay');
+
+    const openServicesModal = () => {
+        servicesModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        servicesModal.setAttribute('aria-hidden', 'false');
+        // Scroll al inicio del modal
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
+    const closeServicesModal = () => {
+        servicesModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        servicesModal.setAttribute('aria-hidden', 'true');
+    };
+
+    if (servicesTrigger) {
+        servicesTrigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            openServicesModal();
+        });
+    }
+
+    if (servicesModalClose) {
+        servicesModalClose.addEventListener('click', closeServicesModal);
+    }
+
+    if (servicesModalOverlay) {
+        servicesModalOverlay.addEventListener('click', closeServicesModal);
+    }
+
+    // Cerrar modal con tecla Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && servicesModal.classList.contains('active')) {
+            closeServicesModal();
+        }
+    });
+
+    // --- LÓGICA DE CLICK EN TARJETAS DE SERVICIOS ---
+    const serviceBoxes = document.querySelectorAll('.services-modal-content .service-box');
+    const myEmail = 'matias.carabajal@estudiantes.unahur.edu.ar';
+
+    serviceBoxes.forEach(box => {
+        box.addEventListener('click', () => {
+            const serviceName = box.getAttribute('data-service');
+            const subject = encodeURIComponent(`Interés en servicio: ${serviceName}`);
+            const body = encodeURIComponent(
+                `Hola Matías,\n\nEstoy interesado en el servicio de ${serviceName}.\n\nSoy...\n\n(Por favor completa tu información aquí)\n\nSaludos.`
+            );
+            
+            window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
+        });
+    });
 
     // --- LÓGICA PARA EL MODO OSCURO/CLARO ---
     const themeToggleButton = document.getElementById('theme-toggle');
