@@ -341,6 +341,7 @@ document.addEventListener("DOMContentLoaded", () => {
         servicesModal.classList.add('active');
         document.body.style.overflow = 'hidden';
         servicesModal.setAttribute('aria-hidden', 'false');
+        document.querySelector('header').classList.add('header-hidden');
         // Scroll al inicio del modal
         window.scrollTo({
             top: 0,
@@ -352,6 +353,7 @@ document.addEventListener("DOMContentLoaded", () => {
         servicesModal.classList.remove('active');
         document.body.style.overflow = 'auto';
         servicesModal.setAttribute('aria-hidden', 'true');
+        document.querySelector('header').classList.remove('header-hidden');
     };
 
     if (servicesTrigger) {
