@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
             'schedule-interview': 'Agendar Entrevista',
             'footer-cta-title': '¿Interesado en trabajar juntos?',
             'about-me-title': 'Sobre Mí',
-            'about-me-text': `¡Hola! Soy <strong>Matías Nahuel Carabajal, Desarrollador Full Stack</strong> con experiencia en tecnologías modernas de frontend y backend. Me apasiona crear soluciones digitales innovadoras y escribir código limpio, siguiendo buenas prácticas para lograr proyectos que combinan funcionalidad, diseño y rendimiento.<br><br><strong>Soy Técnico Universitario en Programación y actualmente curso la Licenciatura en Informática en la Universidad Nacional de Hurlingham.</strong> A lo largo de mi formación adquirí competencias en JavaScript, Python, React, bases de datos relacionales y no relacionales, además de metodologías ágiles de desarrollo.<br><br>Me especializo en el desarrollo de software escalable y responsive, desde la arquitectura hasta la implementación. Tengo experiencia práctica en proyectos full stack, trabajando con APIs REST, testing automatizado y herramientas de control de versiones como Git.<br><br>Busco oportunidades para aplicar mis conocimientos en un entorno profesional, contribuyendo a equipos dinámicos donde pueda seguir aprendiendo y aportar valor mediante soluciones técnicas de calidad. Mi enfoque proactivo, la rápida capacidad de aprendizaje y la atención al detalle me permiten adaptarme con facilidad a nuevos desafíos tecnológicos.`,
+            'education-title': 'Educación',
             'what-im-doing-title': 'LO QUE ESTOY HACIENDO',
             'web-development-title': 'Desarrollo Web',
             'web-development-text': 'Brindar servicios de desarrollo web de alta calidad, creando soluciones Front-end y Back-end robustas y eficientes.',
@@ -82,7 +82,34 @@ document.addEventListener("DOMContentLoaded", () => {
             'footer-contact-title': 'Contacto',
             'footer-social-title': 'Redes Sociales',
             'footer-rights-reserved': '© 2025 Matias Nahuel Carabajal. Todos los derechos reservados.',
-            'back-to-top': 'Volver arriba'
+            'back-to-top': 'Volver arriba',
+            'siga-title': 'SIGA - Sistema de Información y Gestión Agrometeorológica',
+            'siga-desc': 'Pasantía(PPS) en comunidad UNAHUR-INTA. Rediseño completo de la plataforma: Migración de BD (SQL Server → PostgreSQL con PostGIS), nueva API REST y nuevo frontend responsivo con mapas interactivos y reportes PDF.',
+            'siga-credentials-label': 'Credenciales',
+            'about-me-text': '<strong>Matías Nahuel Carabajal: Desarrollador Full Stack</strong><br><br>Técnico Universitario en Programación y estudiante de la Licenciatura en Informática en la Universidad Nacional de Hurlingham (UNAHUR). Cuento con una sólida base en desarrollo Full Stack, con una fuerte especialización tanto en el Front-end como en el Back-end.<br><br>Soy un profesional apasionado por la tecnología y el aprendizaje constante. Busco activamente mi primera experiencia laboral para aplicar mis conocimientos en desarrollo y contribuir a proyectos innovadores con código limpio, arquitecturas escalables y soluciones eficientes.<br><br><strong>Enfoque y Perfil Profesional</strong><br>Mi perfil, como Desarrollador. QA Tester y con una base en Análisis de Datos fundamentalmente autodidacta y proactivo, me permite adaptarme con facilidad a nuevos desafíos, lo que resulta en la creación de soluciones eficientes, la optimización de procesos de calidad (QA) y la interpretación de datos para una toma de decisiones informada. Este enfoque integral impulsa mi crecimiento continuo en cualquier entorno tecnológico dinámico.',
+            'education-tech-title': 'Técnico Universitario en Programación',
+            'education-bachelor-title': 'Licenciatura en Informática',
+            'education-completed': 'Recibido',
+            'education-in-progress': 'En curso',
+            'education-advanced-student': 'Alumno avanzado',
+            'featured-internship': 'Pasantía',
+            'view-live': 'Ver en vivo',
+            'siga-credentials-label': 'Credenciales:',
+            'siga-username-label': 'Usuario:',
+            'siga-password-label': 'Contraseña:',
+            'siga-disclaimer': '(Repositorio no disponible por privacidad del instituto. Los datos que podemos mostrar son acotados y el formato de diseño UX/UI es el que pidieron desde el Instituto, cuando se pueda se mostrara la web del siga)',
+            'featured-project-badge': 'Proyecto Destacado',
+            'app-medicos-desc': 'Proyecto final propuesto por los profesores de la materia Desarrollo de Aplicaciones.',
+            'app-medicos-assignment': 'Consigna:',
+            'ciudeam-desc': 'Es el desarrollo del proyecto final de la materia Construcción de interfaces de la Tecnicatura Universitaria en Programación. Una red social con interfaz moderna y funcionalidades completas para interacción de usuarios.',
+            'walmart-desc1': 'WalMat es una solución de comercio electrónico totalmente funcional, desarrollada como proyecto final del curso de React de TalentoTech. Este proyecto demuestra dominio en el desarrollo frontend moderno y la gestión de estados complejos.',
+            'walmart-desc2': 'Un e-commerce completamente funcional con catálogo dinámico, gestión integral de carrito de compras y diseño responsive para una experiencia de usuario óptima en cualquier dispositivo.',
+            'feedback-heading': 'Si llegaste hasta acá, me interesa tu devolución para poder seguir mejorando.',
+            'feedback-email-label': 'Correo electrónico',
+            'feedback-email-placeholder': 'Ingresar correo',
+            'feedback-message-label': 'Sugerencia',
+            'feedback-message-placeholder': 'Me interesa tu opinion...',
+            'feedback-submit': 'Enviar'
         },
         eng: {
             'see-all': 'View all',
@@ -100,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
             'schedule-interview': 'Schedule Interview',
             'footer-cta-title': 'Interested in working together?',
             'about-me-title': 'About Me',
-            'about-me-text': `Hello! I'm <strong>Matías Nahuel Carabajal, a Full Stack Developer</strong> with experience in modern frontend and backend technologies. I am passionate about creating innovative digital solutions and writing clean code, following best practices to build projects that combine functionality, design, and performance.<br><br><strong>I am a University Technician in Programming and am currently pursuing a a Degree in Computer Science at the National University of Hurlingham.</strong> Throughout my education, I have acquired skills in JavaScript, Python, React, relational and non-relational databases, as well as agile development methodologies.<br><br>I specialize in developing scalable and responsive software, from architecture to implementation. I have hands-on experience in full-stack projects, working with REST APIs, automated testing, and version control tools like Git.<br><br>I am looking for opportunities to apply my knowledge in a professional environment, contributing to dynamic teams where I can continue to learn and add value through high-quality technical solutions. My proactive approach, quick learning ability, and attention to detail allow me to easily adapt to new technological challenges.`,
+            'education-title': 'Education',
             'what-im-doing-title': 'WHAT I AM DOING',
             'web-development-title': 'Web Development',
             'web-development-text': 'Providing high-quality web development services, creating robust and efficient Front-end and Back-end solutions.',
@@ -158,7 +185,34 @@ document.addEventListener("DOMContentLoaded", () => {
             'footer-contact-title': 'Contact',
             'footer-social-title': 'Social Media',
             'footer-rights-reserved': '© 2025 Matias Nahuel Carabajal. All rights reserved.',
-            'back-to-top': 'Back to top'
+            'back-to-top': 'Back to top',
+            'siga-title': 'SIGA - Agrometeorological Information and Management System',
+            'siga-desc': 'Internship(PPS) UNAHUR-INTA. Complete platform redesign: Database migration (SQL Server → PostgreSQL with PostGIS), new REST API, and new responsive frontend with interactive maps and PDF reports.',
+            'siga-credentials-label': 'Credentials',
+            'about-me-text': '<strong>Matías Nahuel Carabajal: Full Stack Developer</strong><br><br>University Technician in Programming and student of the Bachelor\'s degree in Computer Science at the National University of Hurlingham (UNAHUR). I have a solid foundation in Full Stack development, with strong specialization in both Front-end and Back-end.<br><br>I am a professional passionate about technology and continuous learning. I actively seek my first work experience to apply my knowledge in development and contribute to innovative projects with clean code, scalable architectures, and efficient solutions.<br><br><strong>Approach and Professional Profile</strong><br>My profile, as a Developer, QA Tester, and with a foundation in Data Analysis, is fundamentally self-taught and proactive, allowing me to adapt easily to new challenges, resulting in the creation of efficient solutions, optimization of quality processes (QA), and interpretation of data for informed decision-making. This comprehensive approach drives my continuous growth in any dynamic technological environment.',
+            'education-tech-title': 'University Technician in Programming',
+            'education-bachelor-title': 'Bachelor\'s Degree in Computer Science',
+            'education-completed': 'Completed',
+            'education-in-progress': 'In Progress',
+            'education-advanced-student': 'Advanced Student',
+            'featured-internship': 'Internship',
+            'view-live': 'View Live',
+            'siga-credentials-label': 'Credentials:',
+            'siga-username-label': 'Username:',
+            'siga-password-label': 'Password:',
+            'siga-disclaimer': '(Repository not available due to institute privacy. The data we can display is limited and the UX/UI design format is what they requested from the Institute, when possible the SIGA website will be shown)',
+            'featured-project-badge': 'Featured Project',
+            'app-medicos-desc': 'Final project proposed by the teachers of the Application Development course.',
+            'app-medicos-assignment': 'Assignment:',
+            'ciudeam-desc': 'It is the development of the final project of the Interface Construction course of the University Technician in Programming. A social network with a modern interface and complete features for user interaction.',
+            'walmart-desc1': 'WalMat is a fully functional e-commerce solution, developed as the final project of the React course from TalentoTech. This project demonstrates mastery in modern frontend development and complex state management.',
+            'walmart-desc2': 'A fully functional e-commerce with dynamic catalog, comprehensive shopping cart management, and responsive design for an optimal user experience on any device.',
+            'feedback-heading': 'If you\'ve made it this far, I\'d appreciate your feedback to keep improving.',
+            'feedback-email-label': 'Email',
+            'feedback-email-placeholder': 'Enter email',
+            'feedback-message-label': 'Suggestion',
+            'feedback-message-placeholder': 'I\'d like to hear your opinion...',
+            'feedback-submit': 'Send'
         }
     };
 
@@ -175,6 +229,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
         });
+        
+        // Actualizar placeholders de inputs y textareas
+        document.querySelectorAll('[data-placeholder-key]').forEach(element => {
+            const key = element.getAttribute('data-placeholder-key');
+            const translation = translations[language][key];
+            if (translation !== undefined) {
+                element.placeholder = translation;
+            }
+        });
+        
         // Actualiza el texto del botón de perfil explícitamente
         if (toggleButton) {
             const isExpanded = toggleButton.getAttribute("aria-expanded") === "true";
@@ -433,19 +497,9 @@ document.addEventListener("DOMContentLoaded", () => {
         applyTheme(currentTheme);
     });
 
-});
-
-document.addEventListener('contextmenu', event => event.preventDefault());
-document.addEventListener('keydown', function (e) {
-    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.shiftKey && e.key === 'J') || (e.ctrlKey && e.key === 'U')) {
-        e.preventDefault();
-    }
-});
-
-// Featured Project Preview - Click to open in new tab
-document.addEventListener('DOMContentLoaded', function () {
-    const featuredOverlay = document.querySelector('.featured-overlay');
-    if (featuredOverlay) {
+    // Featured Project Preview - Click to open in new tab
+    const featuredOverlays = document.querySelectorAll('.featured-overlay');
+    featuredOverlays.forEach(featuredOverlay => {
         featuredOverlay.addEventListener('click', function () {
             const url = this.getAttribute('data-url');
             if (url) {
@@ -463,11 +517,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         });
-    }
-});
+    });
 
-// Feedback form: validación y envío usando Formspree (o endpoint configurado en el atributo action)
-document.addEventListener('DOMContentLoaded', function () {
+    // Feedback form: validación y envío usando Formspree (o endpoint configurado en el atributo action)
     const form = document.getElementById('feedback-form');
     if (!form) return;
 
@@ -516,6 +568,14 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         } catch (err) {
             status.textContent = 'Error de red al enviar el mensaje.';
+        }
+    });
+
+    // Prevent context menu and dev tools
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.shiftKey && e.key === 'J') || (e.ctrlKey && e.key === 'U')) {
+            e.preventDefault();
         }
     });
 });
