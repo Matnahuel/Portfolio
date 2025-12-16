@@ -427,6 +427,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Agregar evento al botón de servicios en el footer
+    const servicesBtnFooter = document.getElementById('services-btn-footer');
+    if (servicesBtnFooter) {
+        servicesBtnFooter.addEventListener('click', openServicesModal);
+    }
+
     if (servicesModalClose) {
         servicesModalClose.addEventListener('click', closeServicesModal);
     }

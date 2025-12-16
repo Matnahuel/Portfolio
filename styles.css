@@ -2138,7 +2138,8 @@ footer {
 }
 
 .btn-footer-hire,
-.btn-footer-calendar {
+.btn-footer-calendar,
+.btn-footer-services {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -2157,14 +2158,16 @@ footer {
 }
 
 .btn-footer-hire:hover,
-.btn-footer-calendar:hover {
+.btn-footer-calendar:hover,
+.btn-footer-services:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 25px rgba(0, 123, 255, 0.5);
     background: var(--gradient-accent);
 }
 
 .btn-footer-hire:focus,
-.btn-footer-calendar:focus {
+.btn-footer-calendar:focus,
+.btn-footer-services:focus {
     outline: 3px solid var(--accent-color);
     outline-offset: 3px;
 }
@@ -2180,7 +2183,8 @@ footer {
     }
 
     .btn-footer-hire,
-    .btn-footer-calendar {
+    .btn-footer-calendar,
+    .btn-footer-services {
         width: 100%;
         justify-content: center;
         padding: 11px 16px;
