@@ -346,12 +346,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     closeButton.addEventListener("click", () => {
         modal.classList.remove("show");
+        modal.classList.remove("single-image");
         body.style.overflow = "auto";
     });
 
     modal.addEventListener("click", (event) => {
         if (event.target === modal) {
             modal.classList.remove("show");
+            modal.classList.remove("single-image");
             body.style.overflow = "auto";
         }
     });
@@ -368,10 +370,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 navigateModal('next');
             } else if (event.key === "Escape") {
                 modal.classList.remove("show");
+                modal.classList.remove("single-image");
                 body.style.overflow = "auto";
             }
         }
     });
+
+    // --- Modal para Certificaciones ---
+    const certificationsSection = document.getElementById('certifications');
+    if (certificationsSection) {
+        certificationsSection.addEventListener('click', (e) => {
+            const btn = e.target.closest('.cert-btn');
+            if (!btn) return;
+            const imgSrc = btn.getAttribute('data-image');
+            if (!imgSrc) return;
+            currentProjectImages = [imgSrc];
+            currentImageIndex = 0;
+            modalImage.src = imgSrc;
+            modal.classList.add('show');
+            modal.classList.add('single-image');
+            body.style.overflow = 'hidden';
+        });
+    }
 
     // Botón Volver Arriba
     const backToTopButton = document.getElementById("back-to-top");
