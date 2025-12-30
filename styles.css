@@ -57,6 +57,7 @@ body {
     scroll-behavior: smooth;
     overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
+    padding-top: 70px;
 }
 
 .btn-footer {
@@ -85,6 +86,16 @@ body {
     outline: 3px solid var(--accent-color);
     outline-offset: 3px;
 }
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
     font-weight: 600;
     border-radius: 0 0 8px 0;
     transition: top 0.3s ease;
@@ -348,6 +359,413 @@ header nav ul li a:focus {
     background-color: var(--header-text);
     border-radius: 5px;
     transition: all 0.3s linear;
+}
+
+/* Botón Flotante FAB */
+.fab-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1001;
+    touch-action: none;
+}
+
+.fab-main {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    cursor: grab;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.fab-main:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(0, 123, 255, 0.6);
+}
+
+.fab-main:active {
+    cursor: grabbing;
+}
+
+.fab-main::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    animation: pulse-ring 2s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+}
+
+/* Menú FAB - Circular */
+.fab-menu {
+    position: absolute;
+    bottom: 50%;
+    right: 50%;
+    width: 0;
+    height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+}
+
+.fab-container.active .fab-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.fab-item {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: scale(0) translateX(0) translateY(0);
+    cursor: pointer;
+    border: none;
+}
+
+.fab-container.active .fab-item {
+    transform: scale(1);
+}
+
+/* Posiciones circulares para cada botón - manejadas por clases de posición adaptativas */
+
+.fab-linkedin {
+    background: #0077B5;
+}
+
+.fab-linkedin:hover {
+    box-shadow: 0 10px 30px rgba(0, 119, 181, 0.4);
+}
+
+.fab-github {
+    background: #333333;
+}
+
+.fab-github:hover {
+    box-shadow: 0 10px 30px rgba(51, 51, 51, 0.4);
+}
+
+.fab-whatsapp {
+    background: #25D366;
+}
+
+.fab-whatsapp:hover {
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+}
+
+/* Posiciones adaptativas del menú según dónde esté el FAB */
+
+/* Posición: Abajo-Derecha - Los botones van hacia arriba e izquierda */
+.fab-bottom-right .fab-item:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.fab-bottom-right.active .fab-item:nth-child(1) {
+    transform: scale(1) translateY(-120px);
+}
+
+.fab-bottom-right .fab-item:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.fab-bottom-right.active .fab-item:nth-child(2) {
+    transform: scale(1) translateX(-85px) translateY(-85px);
+}
+
+.fab-bottom-right .fab-item:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+.fab-bottom-right.active .fab-item:nth-child(3) {
+    transform: scale(1) translateX(-120px);
+}
+
+.fab-bottom-right .fab-item:nth-child(4) {
+    transition-delay: 0.2s;
+}
+
+.fab-bottom-right.active .fab-item:nth-child(4) {
+    transform: scale(1) translateX(-85px) translateY(85px);
+}
+
+/* Posición: Abajo-Izquierda - Los botones van hacia arriba y derecha */
+.fab-bottom-left .fab-item:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.fab-bottom-left.active .fab-item:nth-child(1) {
+    transform: scale(1) translateY(-120px);
+}
+
+.fab-bottom-left .fab-item:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.fab-bottom-left.active .fab-item:nth-child(2) {
+    transform: scale(1) translateX(85px) translateY(-85px);
+}
+
+.fab-bottom-left .fab-item:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+.fab-bottom-left.active .fab-item:nth-child(3) {
+    transform: scale(1) translateX(120px);
+}
+
+.fab-bottom-left .fab-item:nth-child(4) {
+    transition-delay: 0.2s;
+}
+
+.fab-bottom-left.active .fab-item:nth-child(4) {
+    transform: scale(1) translateX(-85px) translateY(85px);
+}
+
+/* Posición: Abajo-Centro - Los botones van hacia arriba y ambos lados */
+.fab-bottom-center .fab-item:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.fab-bottom-center.active .fab-item:nth-child(1) {
+    transform: scale(1) translateY(-120px);
+}
+
+.fab-bottom-center .fab-item:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.fab-bottom-center.active .fab-item:nth-child(2) {
+    transform: scale(1) translateX(-85px) translateY(-85px);
+}
+
+.fab-bottom-center .fab-item:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+.fab-bottom-center.active .fab-item:nth-child(3) {
+    transform: scale(1) translateX(85px) translateY(-85px);
+}
+
+.fab-bottom-center .fab-item:nth-child(4) {
+    transition-delay: 0.2s;
+}
+
+.fab-bottom-center.active .fab-item:nth-child(4) {
+    transform: scale(1) translateY(-120px) translateX(120px);
+}
+
+/* Posición: Arriba-Centro - Los botones van hacia abajo y ambos lados */
+.fab-top-center .fab-item:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.fab-top-center.active .fab-item:nth-child(1) {
+    transform: scale(1) translateY(120px);
+}
+
+.fab-top-center .fab-item:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.fab-top-center.active .fab-item:nth-child(2) {
+    transform: scale(1) translateX(-85px) translateY(85px);
+}
+
+.fab-top-center .fab-item:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+.fab-top-center.active .fab-item:nth-child(3) {
+    transform: scale(1) translateX(85px) translateY(85px);
+}
+
+.fab-top-center .fab-item:nth-child(4) {
+    transition-delay: 0.2s;
+}
+
+.fab-top-center.active .fab-item:nth-child(4) {
+    transform: scale(1) translateY(120px) translateX(-120px);
+}
+
+/* Posición: Arriba-Derecha - Los botones van hacia abajo e izquierda */
+.fab-top-right .fab-item:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.fab-top-right.active .fab-item:nth-child(1) {
+    transform: scale(1) translateY(120px);
+}
+
+.fab-top-right .fab-item:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.fab-top-right.active .fab-item:nth-child(2) {
+    transform: scale(1) translateX(-85px) translateY(85px);
+}
+
+.fab-top-right .fab-item:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+.fab-top-right.active .fab-item:nth-child(3) {
+    transform: scale(1) translateX(-120px);
+}
+
+.fab-top-right .fab-item:nth-child(4) {
+    transition-delay: 0.2s;
+}
+
+.fab-top-right.active .fab-item:nth-child(4) {
+    transform: scale(1) translateX(-85px) translateY(-85px);
+}
+
+/* Posición: Arriba-Izquierda - Los botones van hacia abajo y derecha */
+.fab-top-left .fab-item:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.fab-top-left.active .fab-item:nth-child(1) {
+    transform: scale(1) translateY(120px);
+}
+
+.fab-top-left .fab-item:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.fab-top-left.active .fab-item:nth-child(2) {
+    transform: scale(1) translateX(85px) translateY(85px);
+}
+
+.fab-top-left .fab-item:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+.fab-top-left.active .fab-item:nth-child(3) {
+    transform: scale(1) translateX(120px);
+}
+
+.fab-top-left .fab-item:nth-child(4) {
+    transition-delay: 0.2s;
+}
+
+.fab-top-left.active .fab-item:nth-child(4) {
+    transform: scale(1) translateX(85px) translateY(-85px);
+}
+
+/* Hover states adaptativos */
+
+/* Abajo-Centro - Hacia arriba y ambos lados */
+.fab-bottom-center .fab-linkedin:hover {
+    transform: scale(1.2) translateX(-85px) translateY(-85px);
+}
+
+.fab-bottom-center .fab-github:hover {
+    transform: scale(1.2) translateX(85px) translateY(-85px);
+}
+
+.fab-bottom-center .fab-whatsapp:hover {
+    transform: scale(1.2) translateY(-120px) translateX(120px);
+}
+
+/* Arriba-Centro - Hacia abajo y ambos lados */
+.fab-top-center .fab-linkedin:hover {
+    transform: scale(1.2) translateX(-85px) translateY(85px);
+}
+
+.fab-top-center .fab-github:hover {
+    transform: scale(1.2) translateX(85px) translateY(85px);
+}
+
+.fab-top-center .fab-whatsapp:hover {
+    transform: scale(1.2) translateY(120px) translateX(-120px);
+}
+
+/* Abajo-Derecha - Hacia arriba e izquierda */
+.fab-bottom-right .fab-linkedin:hover {
+    transform: scale(1.2) translateX(-85px) translateY(-85px);
+}
+
+.fab-bottom-right .fab-github:hover {
+    transform: scale(1.2) translateX(-120px);
+}
+
+.fab-bottom-right .fab-whatsapp:hover {
+    transform: scale(1.2) translateX(-85px) translateY(85px);
+}
+
+/* Abajo-Izquierda - Hacia arriba y derecha */
+.fab-bottom-left .fab-linkedin:hover {
+    transform: scale(1.2) translateX(85px) translateY(-85px);
+}
+
+.fab-bottom-left .fab-github:hover {
+    transform: scale(1.2) translateX(120px);
+}
+
+.fab-bottom-left .fab-whatsapp:hover {
+    transform: scale(1.2) translateX(85px) translateY(85px);
+}
+
+/* Arriba-Derecha - Hacia abajo e izquierda */
+.fab-top-right .fab-linkedin:hover {
+    transform: scale(1.2) translateX(-85px) translateY(85px);
+}
+
+.fab-top-right .fab-github:hover {
+    transform: scale(1.2) translateX(-120px);
+}
+
+.fab-top-right .fab-whatsapp:hover {
+    transform: scale(1.2) translateX(-85px) translateY(-85px);
+}
+
+/* Arriba-Izquierda - Hacia abajo y derecha */
+.fab-top-left .fab-linkedin:hover {
+    transform: scale(1.2) translateX(85px) translateY(85px);
+}
+
+.fab-top-left .fab-github:hover {
+    transform: scale(1.2) translateX(120px);
+}
+
+.fab-top-left .fab-whatsapp:hover {
+    transform: scale(1.2) translateX(85px) translateY(-85px);
 }
 
 /* Sección principal y otros elementos */
@@ -2313,7 +2731,7 @@ body:not(.dark-mode) .footer-social-links a:hover .fa-github {
 .back-to-top {
     position: fixed;
     bottom: 30px;
-    right: 30px;
+    left: 30px;
     width: 50px;
     height: 50px;
     background: var(--gradient-primary);
@@ -2470,7 +2888,7 @@ body:not(.dark-mode) .footer-social-links a:hover .fa-github {
 
     .back-to-top {
         bottom: 20px;
-        right: 20px;
+        left: 20px;
         width: 45px;
         height: 45px;
         font-size: 18px;

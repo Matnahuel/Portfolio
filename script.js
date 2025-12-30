@@ -6,6 +6,198 @@ document.addEventListener("DOMContentLoaded", () => {
     const profileDetails = document.querySelector(".profile-details");
     const languageSelector = document.getElementById('language-selector');
 
+    // --- LÓGICA DEL BOTÓN FLOTANTE FAB ---
+    const fabContainer = document.getElementById("fab-container");
+    const fabMain = document.getElementById("fab-main");
+    let isDragging = false;
+    let offset = { x: 0, y: 0 };
+
+    // Función para detectar la posición y ajustar la clase del menú
+    function updateFabPosition() {
+        if (!fabContainer) return;
+
+        const rect = fabContainer.getBoundingClientRect();
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+
+        // Detectar posición horizontal: izquierda, centro o derecha
+        const quarterWidth = viewportWidth / 4;
+        const isLeft = rect.left < quarterWidth;
+        const isRight = rect.left > viewportWidth - quarterWidth;
+        const isHorizontalCenter = !isLeft && !isRight;
+
+        // Detectar posición vertical
+        const isTop = rect.top < viewportHeight / 2;
+        const isBottom = !isTop;
+
+        // Remover todas las clases de posición
+        fabContainer.classList.remove("fab-bottom-right", "fab-bottom-left", "fab-top-right", "fab-top-left", "fab-top-center", "fab-bottom-center");
+
+        // Agregar la clase según la posición
+        if (isTop && isHorizontalCenter) {
+            fabContainer.classList.add("fab-top-center");
+        } else if (isBottom && isHorizontalCenter) {
+            fabContainer.classList.add("fab-bottom-center");
+        } else if (isTop && isLeft) {
+            fabContainer.classList.add("fab-top-left");
+        } else if (isTop && isRight) {
+            fabContainer.classList.add("fab-top-right");
+        } else if (isBottom && isLeft) {
+            fabContainer.classList.add("fab-bottom-left");
+        } else if (isBottom && isRight) {
+            fabContainer.classList.add("fab-bottom-right");
+        }
+
+        // Chequear que todos los iconos se vean sin superposición
+        checkFabItemsVisibility();
+    }
+
+    // Función para verificar si todos los items FAB son visibles sin superposición
+    function checkFabItemsVisibility() {
+        if (!fabContainer.classList.contains('active')) return;
+
+        const items = fabContainer.querySelectorAll('.fab-item');
+        const fabRect = fabContainer.getBoundingClientRect();
+        let allVisible = true;
+        let itemRects = [];
+
+        // Obtener posiciones de todos los items
+        items.forEach(item => {
+            const itemRect = item.getBoundingClientRect();
+            itemRects.push(itemRect);
+
+            // Chequear si está dentro de la pantalla
+            if (itemRect.left < 0 || itemRect.right > window.innerWidth ||
+                itemRect.top < 0 || itemRect.bottom > window.innerHeight) {
+                allVisible = false;
+            }
+        });
+
+        // Chequear superposición entre items
+        if (allVisible) {
+            for (let i = 0; i < itemRects.length; i++) {
+                for (let j = i + 1; j < itemRects.length; j++) {
+                    if (rectsOverlap(itemRects[i], itemRects[j])) {
+                        allVisible = false;
+                        break;
+                    }
+                }
+                if (!allVisible) break;
+            }
+        }
+
+        // Si no están todos visibles o hay superposición, reorganizar
+        if (!allVisible) {
+            reorganizeMenuItems();
+        }
+    }
+
+    // Función para verificar si dos rectángulos se superponen
+    function rectsOverlap(rect1, rect2) {
+        const padding = 10; // espaciado mínimo entre items
+        return !(rect1.right + padding < rect2.left ||
+                 rect2.right + padding < rect1.left ||
+                 rect1.bottom + padding < rect2.top ||
+                 rect2.bottom + padding < rect1.top);
+    }
+
+    if (fabMain && fabContainer) {
+        // Actualizar posición al cargar
+        updateFabPosition();
+
+        // Toggle menú FAB
+        fabMain.addEventListener("click", (e) => {
+            e.stopPropagation();
+            fabContainer.classList.toggle("active");
+            // Chequear visibilidad cuando se abre el menú
+            if (fabContainer.classList.contains("active")) {
+                setTimeout(() => {
+                    checkFabItemsVisibility();
+                }, 50);
+            }
+        });
+
+        // Cerrar menú al hacer click en otro lado
+        document.addEventListener("click", () => {
+            fabContainer.classList.remove("active");
+        });
+
+        // Hacer draggable el FAB
+        fabMain.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            fabMain.style.cursor = "grabbing";
+            offset.x = e.clientX - fabContainer.getBoundingClientRect().left;
+            offset.y = e.clientY - fabContainer.getBoundingClientRect().top;
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            if (!isDragging) return;
+
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            const containerWidth = fabContainer.offsetWidth;
+            const containerHeight = fabContainer.offsetHeight;
+            const margin = 80; // Margen de seguridad desde los bordes
+
+            let x = e.clientX - offset.x;
+            let y = e.clientY - offset.y;
+
+            // Limitar los bordes con margen de seguridad
+            x = Math.max(margin, Math.min(x, viewportWidth - containerWidth - margin));
+            y = Math.max(margin, Math.min(y, viewportHeight - containerHeight - margin));
+
+            fabContainer.style.left = x + "px";
+            fabContainer.style.right = "auto";
+            fabContainer.style.top = y + "px";
+            fabContainer.style.bottom = "auto";
+
+            // Actualizar posición del menú
+            updateFabPosition();
+        });
+
+        document.addEventListener("mouseup", () => {
+            isDragging = false;
+            fabMain.style.cursor = "grab";
+        });
+
+        // Soporte para touch en móviles
+        fabMain.addEventListener("touchstart", (e) => {
+            isDragging = true;
+            const touch = e.touches[0];
+            offset.x = touch.clientX - fabContainer.getBoundingClientRect().left;
+            offset.y = touch.clientY - fabContainer.getBoundingClientRect().top;
+        });
+
+        document.addEventListener("touchmove", (e) => {
+            if (!isDragging) return;
+            const touch = e.touches[0];
+
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            const containerWidth = fabContainer.offsetWidth;
+            const containerHeight = fabContainer.offsetHeight;
+            const margin = 80; // Margen de seguridad desde los bordes
+
+            let x = touch.clientX - offset.x;
+            let y = touch.clientY - offset.y;
+
+            x = Math.max(margin, Math.min(x, viewportWidth - containerWidth - margin));
+            y = Math.max(margin, Math.min(y, viewportHeight - containerHeight - margin));
+
+            fabContainer.style.left = x + "px";
+            fabContainer.style.right = "auto";
+            fabContainer.style.top = y + "px";
+            fabContainer.style.bottom = "auto";
+
+            // Actualizar posición del menú
+            updateFabPosition();
+        });
+
+        document.addEventListener("touchend", () => {
+            isDragging = false;
+        });
+    }
+
     // --- LÓGICA DE TRADUCCIÓN ---
     const translations = {
         esp: {
