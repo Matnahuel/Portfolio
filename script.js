@@ -10,7 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const fabContainer = document.getElementById("fab-container");
     const fabMain = document.getElementById("fab-main");
     let isDragging = false;
+    let dragMoved = false;
+    let dragStart = null;
     let offset = { x: 0, y: 0 };
+    const DRAG_THRESHOLD = 6; // píxeles mínimos para considerar drag
 
     // Función para detectar la posición y ajustar la clase del menú
     function updateFabPosition() {
@@ -107,6 +110,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Toggle menú FAB
         fabMain.addEventListener("click", (e) => {
+            // Si hubo drag, evitamos el toggle para que el primer clic real abra siempre
+            if (dragMoved) {
+                dragMoved = false;
+                return;
+            }
             e.stopPropagation();
             fabContainer.classList.toggle("active");
             // Chequear visibilidad cuando se abre el menú
@@ -124,20 +132,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Hacer draggable el FAB
         fabMain.addEventListener("mousedown", (e) => {
-            isDragging = true;
-            fabMain.style.cursor = "grabbing";
+            dragMoved = false;
+            dragStart = { x: e.clientX, y: e.clientY };
             offset.x = e.clientX - fabContainer.getBoundingClientRect().left;
             offset.y = e.clientY - fabContainer.getBoundingClientRect().top;
         });
 
         document.addEventListener("mousemove", (e) => {
+            if (!dragStart) return;
+
+            const dx = Math.abs(e.clientX - dragStart.x);
+            const dy = Math.abs(e.clientY - dragStart.y);
+            if (!isDragging && (dx > DRAG_THRESHOLD || dy > DRAG_THRESHOLD)) {
+                isDragging = true;
+                dragMoved = true;
+                fabMain.style.cursor = "grabbing";
+            }
             if (!isDragging) return;
 
             const viewportWidth = window.innerWidth;
             const viewportHeight = window.innerHeight;
             const containerWidth = fabContainer.offsetWidth;
             const containerHeight = fabContainer.offsetHeight;
-            const margin = 80; // Margen de seguridad desde los bordes
+            const margin = 24; // Margen de seguridad desde los bordes
 
             let x = e.clientX - offset.x;
             let y = e.clientY - offset.y;
@@ -157,26 +174,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.addEventListener("mouseup", () => {
             isDragging = false;
+            dragStart = null;
             fabMain.style.cursor = "grab";
+            // Permitimos que el siguiente clic vuelva a togglear
+            setTimeout(() => {
+                dragMoved = false;
+            }, 0);
         });
 
         // Soporte para touch en móviles
         fabMain.addEventListener("touchstart", (e) => {
-            isDragging = true;
+            dragMoved = false;
             const touch = e.touches[0];
+            dragStart = { x: touch.clientX, y: touch.clientY };
             offset.x = touch.clientX - fabContainer.getBoundingClientRect().left;
             offset.y = touch.clientY - fabContainer.getBoundingClientRect().top;
         });
 
         document.addEventListener("touchmove", (e) => {
-            if (!isDragging) return;
             const touch = e.touches[0];
+            if (!dragStart) return;
+
+            const dx = Math.abs(touch.clientX - dragStart.x);
+            const dy = Math.abs(touch.clientY - dragStart.y);
+            if (!isDragging && (dx > DRAG_THRESHOLD || dy > DRAG_THRESHOLD)) {
+                isDragging = true;
+                dragMoved = true;
+            }
+            if (!isDragging) return;
 
             const viewportWidth = window.innerWidth;
             const viewportHeight = window.innerHeight;
             const containerWidth = fabContainer.offsetWidth;
             const containerHeight = fabContainer.offsetHeight;
-            const margin = 80; // Margen de seguridad desde los bordes
+            const margin = 24; // Margen de seguridad desde los bordes
 
             let x = touch.clientX - offset.x;
             let y = touch.clientY - offset.y;
@@ -195,6 +226,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.addEventListener("touchend", () => {
             isDragging = false;
+            dragStart = null;
+            setTimeout(() => {
+                dragMoved = false;
+            }, 0);
         });
     }
 

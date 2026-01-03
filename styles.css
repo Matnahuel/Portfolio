@@ -168,6 +168,7 @@ a:not(.skip-link):focus {
 /* Encabezado y Navegación */
 header {
     background: var(--header-bg);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     color: var(--header-text);
     padding: 1rem 0;
@@ -1230,6 +1231,7 @@ section {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
+    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
 }
 
@@ -2264,6 +2266,7 @@ section {
     top: 50%;
     transform: translateY(-50%);
     background: rgba(0, 123, 255, 0.8);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     color: white;
     border: none;
@@ -2725,6 +2728,15 @@ body:not(.dark-mode) .footer-social-links a:hover .fa-github {
 .nav-link-clean {
     text-decoration: none;
     color: inherit;
+}
+
+.link-underline-inherit {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.indent-list {
+    margin-left: 20px;
 }
 
 @media (max-width: 480px) {
