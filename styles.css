@@ -1018,6 +1018,14 @@ section {
 }
 
 /*Descargar cv*/
+.cv-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
 .cv-download-button {
     background: var(--gradient-primary);
     color: #fff;
@@ -1028,7 +1036,6 @@ section {
     font-weight: 600;
     text-align: center;
     display: inline-block;
-    margin-top: 20px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
     border: none;
@@ -3033,10 +3040,13 @@ body:not(.dark-mode) .footer-social-links a:hover .fa-github {
         font-size: 14px;
     }
 
+    .cv-buttons-container {
+        gap: 10px;
+    }
+
     .cv-download-button {
         padding: 12px 20px;
         font-size: 14px;
-        margin-top: 15px;
     }
 
     #about h2,
