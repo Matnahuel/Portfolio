@@ -3109,3 +3109,190 @@ body:not(.dark-mode) .footer-social-links a:hover .fa-github {
         right: 5px;
     }
 }
+
+/* --- SCROLL REVEAL ANIMATIONS --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeftMassive {
+    from {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRightMassive {
+    from {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeftWithScale {
+    from {
+        opacity: 0;
+        transform: translateX(-50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes slideInRightWithScale {
+    from {
+        opacity: 0;
+        transform: translateX(50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.scroll-reveal {
+    opacity: 0;
+}
+
+.scroll-reveal.active {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.scroll-reveal-left {
+    opacity: 0;
+}
+
+.scroll-reveal-left.active {
+    animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.scroll-reveal-right {
+    opacity: 0;
+}
+
+.scroll-reveal-right.active {
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+.scroll-reveal-left-massive {
+    opacity: 0;
+}
+
+.scroll-reveal-left-massive.active {
+    animation: slideInLeftMassive 0.8s ease-out forwards;
+}
+
+.scroll-reveal-right-massive {
+    opacity: 0;
+}
+
+.scroll-reveal-right-massive.active {
+    animation: slideInRightMassive 0.8s ease-out forwards;
+}
+
+.scroll-reveal-left-scale {
+    opacity: 0;
+}
+
+.scroll-reveal-left-scale.active {
+    animation: slideInLeftWithScale 0.8s ease-out forwards;
+}
+
+.scroll-reveal-right-scale {
+    opacity: 0;
+}
+
+.scroll-reveal-right-scale.active {
+    animation: slideInRightWithScale 0.8s ease-out forwards;
+}
+
+.scroll-reveal-stagger {
+    opacity: 0;
+}
+
+.scroll-reveal-stagger.active {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Aplicar stagger delay a elementos hijo */
+.scroll-reveal-stagger.active > * {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.scroll-reveal-stagger.active > :nth-child(1) { animation-delay: 0s; }
+.scroll-reveal-stagger.active > :nth-child(2) { animation-delay: 0.1s; }
+.scroll-reveal-stagger.active > :nth-child(3) { animation-delay: 0.2s; }
+.scroll-reveal-stagger.active > :nth-child(4) { animation-delay: 0.3s; }
+.scroll-reveal-stagger.active > :nth-child(5) { animation-delay: 0.4s; }
+.scroll-reveal-stagger.active > :nth-child(6) { animation-delay: 0.5s; }
+
+/* Headings sin animación scroll reveal */
+h1[data-scroll-reveal],
+h2[data-scroll-reveal],
+h3[data-scroll-reveal],
+h4[data-scroll-reveal],
+h5[data-scroll-reveal] {
+    opacity: 1 !important;
+    animation: none !important;
+}
+
+/* Headings dentro de secciones con scroll-reveal aparecen sin animación */
+[data-scroll-reveal] > h1,
+[data-scroll-reveal] > h2,
+[data-scroll-reveal] > h3,
+[data-scroll-reveal] > h4,
+[data-scroll-reveal] > h5,
+[data-scroll-reveal] .habtec-header h2,
+[data-scroll-reveal] .languages-header h2,
+[data-scroll-reveal] .certifications-header h2,
+[data-scroll-reveal] .education-header h2 {
+    opacity: 1 !important;
+    animation: none !important;
+}

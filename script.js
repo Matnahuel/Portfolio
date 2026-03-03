@@ -257,10 +257,6 @@ document.addEventListener("DOMContentLoaded", () => {
             'web-development-text': 'Brindar servicios de desarrollo web y software de alta calidad, creando soluciones Front-end, Back-end y de negocio robustas y eficientes.',
             'responsive-design-title': 'Diseño Responsivo',
             'responsive-design-text': 'Crear interfaces de usuario que se adapten a cualquier dispositivo, utilizando tecnologías como CSS, Bootstrap y Tailwind.',
-            'inta-internship-title': 'Pasantía en INTA',
-            'inta-internship-text': 'Integrante del proyecto de reformulación de Frontend-Backend de la Red SIGA.',
-            'bootcamp-participation-title': 'Participando del Impacta Bootcamp <a href="https://x.com/thebafnetwork" target="_blank" rel="noopener noreferrer" class="link-underline-inherit">@TheBAFNetwork</a> y <a href="https://x.com/starmaker_latam" target="_blank" rel="noopener noreferrer" class="link-underline-inherit">Starmaker by Stellar</a>',
-            'bootcamp-participation-text': 'Bootcamp Impacta es un programa de formación intensiva con mentorías y proyectos enfocados en Web3, blockchain y habilidades tech para mejorar la empleabilidad. En paralelo, participo en Starmaker by Stellar para ampliar conocimientos en el ecosistema de tecnología, productos digitales e innovación.',
             'app-development-title': 'Desarrollo de aplicación',
             'app-development-text': 'Proyecto final para terminar la Tecnicatura Universitaria en Programación, App administrativa para un centro de salud.',
             'my-services-title': 'Mis Servicios',
@@ -362,10 +358,6 @@ document.addEventListener("DOMContentLoaded", () => {
             'web-development-text': 'Providing high-quality web and software development services, creating robust and efficient Front-end, Back-end, and business solutions.',
             'responsive-design-title': 'Responsive Design',
             'responsive-design-text': 'Creating user interfaces that adapt to any device, using technologies like CSS, Bootstrap, and Tailwind.',
-            'inta-internship-title': 'Internship at INTA',
-            'inta-internship-text': 'Member of the Frontend-Backend reformulation project for the SIGA Network.',
-            'bootcamp-participation-title': 'Participating in Impacta Bootcamp <a href="https://x.com/thebafnetwork" target="_blank" rel="noopener noreferrer" class="link-underline-inherit">@TheBAFNetwork</a> and <a href="https://x.com/starmaker_latam" target="_blank" rel="noopener noreferrer" class="link-underline-inherit">Starmaker by Stellar</a>',
-            'bootcamp-participation-text': 'Impacta Bootcamp is an intensive training program with mentoring and projects focused on Web3, blockchain, and tech skills to improve employability. In parallel, I participate in Starmaker by Stellar to expand knowledge in the technology ecosystem, digital products, and innovation.',
             'app-development-title': 'Application Development',
             'app-development-text': 'Final project to complete the University Technicature in Programming, an administrative App for a health center.',
             'my-services-title': 'My Services',
@@ -775,6 +767,54 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    // --- SCROLL REVEAL FUNCTIONALITY ---
+    const initScrollReveal = () => {
+        const revealElements = document.querySelectorAll('[data-scroll-reveal]');
+        
+        if (revealElements.length === 0) return;
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const revealType = entry.target.getAttribute('data-scroll-reveal') || 'fade-up';
+                
+                // Agregar las clases base si no existen
+                if (revealType === 'fade-up') {
+                    entry.target.classList.add('scroll-reveal');
+                } else if (revealType === 'slide-left') {
+                    entry.target.classList.add('scroll-reveal-left');
+                } else if (revealType === 'slide-right') {
+                    entry.target.classList.add('scroll-reveal-right');
+                } else if (revealType === 'slide-left-massive') {
+                    entry.target.classList.add('scroll-reveal-left-massive');
+                } else if (revealType === 'slide-right-massive') {
+                    entry.target.classList.add('scroll-reveal-right-massive');
+                } else if (revealType === 'slide-left-scale') {
+                    entry.target.classList.add('scroll-reveal-left-scale');
+                } else if (revealType === 'slide-right-scale') {
+                    entry.target.classList.add('scroll-reveal-right-scale');
+                } else if (revealType === 'stagger') {
+                    entry.target.classList.add('scroll-reveal-stagger');
+                }
+                
+                // Agregar o remover la clase 'active' según si está visible
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                } else {
+                    entry.target.classList.remove('active');
+                }
+            });
+        }, observerOptions);
+        
+        revealElements.forEach(el => observer.observe(el));
+    };
+    
+    initScrollReveal();
 
     // Feedback form: validación y envío usando Formspree (o endpoint configurado en el atributo action)
     const form = document.getElementById('feedback-form');
