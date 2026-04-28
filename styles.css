@@ -71,7 +71,7 @@ body {
     border: none;
     cursor: pointer;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 12px;
     align-self: start;
     box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
     transition: all 0.3s ease;
@@ -127,7 +127,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-    font-size: clamp(2rem, 5vw, 2.625rem);
+    font-size: clamp(1.8rem, 4.5vw, 2.3rem);
 }
 
 
@@ -203,9 +203,23 @@ header nav {
 
 header nav h1 {
     margin: 0;
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: -0.01em;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+    position: relative;
+    order: -1;
+}
+
+body.dark-mode header nav h1 {
+    opacity: 1;
+}
+
+body.dark-mode header nav h1 a {
+    background: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 header nav h1 a {
@@ -228,10 +242,15 @@ header nav ul {
     margin: 0;
     padding: 0;
     display: flex;
+    flex: 1;
+    justify-content: space-around;
+    align-items: center;
 }
 
 header nav ul li {
-    margin-left: 20px;
+    flex: 1;
+    text-align: center;
+    margin-left: 0;
 }
 
 header nav ul li a {
@@ -239,8 +258,10 @@ header nav ul li a {
     text-decoration: none;
     font-weight: 500;
     position: relative;
-    padding: 5px 0;
+    padding: 8px 10px;
     transition: color 0.3s ease;
+    display: block;
+    white-space: nowrap;
 }
 
 header nav ul li a::after {
@@ -275,7 +296,7 @@ header nav ul li a:focus {
     border: none;
     color: var(--header-text);
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding: 0.5rem;
     margin-left: 1rem;
     display: flex;
@@ -301,7 +322,7 @@ header nav ul li a:focus {
 
 .language-selector-container i {
     color: var(--text-secondary);
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-right: 6px;
 }
 
@@ -310,7 +331,7 @@ header nav ul li a:focus {
     border: none;
     color: var(--header-text);
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
     cursor: pointer;
     padding: 8px 4px;
@@ -379,7 +400,7 @@ header nav ul li a:focus {
     color: white;
     border: none;
     cursor: grab;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -451,7 +472,7 @@ header nav ul li a:focus {
     justify-content: center;
     color: white;
     text-decoration: none;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     transform: scale(0) translateX(0) translateY(0);
@@ -887,7 +908,7 @@ section {
 
 .profile-info h3 {
     margin: 0;
-    font-size: 28px;
+    font-size: 25px;
     font-weight: 600;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
@@ -897,7 +918,7 @@ section {
 
 .profile-info .role {
     margin: 8px 0 0;
-    font-size: 18px;
+    font-size: 16px;
     color: var(--accent-color);
     background: none;
     padding: 0;
@@ -943,7 +964,7 @@ section {
 }
 
 .contact-info span {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--text-muted);
     display: block;
 }
@@ -964,7 +985,7 @@ section {
 
 .social-links a {
     color: #f0f0f0;
-    font-size: 24px;
+    font-size: 22px;
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
@@ -989,7 +1010,7 @@ section {
 }
 
 .additional-info-container h3 {
-    font-size: 18px;
+    font-size: 16px;
     color: var(--text-primary);
     margin-bottom: 15px;
 }
@@ -1004,7 +1025,7 @@ section {
 }
 
 .additional-info-container li {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.8;
     color: var(--text-secondary);
     display: flex;
@@ -1032,7 +1053,7 @@ section {
     padding: 14px 30px;
     text-decoration: none;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     text-align: center;
     display: inline-block;
@@ -1068,7 +1089,7 @@ section {
     padding: 14px 30px;
     text-decoration: none;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     text-align: center;
     display: inline-flex;
@@ -1137,7 +1158,7 @@ section {
 }
 
 #about h2 {
-    font-size: 42px;
+    font-size: 38px;
     margin-bottom: 30px;
     text-align: left;
     background: var(--gradient-primary);
@@ -1147,7 +1168,7 @@ section {
 }
 
 #about .about-me-text {
-    font-size: 17px;
+    font-size: 15px;
     line-height: 1.9;
     color: var(--text-secondary);
     margin-bottom: 50px;
@@ -1160,7 +1181,7 @@ section {
 }
 
 #about h3 {
-    font-size: 28px;
+    font-size: 25px;
     margin-top: 50px;
     margin-bottom: 30px;
     color: var(--text-primary);
@@ -1191,7 +1212,7 @@ section {
 }
 
 .service-icon {
-    font-size: 36px;
+    font-size: 32px;
     color: var(--primary-color);
     transition: all 0.3s ease;
 }
@@ -1203,13 +1224,13 @@ section {
 
 .service-content h4 {
     margin: 0;
-    font-size: 18px;
+    font-size: 16px;
     color: var(--text-primary);
 }
 
 .service-content p {
     margin: 5px 0 0;
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-secondary);
 }
 
@@ -1275,7 +1296,7 @@ section {
     right: 20px;
     background: none;
     border: none;
-    font-size: 28px;
+    font-size: 24px;
     color: var(--text-primary);
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1296,7 +1317,7 @@ section {
 }
 
 .services-modal-content h2 {
-    font-size: 42px;
+    font-size: 38px;
     margin: 0 0 15px 0;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
@@ -1311,7 +1332,7 @@ section {
 .services-instruction {
     display: block;
     margin-top: 12px;
-    font-size: 14px;
+    font-size: 13px;
     color: var(--primary-color);
     font-weight: 500;
     font-style: italic;
@@ -1364,7 +1385,7 @@ section {
 }
 
 .services-modal-content .service-icon-large {
-    font-size: 52px;
+    font-size: 46px;
     color: var(--primary-color);
     margin-bottom: 20px;
     transition: all 0.3s ease;
@@ -1384,14 +1405,14 @@ section {
 }
 
 .services-modal-content .service-box h3 {
-    font-size: 22px;
+    font-size: 20px;
     margin: 0 0 12px 0;
     color: var(--text-primary);
     font-weight: 600;
 }
 
 .services-modal-content .service-box > p {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-secondary);
     line-height: 1.6;
     margin-bottom: 22px;
@@ -1413,7 +1434,7 @@ section {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 13px;
+    font-size: 12px;
     color: var(--text-secondary);
     transition: all 0.2s ease;
 }
@@ -1536,12 +1557,12 @@ section {
 }
 
 .habtec-header i {
-    font-size: 24px;
+    font-size: 22px;
     color: #007bff;
 }
 
 .habtec-header h2 {
-    font-size: 42px;
+    font-size: 38px;
     margin: 0;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
@@ -1563,13 +1584,13 @@ section {
 }
 
 .habtec-column li {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 2.2;
     color: var(--text-secondary);
 }
 
 .habtec-column .categoria {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     color: var(--text-primary);
     border-bottom: 3px solid;
@@ -1587,7 +1608,7 @@ section {
 }
 
 .habtec-column .sub-categoria {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     color: var(--text-primary);
     display: inline-block;
@@ -1614,12 +1635,12 @@ section {
 }
 
 .education-icon {
-    font-size: 24px;
+    font-size: 22px;
     color: #007bff;
 }
 
 .education-header h2 {
-    font-size: 42px;
+    font-size: 38px;
     margin: 0;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
@@ -1680,7 +1701,7 @@ section {
 
 .education-info h3 {
     margin: 0;
-    font-size: 18px;
+    font-size: 16px;
     color: var(--text-primary);
     font-weight: 600;
     line-height: 1.5;
@@ -1688,7 +1709,7 @@ section {
 
 .education-institution {
     margin: 8px 0 0;
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-secondary);
 }
 
@@ -1703,7 +1724,7 @@ section {
     display: inline-block;
     padding: 6px 16px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -1722,7 +1743,7 @@ section {
 }
 
 .status-detail {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--text-secondary);
     font-style: italic;
 }
@@ -1784,12 +1805,12 @@ section {
 }
 
 .certifications-icon {
-    font-size: 24px;
+    font-size: 22px;
     color: #007bff;
 }
 
 .certifications-header h2 {
-    font-size: 42px;
+    font-size: 38px;
     margin: 0;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
@@ -1803,7 +1824,7 @@ section {
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 10px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
@@ -1868,7 +1889,7 @@ section {
 
 .certification-item p {
     margin: 0;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.5;
     color: var(--text-secondary);
     flex: 1 1 auto;
@@ -1905,12 +1926,12 @@ section {
 }
 
 .lang-icon {
-    font-size: 16px;
+    font-size: 14px;
     color: #007bff;
 }
 
 .languages-header h2 {
-    font-size: 42px;
+    font-size: 38px;
     margin: 0;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
@@ -1938,13 +1959,13 @@ section {
 
 .language-name {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
     color: var(--text-primary);
     display: block;
 }
 
 .language-level {
-    font-size: 14px;
+    font-size: 12px;
     color: var(--text-muted);
     display: block;
     margin-top: 5px;
@@ -1952,7 +1973,7 @@ section {
 
 /*PROYECTOS Y CARRUSELES*/
 #projects h2 {
-    font-size: 42px;
+    font-size: 38px;
     margin-bottom: 50px;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
