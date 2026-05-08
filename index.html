@@ -14,6 +14,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser/dist/email.min.js"></script>
     <script type="importmap">
         {
             "imports": {
@@ -751,7 +752,7 @@
                     devolución para poder seguir
                     mejorando.</h4>
 
-                <form id="feedback-form" action="https://formspree.io/f/{YOUR_FORMSPREE_ID}" method="POST" novalidate
+                <form id="feedback-form" novalidate
                     aria-label="Formulario de opinión">
                     <label for="feedback-email" class="sr-only" data-translate-key="feedback-email-label">Correo
                         electrónico</label>
@@ -777,24 +778,74 @@
         </div>
     </footer>
 
-    <!-- Botón Flotante FAB con Menú Expandible -->
+    <!-- Botón Flotante FAB con Chatbot MatIAs -->
     <div class="fab-container fab-bottom-right" id="fab-container">
-        <button class="fab-main" id="fab-main" aria-label="Abrir menú flotante" aria-expanded="false">
+        <button class="fab-main" id="fab-main" aria-label="Abrir chatbot MatIAs" aria-expanded="false">
             <i class="fas fa-plus"></i>
         </button>
         
-        <div class="fab-menu">
-            <a href="https://www.linkedin.com/in/matiasncarabajal/" target="_blank" rel="noopener noreferrer" class="fab-item fab-linkedin" title="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
+        <div class="chat-container hidden" id="chat-container">
+            <div class="chat-header">
+                <h3><i class="fas fa-robot"></i> MatIAs</h3>
+                <button class="chat-close" id="chat-close" aria-label="Cerrar chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
             
-            <a href="https://github.com/Matnahuel" target="_blank" rel="noopener noreferrer" class="fab-item fab-github" title="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
+            <div class="chat-content">
+                <div class="chat-message bot-message">
+                    <p>¡Hola! Soy MatIAs, tu asistente personal. ¿En qué puedo ayudarte?</p>
+                </div>
+                
+                <div class="chat-suggestions" id="chat-suggestions">
+                    <button class="suggestion-btn" data-target="#projects">
+                        <i class="fas fa-folder-open"></i>
+                        <span>¿Cuales son tus proyectos?</span>
+                    </button>
+                    
+                    <button class="suggestion-btn" data-target="#habtec">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>¿Qué habilidades técnicas tienes?</span>
+                    </button>
+                    
+                    <button class="suggestion-btn" data-target="#certifications">
+                        <i class="fas fa-certificate"></i>
+                        <span>¿Qué certificaciones tienes?</span>
+                    </button>
+                    
+                    <button class="suggestion-btn" data-target="#" id="services-chat-btn">
+                        <i class="fas fa-briefcase"></i>
+                        <span>¿Cuales son tus servicios?</span>
+                    </button>
+                    
+                    <button class="suggestion-btn" data-target="#footer-Contacto">
+                        <i class="fas fa-envelope"></i>
+                        <span>¿Cómo puedo contactarte?</span>
+                    </button>
+                    
+                    <button class="suggestion-btn" id="download-cv-chat-btn">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Descargar mi CV ATS</span>
+                    </button>
+                </div>
+            </div>
             
-            <a href="https://wa.me/5491130022107" target="_blank" rel="noopener noreferrer" class="fab-item fab-whatsapp" title="WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
+            <div class="chat-footer">
+                <p class="footer-text">O conecta directamente:</p>
+                <div class="chat-social-links">
+                    <a href="https://www.linkedin.com/in/matiasncarabajal/" target="_blank" rel="noopener noreferrer" class="chat-social fab-linkedin" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    
+                    <a href="https://github.com/Matnahuel" target="_blank" rel="noopener noreferrer" class="chat-social fab-github" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    
+                    <a href="https://wa.me/5491130022107" target="_blank" rel="noopener noreferrer" class="chat-social fab-whatsapp" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 

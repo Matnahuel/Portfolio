@@ -6,230 +6,124 @@ document.addEventListener("DOMContentLoaded", () => {
     const profileDetails = document.querySelector(".profile-details");
     const languageSelector = document.getElementById('language-selector');
 
-    // --- LÓGICA DEL BOTÓN FLOTANTE FAB ---
+    // --- LÓGICA DEL CHATBOT MatIAs ---
     const fabContainer = document.getElementById("fab-container");
     const fabMain = document.getElementById("fab-main");
+    const chatContainer = document.getElementById("chat-container");
+    const chatClose = document.getElementById("chat-close");
+    const suggestionBtns = document.querySelectorAll(".suggestion-btn");
+    const servicesChatBtn = document.getElementById("services-chat-btn");
+    const downloadCvChatBtn = document.getElementById("download-cv-chat-btn");
+    
     let isDragging = false;
     let dragMoved = false;
     let dragStart = null;
     let offset = { x: 0, y: 0 };
-    const DRAG_THRESHOLD = 6; // píxeles mínimos para considerar drag
-
-    // Función para detectar la posición y ajustar la clase del menú
-    function updateFabPosition() {
-        if (!fabContainer) return;
-
-        const rect = fabContainer.getBoundingClientRect();
-        const viewportWidth = window.innerWidth;
-        const viewportHeight = window.innerHeight;
-
-        // Detectar posición horizontal: izquierda, centro o derecha
-        const quarterWidth = viewportWidth / 4;
-        const isLeft = rect.left < quarterWidth;
-        const isRight = rect.left > viewportWidth - quarterWidth;
-        const isHorizontalCenter = !isLeft && !isRight;
-
-        // Detectar posición vertical
-        const isTop = rect.top < viewportHeight / 2;
-        const isBottom = !isTop;
-
-        // Remover todas las clases de posición
-        fabContainer.classList.remove("fab-bottom-right", "fab-bottom-left", "fab-top-right", "fab-top-left", "fab-top-center", "fab-bottom-center");
-
-        // Agregar la clase según la posición
-        if (isTop && isHorizontalCenter) {
-            fabContainer.classList.add("fab-top-center");
-        } else if (isBottom && isHorizontalCenter) {
-            fabContainer.classList.add("fab-bottom-center");
-        } else if (isTop && isLeft) {
-            fabContainer.classList.add("fab-top-left");
-        } else if (isTop && isRight) {
-            fabContainer.classList.add("fab-top-right");
-        } else if (isBottom && isLeft) {
-            fabContainer.classList.add("fab-bottom-left");
-        } else if (isBottom && isRight) {
-            fabContainer.classList.add("fab-bottom-right");
-        }
-
-        // Chequear que todos los iconos se vean sin superposición
-        checkFabItemsVisibility();
-    }
-
-    // Función para verificar si todos los items FAB son visibles sin superposición
-    function checkFabItemsVisibility() {
-        if (!fabContainer.classList.contains('active')) return;
-
-        const items = fabContainer.querySelectorAll('.fab-item');
-        const fabRect = fabContainer.getBoundingClientRect();
-        let allVisible = true;
-        let itemRects = [];
-
-        // Obtener posiciones de todos los items
-        items.forEach(item => {
-            const itemRect = item.getBoundingClientRect();
-            itemRects.push(itemRect);
-
-            // Chequear si está dentro de la pantalla
-            if (itemRect.left < 0 || itemRect.right > window.innerWidth ||
-                itemRect.top < 0 || itemRect.bottom > window.innerHeight) {
-                allVisible = false;
-            }
-        });
-
-        // Chequear superposición entre items
-        if (allVisible) {
-            for (let i = 0; i < itemRects.length; i++) {
-                for (let j = i + 1; j < itemRects.length; j++) {
-                    if (rectsOverlap(itemRects[i], itemRects[j])) {
-                        allVisible = false;
-                        break;
-                    }
-                }
-                if (!allVisible) break;
-            }
-        }
-
-        // Si no están todos visibles o hay superposición, reorganizar
-        if (!allVisible) {
-            reorganizeMenuItems();
-        }
-    }
-
-    // Función para verificar si dos rectángulos se superponen
-    function rectsOverlap(rect1, rect2) {
-        const padding = 10; // espaciado mínimo entre items
-        return !(rect1.right + padding < rect2.left ||
-                 rect2.right + padding < rect1.left ||
-                 rect1.bottom + padding < rect2.top ||
-                 rect2.bottom + padding < rect1.top);
-    }
+    const DRAG_THRESHOLD = 6;
 
     if (fabMain && fabContainer) {
-        // Actualizar posición al cargar
-        updateFabPosition();
+        // Función para ajustar la posición del chat si se sale de pantalla
+        function adjustChatPosition() {
+            if (!fabContainer.classList.contains('active')) return;
+            
+            const chatRect = chatContainer.getBoundingClientRect();
+            const viewportWidth = window.innerWidth;
+            const padding = 10;
+            
+            // Solo ajustar horizontalmente si se sale de pantalla
+            if (chatRect.left < padding) {
+                chatContainer.style.left = '0';
+                chatContainer.style.right = 'auto';
+            } else if (chatRect.right > viewportWidth - padding) {
+                chatContainer.style.right = '0';
+                chatContainer.style.left = 'auto';
+            } else {
+                // Posición normal: derecha
+                chatContainer.style.left = '';
+                chatContainer.style.right = '0';
+            }
+        }
 
-        // Toggle menú FAB
+        // Toggle chat al hacer click en el botón FAB
         fabMain.addEventListener("click", (e) => {
-            // Si hubo drag, evitamos el toggle para que el primer clic real abra siempre
             if (dragMoved) {
                 dragMoved = false;
                 return;
             }
             e.stopPropagation();
             fabContainer.classList.toggle("active");
-            // Chequear visibilidad cuando se abre el menú
+            
+            // Ajustar posición después de que se abre
             if (fabContainer.classList.contains("active")) {
-                setTimeout(() => {
-                    checkFabItemsVisibility();
-                }, 50);
+                setTimeout(adjustChatPosition, 50);
             }
         });
 
-        // Cerrar menú al hacer click en otro lado
-        document.addEventListener("click", () => {
+        // Cerrar chat
+        chatClose.addEventListener("click", (e) => {
+            e.stopPropagation();
             fabContainer.classList.remove("active");
         });
 
-        // Hacer draggable el FAB
-        fabMain.addEventListener("mousedown", (e) => {
-            dragMoved = false;
-            dragStart = { x: e.clientX, y: e.clientY };
-            offset.x = e.clientX - fabContainer.getBoundingClientRect().left;
-            offset.y = e.clientY - fabContainer.getBoundingClientRect().top;
-        });
-
-        document.addEventListener("mousemove", (e) => {
-            if (!dragStart) return;
-
-            const dx = Math.abs(e.clientX - dragStart.x);
-            const dy = Math.abs(e.clientY - dragStart.y);
-            if (!isDragging && (dx > DRAG_THRESHOLD || dy > DRAG_THRESHOLD)) {
-                isDragging = true;
-                dragMoved = true;
-                fabMain.style.cursor = "grabbing";
+        // Cerrar chat al hacer click afuera
+        document.addEventListener("click", (e) => {
+            if (!fabContainer.contains(e.target)) {
+                fabContainer.classList.remove("active");
             }
-            if (!isDragging) return;
-
-            const viewportWidth = window.innerWidth;
-            const viewportHeight = window.innerHeight;
-            const containerWidth = fabContainer.offsetWidth;
-            const containerHeight = fabContainer.offsetHeight;
-            const margin = 24; // Margen de seguridad desde los bordes
-
-            let x = e.clientX - offset.x;
-            let y = e.clientY - offset.y;
-
-            // Limitar los bordes con margen de seguridad
-            x = Math.max(margin, Math.min(x, viewportWidth - containerWidth - margin));
-            y = Math.max(margin, Math.min(y, viewportHeight - containerHeight - margin));
-
-            fabContainer.style.left = x + "px";
-            fabContainer.style.right = "auto";
-            fabContainer.style.top = y + "px";
-            fabContainer.style.bottom = "auto";
-
-            // Actualizar posición del menú
-            updateFabPosition();
         });
 
-        document.addEventListener("mouseup", () => {
-            isDragging = false;
-            dragStart = null;
-            fabMain.style.cursor = "grab";
-            // Permitimos que el siguiente clic vuelva a togglear
-            setTimeout(() => {
-                dragMoved = false;
-            }, 0);
+        // Prevenir que clicks dentro del chat cierren el menú
+        chatContainer.addEventListener("click", (e) => {
+            e.stopPropagation();
         });
-
-        // Soporte para touch en móviles
-        fabMain.addEventListener("touchstart", (e) => {
-            dragMoved = false;
-            const touch = e.touches[0];
-            dragStart = { x: touch.clientX, y: touch.clientY };
-            offset.x = touch.clientX - fabContainer.getBoundingClientRect().left;
-            offset.y = touch.clientY - fabContainer.getBoundingClientRect().top;
-        });
-
-        document.addEventListener("touchmove", (e) => {
-            const touch = e.touches[0];
-            if (!dragStart) return;
-
-            const dx = Math.abs(touch.clientX - dragStart.x);
-            const dy = Math.abs(touch.clientY - dragStart.y);
-            if (!isDragging && (dx > DRAG_THRESHOLD || dy > DRAG_THRESHOLD)) {
-                isDragging = true;
-                dragMoved = true;
+        
+        // Ajustar posición cuando la ventana se redimensiona
+        window.addEventListener("resize", () => {
+            if (fabContainer.classList.contains("active")) {
+                adjustChatPosition();
             }
-            if (!isDragging) return;
-
-            const viewportWidth = window.innerWidth;
-            const viewportHeight = window.innerHeight;
-            const containerWidth = fabContainer.offsetWidth;
-            const containerHeight = fabContainer.offsetHeight;
-            const margin = 24; // Margen de seguridad desde los bordes
-
-            let x = touch.clientX - offset.x;
-            let y = touch.clientY - offset.y;
-
-            x = Math.max(margin, Math.min(x, viewportWidth - containerWidth - margin));
-            y = Math.max(margin, Math.min(y, viewportHeight - containerHeight - margin));
-
-            fabContainer.style.left = x + "px";
-            fabContainer.style.right = "auto";
-            fabContainer.style.top = y + "px";
-            fabContainer.style.bottom = "auto";
-
-            // Actualizar posición del menú
-            updateFabPosition();
         });
 
-        document.addEventListener("touchend", () => {
-            isDragging = false;
-            dragStart = null;
-            setTimeout(() => {
-                dragMoved = false;
-            }, 0);
+        // Manejar clics en los botones de sugerencia
+        suggestionBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const target = btn.getAttribute("data-target");
+                if (target && target !== "#") {
+                    // Cerrar el chat
+                    fabContainer.classList.remove("active");
+                    // Navegar a la sección
+                    setTimeout(() => {
+                        const element = document.querySelector(target);
+                        if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }, 300);
+                }
+            });
+        });
+
+        // Manejar clic especial para servicios
+        servicesChatBtn.addEventListener("click", () => {
+            fabContainer.classList.remove("active");
+            // Triggear el modal de servicios
+            const servicesLink = document.getElementById("services-trigger");
+            if (servicesLink) {
+                setTimeout(() => {
+                    servicesLink.click();
+                }, 300);
+            }
+        });
+
+        // Manejar descarga de CV ATS
+        downloadCvChatBtn.addEventListener("click", () => {
+            fabContainer.classList.remove("active");
+            // Crear un link temporal para descargar
+            const link = document.createElement("a");
+            link.href = "./assets/cv/CV_Matias_Carabajal_ATS_2026.pdf";
+            link.download = "CV_Matias_Carabajal_ATS.pdf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         });
     }
 
@@ -816,55 +710,84 @@ document.addEventListener("DOMContentLoaded", () => {
     
     initScrollReveal();
 
-    // Feedback form: validación y envío usando Formspree (o endpoint configurado en el atributo action)
-    const form = document.getElementById('feedback-form');
-    if (!form) return;
-
-    const email = document.getElementById('feedback-email');
-    const message = document.getElementById('feedback-message');
-    const status = document.getElementById('feedback-status');
-
-    const validText = (el) => {
-        return el && el.value && /\S/.test(el.value) && el.value.trim().length >= 5;
-    };
-
-    form.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        status.textContent = '';
-
-        // Validación nativa de email
-        if (!email.checkValidity()) {
-            email.reportValidity();
+    // Esperar a que EmailJS esté disponible
+    function initEmailJS() {
+        if (typeof emailjs === 'undefined') {
+            setTimeout(initEmailJS, 100);
             return;
         }
+        
+        emailjs.init('3oFNJTeVwoDDMvvM-');
+        setupFeedbackForm();
+    }
 
-        // Validación de texto: no solo espacios y longitud mínima
-        if (!validText(message)) {
-            message.setCustomValidity('Por favor ingresa un texto válido de al menos 5 caracteres.');
-            message.reportValidity();
-            message.setCustomValidity('');
-            return;
-        }
+    function setupFeedbackForm() {
+        // Feedback form: validación y envío usando EmailJS
+        const form = document.getElementById('feedback-form');
+        if (!form) return;
 
-        // Enviar datos
-        const formData = new FormData(form);
-        try {
-            const res = await fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            });
+        const email = document.getElementById('feedback-email');
+        const message = document.getElementById('feedback-message');
+        const status = document.getElementById('feedback-status');
 
-            if (res.ok) {
-                status.textContent = 'Mensaje enviado. ¡Gracias!';
-                form.reset();
-            } else {
-                let data;
-                try { data = await res.json(); } catch (err) { }
-                status.textContent = (data && data.error) ? data.error : 'Error al enviar el mensaje. Intenta nuevamente.';
+        const validText = (el) => {
+            return el && el.value && /\S/.test(el.value) && el.value.trim().length >= 5;
+        };
+
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            status.textContent = '';
+
+            // Validación nativa de email
+            if (!email.checkValidity()) {
+                email.reportValidity();
+                return;
             }
-        } catch (err) {
-            status.textContent = 'Error de red al enviar el mensaje.';
-        }
-    });
+
+            // Validación de texto: no solo espacios y longitud mínima
+            if (!validText(message)) {
+                message.setCustomValidity('Por favor ingresa un texto válido de al menos 5 caracteres.');
+                message.reportValidity();
+                message.setCustomValidity('');
+                return;
+            }
+
+            // Mostrar estado de envío
+            status.textContent = 'Enviando tu mensaje...';
+            status.style.color = 'var(--primary-color)';
+
+            try {
+                // Enviar email usando EmailJS
+                const result = await emailjs.send(
+                    'service_epyfgij', // Service ID
+                    'template_r3kp7ic', // Template ID
+                    {
+                        user_email: email.value,
+                        user_message: message.value
+                    }
+                );
+
+                if (result.status === 200) {
+                    status.textContent = '¡Mensaje enviado correctamente! Gracias por tu devolución.';
+                    status.style.color = 'var(--primary-color)';
+                    form.reset();
+                    
+                    setTimeout(() => {
+                        status.textContent = '';
+                    }, 3000);
+                }
+            } catch (error) {
+                console.error('Error al enviar:', error);
+                status.textContent = 'Error al enviar el mensaje. Intenta nuevamente.';
+                status.style.color = '#ff6b6b';
+                
+                setTimeout(() => {
+                    status.textContent = '';
+                }, 3000);
+            }
+        });
+    }
+
+    // Iniciar EmailJS cuando el DOM esté listo
+    initEmailJS();
 });
