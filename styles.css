@@ -190,7 +190,8 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 960px;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -243,14 +244,15 @@ header nav ul {
     padding: 0;
     display: flex;
     flex: 1;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 1rem;
 }
 
 header nav ul li {
-    flex: 1;
     text-align: center;
     margin-left: 0;
+    flex: 0 1 auto;
 }
 
 header nav ul li a {
@@ -258,10 +260,11 @@ header nav ul li a {
     text-decoration: none;
     font-weight: 500;
     position: relative;
-    padding: 8px 10px;
+    padding: 8px 8px;
     transition: color 0.3s ease;
     display: block;
     white-space: nowrap;
+    font-size: 14px;
 }
 
 header nav ul li a::after {
