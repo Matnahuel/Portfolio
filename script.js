@@ -587,7 +587,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- LÓGICA DE CLICK EN TARJETAS DE SERVICIOS ---
     const serviceBoxes = document.querySelectorAll('.services-modal-content .service-box');
-    const myEmail = 'matias.carabajal@estudiantes.unahur.edu.ar';
+    const myEmail = 'matias.carabajal.trabajo@gmail.com';
 
     serviceBoxes.forEach(box => {
         box.addEventListener('click', () => {
