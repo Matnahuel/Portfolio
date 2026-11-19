@@ -1,0 +1,499 @@
+@media (max-width: 1024px) {
+    .services-modal-content {
+        width: 90%;
+        padding: 40px;
+    }
+
+    .services-modal-content .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    header nav {
+        padding: 0 20px;
+    }
+
+    header nav ul {
+        display: none;
+    }
+
+    header nav h1,
+    .nav-brand {
+        font-size: 18px;
+    }
+
+    #hamburger {
+        display: flex;
+    }
+
+    #nav-links {
+        position: fixed;
+        right: 0;
+        top: 60px;
+        height: calc(100vh - 60px);
+        width: 100%;
+        background-color: var(--bg-card);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        display: none;
+        z-index: 999;
+    }
+
+    #nav-links.active {
+        transform: translateX(0);
+        display: flex;
+    }
+
+    #nav-links li {
+        margin: 0;
+    }
+
+    #nav-links li a {
+        font-size: 24px;
+        color: var(--text-primary);
+    }
+
+    section {
+        padding: 100px 20px 40px;
+    }
+
+    .profile-card:not(.expanded) {
+        flex-direction: column;
+        text-align: center;
+        padding: 72px 25px 25px;
+    }
+
+    .profile-card.expanded {
+        text-align: left;
+        padding-top: 72px;
+    }
+
+    .profile-card .profile-top-actions {
+        top: 16px;
+        left: 16px;
+        right: 16px;
+        justify-content: flex-end;
+    }
+
+    .toggle-button {
+        top: 15px;
+        right: 15px;
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    .profile-card:not(.expanded) .profile-header {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .profile-card:not(.expanded) .profile-info {
+        text-align: center;
+    }
+
+    .profile-card:not(.expanded) .profile-details {
+        text-align: left;
+        padding: 15px 0;
+    }
+
+    .contact-item {
+        gap: 10px;
+    }
+
+    .contact-info {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .contact-info span {
+        font-size: 11px;
+    }
+
+    .contact-info a {
+        font-size: 14px;
+        word-break: normal;
+        overflow-wrap: break-word;
+        display: block;
+    }
+
+    .social-links {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .profile-card.expanded .social-links {
+        justify-content: flex-start;
+    }
+
+    #about h2,
+    .education-header h2,
+    .habtec-header h2,
+    .certifications-header h2,
+    .languages-header h2,
+    #projects h2 {
+        font-size: 36px;
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certifications-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .certifications-button {
+        align-self: flex-start;
+    }
+
+    .languages-horizontal-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .featured-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .featured-preview {
+        height: 300px;
+    }
+
+    .featured-info h3 {
+        font-size: 24px;
+    }
+
+    .featured-links {
+        flex-wrap: wrap;
+    }
+
+    .services-modal-content {
+        width: 95%;
+        padding: 30px;
+        max-height: 95vh;
+    }
+
+    .services-modal-content h2 {
+        font-size: 32px;
+    }
+
+    .services-modal-close {
+        font-size: 24px;
+    }
+
+    .services-modal-content .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-modal-content .service-box {
+        padding: 25px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-links {
+        align-items: center;
+    }
+
+    .footer-social-links {
+        justify-content: center;
+    }
+
+    .back-to-top {
+        bottom: 20px;
+        left: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 700px) {
+    .footer-action-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-footer-hire,
+    .btn-footer-calendar,
+    .btn-footer-services {
+        width: 100%;
+        justify-content: center;
+        padding: 11px 16px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        line-height: 1.6;
+    }
+
+    section,
+    #education {
+        padding: 80px 15px 30px;
+    }
+
+    header nav h1,
+    .nav-brand {
+        font-size: 16px;
+    }
+
+    .profile-card,
+    .profile-card:not(.expanded),
+    .profile-card.expanded {
+        padding: 72px 18px 22px;
+    }
+
+    .profile-card .profile-top-actions {
+        top: 16px;
+        left: 16px;
+        right: 16px;
+        justify-content: space-between;
+    }
+
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-info h1,
+    .profile-info h3 {
+        font-size: 24px;
+    }
+
+    .profile-info .role {
+        font-size: 16px;
+    }
+
+    .profile-details {
+        padding: 10px 0;
+        gap: 12px;
+    }
+
+    .contact-item {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .contact-item i {
+        font-size: 18px;
+    }
+
+    .contact-info {
+        flex: 1;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .contact-info span {
+        font-size: 10px;
+        margin-bottom: 2px;
+    }
+
+    .contact-info a {
+        font-size: 12px;
+        word-break: break-all;
+        overflow-wrap: anywhere;
+        line-height: 1.3;
+        display: block;
+    }
+
+    .social-links {
+        justify-content: center;
+        gap: 15px;
+        padding-top: 15px;
+    }
+
+    .social-links a {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+    }
+
+    .additional-info-container {
+        padding-top: 15px;
+    }
+
+    .additional-info-container h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .additional-info-container ul {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .additional-info-container li {
+        font-size: 14px;
+    }
+
+    .cv-buttons-container {
+        gap: 10px;
+    }
+
+    .cv-download-button {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .profile-action-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hire-button,
+    .calendar-button {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+
+    #about h2,
+    .education-header h2,
+    .habtec-header h2,
+    .certifications-header h2,
+    .languages-header h2,
+    #projects h2 {
+        font-size: 30px;
+    }
+
+    .about-me-text {
+        font-size: 16px;
+    }
+
+    .education-card {
+        padding: 20px;
+    }
+
+    .education-university-logo {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+    }
+
+    .education-info h3 {
+        font-size: 16px;
+    }
+
+    .services-container,
+    .habtec-grid,
+    .credentials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .habtec-column {
+        margin-bottom: 20px;
+    }
+
+    .languages-horizontal-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        border: none;
+        padding: 0;
+    }
+
+    .language-column {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 10px;
+    }
+
+    .featured-project {
+        border-radius: 12px;
+        margin-bottom: 40px;
+    }
+
+    .featured-content {
+        padding: 15px;
+    }
+
+    .featured-badge {
+        top: 10px;
+        left: 10px;
+        font-size: 11px;
+    }
+
+    .featured-preview {
+        height: 250px;
+    }
+
+    .featured-info h3 {
+        font-size: 20px;
+    }
+
+    .btn-featured {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+
+    .carousel-container {
+        height: 250px;
+    }
+
+    .modal .modal-carousel-button {
+        padding: 8px;
+        font-size: 18px;
+    }
+
+    .modal .modal-carousel-button.prev-button {
+        left: 5px;
+    }
+
+    .modal .modal-carousel-button.next-button {
+        right: 5px;
+    }
+
+    .services-modal-content {
+        width: 98%;
+        padding: 20px;
+    }
+
+    .services-modal-content h2 {
+        font-size: 28px;
+    }
+
+    .services-intro {
+        font-size: 14px;
+    }
+
+    .services-modal-content .service-box h3 {
+        font-size: 20px;
+    }
+
+    .services-modal-content .service-box {
+        padding: 18px;
+    }
+
+    .services-modal-close {
+        top: 15px;
+        right: 15px;
+        font-size: 20px;
+    }
+
+    .chat-container {
+        width: 90vw;
+        max-width: 360px;
+        height: 500px;
+    }
+}

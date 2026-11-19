@@ -4,27 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matias Nahuel Carabajal | Desarrollador Web Full Stack</title>
     <meta name="description"
-        content="Portfolio de Matías Nahuel Carabajal - Desarrollador Web Full Stack especializado en JavaScript, Python, React y tecnologías modernas">
-    <title>Matias Nahuel Carabajal - Desarrollador Full Stack</title>
-    <link rel="icon" type="image/png" href="assets/img/portafolio.png">
-    <link rel="shortcut icon" href="assets/img/portafolio.png">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        content="Portfolio de Matias Nahuel Carabajal, Técnico Universitario en Programación y Desarrollador Full Stack especializado en React, Node.js, JavaScript, TypeScript, PostgreSQL y MongoDB.">
+    <meta name="author" content="Matias Nahuel Carabajal">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://matnahuel.github.io/">
+
+    <!-- Open Graph (LinkedIn, WhatsApp, Facebook) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:title" content="Matias Nahuel Carabajal | Desarrollador Web Full Stack">
+    <meta property="og:description"
+        content="Proyectos Full Stack, experiencia en Olla Vegana, OESTACK e INTA (SIGA), testing QA y formación en UNAHUR. Conocé mi trabajo y descargá mi CV.">
+    <meta property="og:url" content="https://matnahuel.github.io/">
+    <meta property="og:image" content="https://matnahuel.github.io/assets/img/yo1.jpeg">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Matias Nahuel Carabajal | Desarrollador Web Full Stack">
+    <meta name="twitter:description"
+        content="Desarrollador Full Stack (React, Node.js, Express, PostgreSQL, MongoDB). Técnico Universitario en Programación (UNAHUR).">
+    <meta name="twitter:image" content="https://matnahuel.github.io/assets/img/yo1.jpeg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/img/portafolio.png">
+
+    <!-- Fuentes y Estilos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser/dist/email.min.js"></script>
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://cdn.jsdelivr.net/npm/three@0.164/build/three.module.js",
-                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164/examples/jsm/"
-            }
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <!-- Datos Estructurados Schema.org (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Matias Nahuel Carabajal",
+        "jobTitle": "Desarrollador Web Full Stack",
+        "url": "https://matnahuel.github.io/",
+        "image": "https://matnahuel.github.io/assets/img/yo1.jpeg",
+        "email": "mailto:matias.carabajal.trabajo@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Rafael Castillo",
+            "addressRegion": "Buenos Aires",
+            "addressCountry": "AR"
+        },
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Universidad Nacional de Hurlingham"
+        },
+        "knowsAbout": [
+            "JavaScript", "TypeScript", "React", "Node.js", "Express",
+            "Python", "Java", "PostgreSQL", "MongoDB", "MySQL", "SQL Server",
+            "Selenium", "Postman", "Docker", "Scrum", "Full Stack Development"
+        ],
+        "sameAs": [
+            "https://www.linkedin.com/in/matiasncarabajal/",
+            "https://github.com/Matnahuel"
+        ]
+    }
     </script>
+
+    <!-- Scripts diferidos -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser/dist/email.min.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
 </head>
 
 <body>
@@ -34,18 +81,13 @@
         <nav role="navigation" aria-label="Navegación principal">
             <div class="nav-left">
                 <ul id="nav-links" role="menubar">
-                    <li role="none"><a href="#about" role="menuitem" data-translate-key="about-me-title">Sobre Mí</a>
-                    </li>
-                    <li role="none"><a href="#projects" role="menuitem"
-                            data-translate-key="projects-title">Proyectos</a></li>
-                    <li role="none"><a href="#habtec" role="menuitem" data-translate-key="technical-skills-title">Mis
-                            Habilidades</a></li>
-                    <li role="none"><a href="#certifications" role="menuitem"
-                            data-translate-key="certifications-title">Certificaciones</a></li>
-                    <li role="none"><a href="#footer-Contacto" role="menuitem"
-                            data-translate-key="footer-contact-title">Contacto</a></li>
-                    <li role="none"><a href="#" id="services-trigger" role="menuitem"
-                            data-translate-key="my-services-title">Mis Servicios</a></li>
+                    <li role="none"><a href="#about" role="menuitem" data-translate-key="about-me-title">Sobre Mí</a></li>
+                    <li role="none"><a href="#experience" role="menuitem" data-translate-key="experience-title">Experiencia</a></li>
+                    <li role="none"><a href="#projects" role="menuitem" data-translate-key="projects-title">Proyectos</a></li>
+                    <li role="none"><a href="#habtec" role="menuitem" data-translate-key="technical-skills-title">Mis Habilidades</a></li>
+                    <li role="none"><a href="#certifications" role="menuitem" data-translate-key="certifications-title">Certificaciones</a></li>
+                    <li role="none"><a href="#footer-Contacto" role="menuitem" data-translate-key="footer-contact-title">Contacto</a></li>
+                    <li role="none"><a href="#" id="services-trigger" role="menuitem" data-translate-key="my-services-title">Mis Servicios</a></li>
                 </ul>
                 <button id="hamburger" aria-label="Abrir menú de navegación" aria-expanded="false"
                     aria-controls="nav-links">
@@ -67,11 +109,11 @@
                 </button>
             </div>
             <div class="nav-right">
-                <h1>
+                <span class="nav-brand">
                     <a href="#profile-card" aria-label="Ir al inicio del portfolio" class="nav-link-clean">
-                        Matías Carabajal
+                        Matias Carabajal
                     </a>
-                </h1>
+                </span>
             </div>
         </nav>
     </header>
@@ -79,32 +121,40 @@
     <main id="main-content" role="main">
         <section class="profile-card-container" aria-label="Información de perfil">
             <div class="profile-card" id="profile-card">
-                <button class="toggle-button" id="toggle-profile" aria-label="Mostrar información completa del perfil"
-                    aria-expanded="false" data-translate-key="see-all">Ver todo</button>
+                <div class="profile-top-actions">
+                    <div class="cv-buttons-container profile-cv-visible">
+                        <a href="./assets/cv/Matias_Carabajal_SoftwareDev.pdf" download class="cv-download-button"
+                            aria-label="Descargar CV"
+                            data-translate-key="download-cv">Descargar CV</a>
+                    </div>
+                    <button class="toggle-button" id="toggle-profile" aria-label="Mostrar información completa del perfil"
+                        aria-expanded="false" data-translate-key="see-all">Ver todo</button>
+                </div>
+
                 <div class="profile-header">
                     <img src="./assets/img/yo1.jpeg"
-                        alt="Foto de perfil de Matías Nahuel Carabajal, Desarrollador Web Full Stack"
-                        class="profile-picture">
+                        alt="Foto de perfil de Matias Nahuel Carabajal, Desarrollador Web Full Stack"
+                        class="profile-picture" width="150" height="150">
                     <div class="profile-info">
-                        <h3>Matías Nahuel Carabajal</h3>
-                        <p class="title" data-translate-key="university-technician">Técnico Universitario en
-                            Programación</p>
+                        <h1>Matias Nahuel Carabajal</h1>
+                        <p class="title" data-translate-key="university-technician">Técnico Universitario en Programación</p>
                         <p class="role" data-translate-key="full-stack-developer">Desarrollador Full Stack</p>
                     </div>
                 </div>
+
                 <div class="profile-details hidden" role="region" aria-label="Detalles de contacto">
                     <div class="contact-item">
-                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <i class="fas fa-envelope fa-fw" aria-hidden="true"></i>
                         <div class="contact-info">
                             <span data-translate-key="email-label">EMAIL</span>
                             <a href="mailto:matias.carabajal.trabajo@gmail.com"
-                                aria-label="Enviar correo electrónico a Matías Carabajal">
+                                aria-label="Enviar correo electrónico a Matias Carabajal">
                                 matias.carabajal.trabajo@gmail.com
                             </a>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <i class="fas fa-phone fa-fw" aria-hidden="true"></i>
                         <div class="contact-info">
                             <span data-translate-key="phone-label">TELÉFONO</span>
                             <a href="https://wa.me/+5491130022107"
@@ -115,24 +165,24 @@
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <i class="fas fa-location-dot fa-fw" aria-hidden="true"></i>
                         <div class="contact-info">
                             <span data-translate-key="location-label">UBICACIÓN</span>
                             <a href="https://www.google.com/maps" aria-label="Ver ubicación en Google Maps"
                                 target="_blank" rel="noopener noreferrer">
-                                Rafael Castillo, La Matanza, BA, Argentina
+                                Buenos Aires, Argentina
                             </a>
                         </div>
                     </div>
                     <div class="social-links" role="list" aria-label="Enlaces a redes sociales">
                         <a href="https://www.linkedin.com/in/matiasncarabajal/" target="_blank"
-                            rel="noopener noreferrer" aria-label="Visitar perfil de LinkedIn de Matías Carabajal"
+                            rel="noopener noreferrer" aria-label="Visitar perfil de LinkedIn de Matias Carabajal"
                             role="listitem">
                             <i class="fab fa-linkedin" aria-hidden="true"></i>
                             <span class="sr-only">LinkedIn</span>
                         </a>
                         <a href="https://github.com/Matnahuel" target="_blank" rel="noopener noreferrer"
-                            aria-label="Visitar perfil de GitHub de Matías Carabajal" role="listitem">
+                            aria-label="Visitar perfil de GitHub de Matias Carabajal" role="listitem">
                             <i class="fab fa-github" aria-hidden="true"></i>
                             <span class="sr-only">GitHub</span>
                         </a>
@@ -140,15 +190,9 @@
                     <div class="additional-info-container">
                         <h3 data-translate-key="additional-info-title">Info adicional</h3>
                         <ul>
-                            <li data-translate-key="driving-license"><i class="fas fa-car-side"></i>Licencia de conducir
-                                clase B2.</li>
-                            <li data-translate-key="own-vehicle"><i class="fas fa-car"></i>Vehículo propio.</li>
+                            <li data-translate-key="driving-license"><i class="fas fa-id-card fa-fw" aria-hidden="true"></i>Licencia de conducir clase B2.</li>
+                            <li data-translate-key="own-vehicle"><i class="fas fa-car fa-fw" aria-hidden="true"></i>Vehículo propio.</li>
                         </ul>
-                    </div>
-                    <div class="cv-buttons-container">
-                        <a href="./assets/cv/CV_Matias_Carabajal_ATS_2026.pdf" download class="cv-download-button"
-                            aria-label="Descargar CV"
-                            data-translate-key="download-cv-ats">Descargar CV</a>
                     </div>
                 </div>
             </div>
@@ -156,24 +200,288 @@
 
         <section id="about" aria-labelledby="about-heading" data-scroll-reveal="slide-left-scale">
             <h2 id="about-heading" data-translate-key="about-me-title">Sobre Mí</h2>
-            <p class="about-me-text">
-                <strong>Matías Nahuel Carabajal: Desarrollador Full Stack</strong>
+            <p class="about-me-text" data-translate-key="about-me-text">
+                <strong>Matias Nahuel Carabajal: Desarrollador Full Stack</strong>
                 <br><br>
-                <b>Técnico Universitario en Programación</b> y <b>estudiante de la Licenciatura en Informática en la
-                    Universidad Nacional de Hurlingham</b> (UNAHUR). Cuento con una sólida base en <b><i> desarrollo Full
-                Stack</i></b>.
+                Soy <b>Desarrollador Full Stack</b> y <b>Técnico Universitario en Programación</b> (UNAHUR), además de estudiante avanzado de la <b>Licenciatura en Informática</b> en la misma universidad. Cuento con experiencia en el ecosistema <b>JavaScript</b> (<b>React</b>, <b>Node.js</b>, <b>Express</b>) y bases de datos relacionales (<b>PostgreSQL</b>) y no relacionales (<b>MongoDB</b>).
                 <br><br>
-                Soy un profesional apasionado por la tecnología y el aprendizaje constante. Busco activamente mi primera
-                experiencia laboral para aplicar mis conocimientos en desarrollo y contribuir a proyectos innovadores
-                con código limpio, arquitecturas escalables y soluciones eficientes.
+                En mi pasantía en <b>INTA</b> (proyecto SIGA) migré bases de datos de <b>SQL Server</b> a <b>PostgreSQL con PostGIS</b> y desarrollé <b>APIs REST</b> para la gestión de información geoespacial, y en <b>Olla Vegana</b> (vía <b>OESTACK</b>) desarrollé una plataforma full stack con pasarela de pagos, control de concurrencia de stock y despliegue en servidor Linux con túneles de Cloudflare.
                 <br><br>
-                <strong>Enfoque y Perfil Profesional</strong><br>
-                Mi perfil, como <b><i>Desarrollador, QA Tester</i></b> y con una base en <b><i>Análisis de Datos</i></b> fundamentalmente
-                autodidacta y proactivo, me permite adaptarme con facilidad a nuevos desafíos, lo que resulta en la
-                creación de soluciones eficientes, la optimización de procesos de calidad (QA) y la interpretación de
-                datos para una toma de decisiones informada. Este enfoque integral impulsa mi crecimiento continuo en
-                cualquier entorno tecnológico dinámico.
+                Busco sumarme a un equipo de desarrollo donde aportar tanto en frontend como en backend, trabajando con metodologías ágiles (<b>Scrum</b>) y buenas prácticas de calidad y testing.
             </p>
+        </section>
+
+        <section id="experience" aria-labelledby="experience-heading" data-scroll-reveal="slide-left-scale">
+            <div class="experience-header">
+                <i class="fas fa-briefcase experience-icon" aria-hidden="true"></i>
+                <h2 id="experience-heading" data-translate-key="experience-title">Experiencia</h2>
+            </div>
+
+            <div class="experience-grid" data-scroll-reveal="stagger">
+                <article class="experience-card">
+                    <div class="experience-card-top">
+                        <div>
+                            <h3 data-translate-key="exp-olla-role">Desarrollador Full Stack — Olla Vegana (OESTACK)</h3>
+                            <p class="experience-subtitle" data-translate-key="exp-olla-stack">Web institucional, E-commerce y CMS · JS, TS, React, Vite, Tailwind CSS, Node.js, Express, MongoDB Atlas, Cloudflare Tunnels, Mercado Pago API</p>
+                        </div>
+                        <span class="experience-period" data-translate-key="exp-olla-period">Oct. 2026</span>
+                    </div>
+                    <ul class="experience-list">
+                        <li data-translate-key="exp-olla-b1">Diseñé y desarrollé una plataforma web full stack integral para la gestión de pedidos, stock y donaciones.</li>
+                        <li data-translate-key="exp-olla-b2">Integré <strong>Mercado Pago</strong> (Checkout Pro y Webhooks) para automatizar la acreditación de pagos y sincronizar órdenes.</li>
+                        <li data-translate-key="exp-olla-b3">Implementé reservas de stock y control de concurrencia en tiempo real para prevenir sobreventas, junto con seguridad en Node.js/Express (Helmet, rate limit y validaciones).</li>
+                        <li data-translate-key="exp-olla-b4">Configuré el entorno productivo sobre un servidor Linux autohospedado con <strong>PM2</strong> y <strong>Cloudflare Tunnels</strong>, realizando pruebas de carga con <strong>K6</strong>.</li>
+                    </ul>
+                </article>
+
+                <article class="experience-card">
+                    <div class="experience-card-top">
+                        <div>
+                            <h3 data-translate-key="exp-siga-role">Desarrollador Full Stack (PPS) — Proyecto SIGA (UNAHUR / INTA)</h3>
+                            <p class="experience-subtitle" data-translate-key="exp-siga-stack">Sistema de Información y Gestión Agrometeorológica · JavaScript, React, Node.js, Express, PostgreSQL, Sequelize, Leaflet</p>
+                        </div>
+                        <span class="experience-period" data-translate-key="exp-siga-period">Ago. 2025 – Ene. 2026</span>
+                    </div>
+                    <ul class="experience-list">
+                        <li data-translate-key="exp-siga-b1">Desarrollé nuevas funcionalidades para el sistema SIGA utilizando JavaScript y Node.js.</li>
+                        <li data-translate-key="exp-siga-b2">Migré bases de datos desde SQL Server hacia <strong>PostgreSQL con PostGIS</strong> manteniendo la integridad de los datos geoespaciales.</li>
+                        <li data-translate-key="exp-siga-b3">Diseñé y consumí <strong>APIs REST</strong> para el flujo de información espacial e integré mapas interactivos en interfaces responsivas.</li>
+                        <li data-translate-key="exp-siga-b4">Optimicé consultas SQL, implementé generación automática de reportes en PDF y trabajé en equipo bajo <strong>Scrum</strong>.</li>
+                    </ul>
+                </article>
+
+                <article class="experience-card">
+                    <div class="experience-card-top">
+                        <div>
+                            <h3 data-translate-key="exp-pc-role">Técnico de PC — Soporte Técnico Eventual</h3>
+                            <p class="experience-subtitle" data-translate-key="exp-pc-stack">Hardware, software, sistemas operativos y mantenimiento preventivo/correctivo</p>
+                        </div>
+                        <span class="experience-period" data-translate-key="exp-pc-period">Eventual</span>
+                    </div>
+                    <ul class="experience-list">
+                        <li data-translate-key="exp-pc-b1">Diagnóstico y resolución de incidencias de hardware y software en equipos de escritorio y portátiles.</li>
+                        <li data-translate-key="exp-pc-b2">Instalación y configuración de sistemas operativos, aplicaciones, soporte a usuarios y mantenimiento preventivo y correctivo.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="projects" aria-labelledby="projects-heading" data-scroll-reveal="slide-right-massive">
+            <div class="projects-header-row">
+                <h2 id="projects-heading" data-translate-key="projects-title">Proyectos</h2>
+                <div class="elevator-indicator" id="proj-elevator" role="tablist" aria-label="Proyecto actual del 1 al 6"></div>
+            </div>
+
+            <div class="phone-carousel-wrapper">
+                <button type="button" class="carousel-nav prev" id="proj-prev" aria-label="Proyecto anterior">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
+
+                <div class="phone-carousel-track" id="phone-carousel-track">
+
+                    <phone-project-card
+                        title-key="proj-olla-title"
+                        problem-key="proj-olla-problem"
+                        tech-why-key="proj-olla-tech"
+                        role-key="proj-olla-role"
+                        title="Olla Vegana - Web, E-commerce y CMS"
+                        preview-url="https://www.ollavegana.org/"
+                        live-url="https://www.ollavegana.org/"
+                        instagram-url="https://www.instagram.com/olla.vegana/">
+                    </phone-project-card>
+
+                    <phone-project-card
+                        title-key="proj-oestack-title"
+                        problem-key="proj-oestack-problem"
+                        tech-why-key="proj-oestack-tech"
+                        role-key="proj-oestack-role"
+                        title="OESTACK - Soluciones Web y Software"
+                        preview-url="https://oestack.com/"
+                        live-url="https://oestack.com/"
+                        repo-url="https://github.com/Oestack/oestack-front"
+                        instagram-url="https://www.instagram.com/oestack_/">
+                    </phone-project-card>
+
+                    <phone-project-card
+                        title-key="proj-siga-title"
+                        problem-key="proj-siga-problem"
+                        tech-why-key="proj-siga-tech"
+                        role-key="proj-siga-role"
+                        title="SIGA - Gestión Agrometeorológica"
+                        preview-url="https://matnahuel.github.io/PPS-SIGA-INTA-UNAHUR/"
+                        live-url="https://matnahuel.github.io/PPS-SIGA-INTA-UNAHUR/"
+                        demo="<code>admin123</code> / <code>admin123</code>">
+                    </phone-project-card>
+
+                    <phone-project-card
+                        title-key="proj-medicos-title"
+                        problem-key="proj-medicos-problem"
+                        tech-why-key="proj-medicos-tech"
+                        role-key="proj-medicos-role"
+                        title="App Prestadores Médicos"
+                        preview-url="https://des-app-front.vercel.app/"
+                        live-url="https://des-app-front.vercel.app/"
+                        repo-url="https://github.com/orgs/DesApp-2025c2-Grupo5/repositories"
+                        demo="<code>11111111111</code> / <code>123</code>">
+                    </phone-project-card>
+
+                    <phone-project-card
+                        title-key="proj-ciuteam-title"
+                        problem-key="proj-ciuteam-problem"
+                        tech-why-key="proj-ciuteam-tech"
+                        role-key="proj-ciuteam-role"
+                        title="Red Antisocial (CIUTEAM)"
+                        preview-url="https://matnahuel.github.io/CIUTEAM-Anti-Social-Net"
+                        live-url="https://matnahuel.github.io/CIUTEAM-Anti-Social-Net"
+                        repo-url="https://github.com/Matnahuel/CIUTEAM-Anti-Social-Net"
+                        demo="<code>Luna</code> / <code>123456</code>">
+                    </phone-project-card>
+
+                    <phone-project-card
+                        title-key="proj-walmat-title"
+                        problem-key="proj-walmat-problem"
+                        tech-why-key="proj-walmat-tech"
+                        role-key="proj-walmat-role"
+                        title="WalMat E-commerce"
+                        preview-url="https://matnahuel.github.io/WalMat---Tienda-Oficial/#/"
+                        live-url="https://matnahuel.github.io/WalMat---Tienda-Oficial/#/"
+                        repo-url="https://github.com/Matnahuel/WalMat---Tienda-Oficial"
+                        demo="<code>testuser</code> / <code>password123</code>">
+                    </phone-project-card>
+
+                </div>
+
+                <button type="button" class="carousel-nav next" id="proj-next" aria-label="Siguiente proyecto">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Modal de Servicios -->
+        <div id="services-modal" class="services-modal" role="dialog" aria-labelledby="services-modal-heading"
+            aria-hidden="true">
+            <div class="services-modal-overlay"></div>
+            <div class="services-modal-content">
+                <button id="services-modal-close" class="services-modal-close" aria-label="Cerrar modal de servicios">
+                    <i class="fas fa-xmark" aria-hidden="true"></i>
+                </button>
+
+                <h2 id="services-modal-heading" data-translate-key="my-services-title">Mis Servicios</h2>
+                <p class="services-intro">
+                    <span data-translate-key="services-intro">Soluciones digitales y desarrollo de software a medida para comercios, organizaciones y equipos.</span><br>
+                    <span class="services-instruction" data-translate-key="select-service-instruction">(Selecciona el servicio que necesites)</span>
+                </p>
+
+                <div class="services-grid">
+                    <div class="service-box" data-service="Desarrollo Web">
+                        <div class="service-icon-large">
+                            <i class="fas fa-code" aria-hidden="true"></i>
+                        </div>
+                        <h3 data-translate-key="web-dev-service-title">Desarrollo Web</h3>
+                        <p data-translate-key="web-dev-service-desc">Sitios web institucionales, plataformas e-commerce y aplicaciones full stack responsivas y orientadas a rendimiento y SEO.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check" aria-hidden="true"></i> <span data-translate-key="web-dev-feature-1">React, TypeScript y Tailwind/Bootstrap</span></li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> <span data-translate-key="web-dev-feature-2">APIs REST en Node.js y Express</span></li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> <span data-translate-key="web-dev-feature-3">Diseño Responsive</span></li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> <span data-translate-key="web-dev-feature-4">Pasarelas de Pago (Mercado Pago)</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="service-box" data-service="Diseño UI/UX">
+                        <div class="service-icon-large">
+                            <i class="fas fa-pen-ruler" aria-hidden="true"></i>
+                        </div>
+                        <h3 data-translate-key="ui-ux-service-title">Diseño UI/UX</h3>
+                        <p data-translate-key="ui-ux-service-desc">Relevamiento funcional y diseño de interfaces claras, accesibles y adaptables a cada dispositivo.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check" aria-hidden="true"></i> <span data-translate-key="ui-ux-feature-1">Relevamiento Funcional</span></li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> <span data-translate-key="ui-ux-feature-2">Componentes UI (MUI, Tailwind)</span></li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> <span data-translate-key="ui-ux-feature-3">Experiencia de Usuario</span></li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> <span data-translate-key="ui-ux-feature-4">Adaptación Mobile / Desktop</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="service-box" data-service="Desarrollo de Software">
+                        <div class="service-icon-large">
+                            <i class="fas fa-gears" aria-hidden="true"></i>
+                        </div>
+                        <h3 data-translate-key="software-dev-service-title">Desarrollo de Software</h3>
+                        <p data-translate-key="software-dev-service-desc">Arquitectura de datos, automatización, despliegue en entornos Linux/Docker y validación de calidad.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check" aria-hidden="true"></i> <span data-translate-key="software-dev-feature-1">PostgreSQL, MongoDB, MySQL y SQL Server</span></li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> <span data-translate-key="software-dev-feature-2">Despliegue Linux, PM2, Cloudflare y Docker</span></li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> <span data-translate-key="software-dev-feature-3">Testing Funcional y Automatizado</span></li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> <span data-translate-key="software-dev-feature-4">Mantenimiento y Evolución</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="habtec" aria-labelledby="habtec-heading" data-scroll-reveal="slide-right-scale">
+            <div class="habtec-header">
+                <i class="fas fa-layer-group" aria-hidden="true"></i>
+                <h2 id="habtec-heading" data-translate-key="technical-skills-title">Mis habilidades técnicas</h2>
+            </div>
+            <div class="habtec-grid" data-scroll-reveal="stagger">
+                <div class="habtec-column" data-scroll-reveal="slide-left">
+                    <ul>
+                        <li><span class="categoria" data-translate-key="languages-category">Lenguajes</span></li>
+                    </ul>
+                    <ul class="indent-list">
+                        <li>JavaScript</li>
+                        <li>TypeScript</li>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>SQL</li>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                    </ul>
+
+                    <ul>
+                        <li><span class="categoria" data-translate-key="frontend-category">Frontend</span></li>
+                        <li>React</li>
+                        <li>Bootstrap</li>
+                        <li>Tailwind CSS</li>
+                        <li>MUI</li>
+                        <li>Responsive Design</li>
+                    </ul>
+
+                    <ul>
+                        <li><span class="categoria" data-translate-key="backend-category">Backend</span></li>
+                        <li>Node.js</li>
+                        <li>Express.js</li>
+                        <li>REST APIs</li>
+                        <li>JWT Authentication</li>
+                        <li>CRUD</li>
+                    </ul>
+                </div>
+
+                <div class="habtec-column" data-scroll-reveal="slide-right">
+                    <ul>
+                        <li><span class="categoria" data-translate-key="databases-category">Bases de Datos</span></li>
+                        <li>PostgreSQL</li>
+                        <li>MongoDB</li>
+                        <li>MySQL</li>
+                        <li>SQL Server</li>
+                    </ul>
+
+                    <ul>
+                        <li><span class="categoria" data-translate-key="testing-category">Testing</span></li>
+                        <li>Selenium</li>
+                        <li>Postman</li>
+                        <li>Testing Funcional y Automatizado</li>
+                    </ul>
+
+                    <ul>
+                        <li><span class="categoria" data-translate-key="devops-category">DevOps y Metodologías</span></li>
+                        <li>Docker</li>
+                        <li>Git</li>
+                        <li>GitHub</li>
+                        <li>Scrum</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <section id="education" aria-labelledby="education-heading" data-scroll-reveal="slide-left-scale">
@@ -185,7 +493,7 @@
                 <div class="education-card">
                     <div class="education-card-header">
                         <div class="education-university-logo">
-                            <i class="fas fa-university" aria-hidden="true"></i>
+                            <i class="fas fa-building-columns" aria-hidden="true"></i>
                         </div>
                         <div class="education-info">
                             <h3 data-translate-key="education-tech-title">Técnico Universitario en Programación</h3>
@@ -200,7 +508,7 @@
                 <div class="education-card">
                     <div class="education-card-header">
                         <div class="education-university-logo">
-                            <i class="fas fa-university" aria-hidden="true"></i>
+                            <i class="fas fa-building-columns" aria-hidden="true"></i>
                         </div>
                         <div class="education-info">
                             <h3 data-translate-key="education-bachelor-title">Licenciatura en Informática</h3>
@@ -208,438 +516,51 @@
                         </div>
                     </div>
                     <div class="education-status">
-                        <span class="status-badge in-progress" data-translate-key="education-in-progress">En
-                            curso</span>
-                        <span class="status-detail" data-translate-key="education-advanced-student">Alumno
-                            avanzado</span>
+                        <span class="status-badge in-progress" data-translate-key="education-in-progress">En curso</span>
+                        <span class="status-detail" data-translate-key="education-advanced-student">Alumno avanzado</span>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" aria-labelledby="projects-heading" data-scroll-reveal="slide-right-massive">
-            <h2 id="projects-heading" data-translate-key="projects-title">Proyectos</h2>
-
-            <!-- Proyecto Destacado: SIGA -->
-            <div class="featured-project" data-scroll-reveal="slide-left-massive">
-                <div class="featured-badge" data-translate-key="featured-internship">Pasantía</div>
-                <div class="featured-content">
-                    <div class="featured-preview">
-                        <iframe class="featured-iframe" src="https://matnahuel.github.io/PPS-SIGA-INTA-UNAHUR/"
-                            title="Vista previa de SIGA - Sistema de Información y Gestión Agrometeorológica"
-                            sandbox="allow-same-origin allow-scripts allow-popups" loading="lazy">
-                        </iframe>
-                        <div class="featured-overlay" role="button" tabindex="0"
-                            aria-label="Abrir proyecto SIGA en pantalla completa"
-                            data-url="https://matnahuel.github.io/PPS-SIGA-INTA-UNAHUR/">
-                            <i class="fas fa-expand" aria-hidden="true"></i>
-                            <span data-translate-key="view-live">Ver en vivo</span>
-                        </div>
-                    </div>
-                    <div class="featured-info">
-                        <h3>SIGA - Sistema de Información y Gestión Agrometeorológica</h3>
-                        
-                        </h3>
-                        <p data-translate-key="siga-desc">Pasantía(PPS) en comunidad UNAHUR-INTA. Rediseño completo de
-                            la plataforma: Migración de BD (SQL Server → PostgreSQL con PostGIS), nueva API REST y nuevo
-                            frontend responsivo con mapas interactivos y reportes PDF.</p>
-                        <p data-translate-key="siga-credentials-label"><strong>Credenciales:</strong></p>
-                        <div class="credentials-grid">
-                            <div>
-                                <strong data-translate-key="siga-username-label">Usuario:</strong>
-                                <ul class="credentials-list">
-                                    <li><code>admin123</code></li>
-                                    <li><code>user</code></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <strong data-translate-key="siga-password-label">Contraseña:</strong>
-                                <ul class="credentials-list">
-                                    <li><code>admin123</code></li>
-                                    <li><code>user123</code></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="featured-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Express</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">PostGIS</span>
-                            <span class="tech-tag">Sequelize</span>
-                            <span class="tech-tag">Leaflet</span>
-                            <span class="tech-tag">react-pdf</span>
-                        </div>
-                        <p class="disclaimer-text" data-translate-key="siga-disclaimer">(Repositorio no disponible por
-                            privacidad del instituto. Los datos
-                            que podemos mostrar son acotados y el formato de diseño UX/UI es el que pidieron desde el
-                            Instituto, cuando se pueda se mostrara la web del siga)
-                        </p>
-                        <div class="featured-links">
-                            <a href="https://matnahuel.github.io/PPS-SIGA-INTA-UNAHUR/" target="_blank"
-                                rel="noopener noreferrer" class="btn-featured btn-live"
-                                aria-label="Ver proyecto en vivo">
-                                <i class="fas fa-external-link-alt" aria-hidden="true"></i> <span
-                                    data-translate-key="view-live">Ver en Vivo</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Proyecto Destacado: App Prestadores Medicos -->
-            <div class="featured-project" data-scroll-reveal="slide-right-massive">
-                <div class="featured-badge" data-translate-key="featured-project-badge">Proyecto Destacado</div>
-                <div class="featured-content">
-                    <div class="featured-preview">
-                        <iframe class="featured-iframe" src="https://des-app-front.vercel.app/"
-                            title="Vista previa de App Prestadores Medicos"
-                            sandbox="allow-same-origin allow-scripts allow-popups" loading="lazy">
-                        </iframe>
-                        <div class="featured-overlay" role="button" tabindex="0"
-                            aria-label="Abrir proyecto App Prestadores Medicos en pantalla completa"
-                            data-url="https://des-app-front.vercel.app/">
-                            <i class="fas fa-expand" aria-hidden="true"></i>
-                            <span data-translate-key="view-live">Ver en vivo</span>
-                        </div>
-                    </div>
-                    <div class="featured-info">
-                        <h3>Proyecto final: App Prestadores Medicos</h3>
-                        <p data-translate-key="app-medicos-desc">Proyecto final propuesto por los profesores de la
-                            materia Desarrollo de Aplicaciones.</p>
-                        <p><strong data-translate-key="app-medicos-assignment">Consigna:</strong> <a
-                            href="https://unahur-desapp.github.io/unahur-desapp-site/medicina-integral/propuesta-3-medicina-integral.html"
-                            target="_blank" rel="noopener noreferrer" class="link-underline-inherit">Desarrollo de Aplicaciones -
-                            UNaHur</a></p>
-                        <p data-translate-key="siga-credentials-label"><strong>Credenciales:</strong></p>
-                        <ul class="credentials-list">
-                            <li><span data-translate-key="siga-username-label">Usuario:</span> <code>11111111111</code>
-                                o <code>22222222222</code> o <code>33333333333</code>
-                            </li>
-                            <li><span data-translate-key="siga-password-label">Contraseña:</span> <code>123</code></li>
-                        </ul>
-                        <div class="featured-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">MUI</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Express</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Mongoose</span>
-                        </div>
-                        <div class="featured-links">
-                            <a href="https://github.com/orgs/DesApp-2025c2-Grupo5/repositories" target="_blank"
-                                rel="noopener noreferrer" class="btn-featured btn-repo"
-                                aria-label="Ver repositorios del grupo en GitHub">
-                                <i class="fab fa-github" aria-hidden="true"></i> Repositorios
-                            </a>
-                            <a href="https://des-app-front.vercel.app/" target="_blank"
-                                rel="noopener noreferrer" class="btn-featured btn-live"
-                                aria-label="Ver proyecto en vivo">
-                                <i class="fas fa-external-link-alt" aria-hidden="true"></i> Ver en Vivo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Proyecto Destacado: CIUTEAM -->
-            <div class="featured-project" data-scroll-reveal="slide-left-massive">
-                <div class="featured-badge" data-translate-key="featured-project-badge">Proyecto Destacado</div>
-                <div class="featured-content">
-                    <div class="featured-preview">
-                        <iframe class="featured-iframe" src="https://matnahuel.github.io/CIUTEAM-Anti-Social-Net"
-                            title="Vista previa de CIUTEAM-Anti-Social-Net"
-                            sandbox="allow-same-origin allow-scripts allow-popups" loading="lazy">
-                        </iframe>
-                        <div class="featured-overlay" role="button" tabindex="0"
-                            aria-label="Abrir proyecto CIUTEAM en pantalla completa"
-                            data-url="https://matnahuel.github.io/CIUTEAM-Anti-Social-Net">
-                            <i class="fas fa-expand" aria-hidden="true"></i>
-                            <span>Ver en vivo</span>
-                        </div>
-                    </div>
-                    <div class="featured-info">
-                        <h3>CIUTEAM - Anti-Social-Net</h3>
-                        <p data-translate-key="ciuteam-desc">Es el desarrollo del proyecto final de la materia
-                            Construcción de interfaces de la
-                            Tecnicatura Universitaria en Programación. Una red social con interfaz moderna y
-                            funcionalidades completas para interacción de usuarios.</p>
-                        <p data-translate-key="siga-credentials-label"><strong>Credenciales:</strong></p>
-                        <div class="credentials-grid">
-                            <div>
-                                <strong data-translate-key="siga-username-label">Usuario:</strong>
-                                <ul class="credentials-list">
-                                    <li><code>Luna</code></li>
-                                    <li><code>Sol</code></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <strong data-translate-key="siga-password-label">Contraseña:</strong>
-                                <ul class="credentials-list">
-                                    <li><code>123456</code></li>
-                                    <li><code>123456</code></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="featured-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">CSS</span>
-                        </div>
-                        <div class="featured-links">
-                            <a href="https://github.com/Matnahuel/CIUTEAM-Anti-Social-Net" target="_blank"
-                                rel="noopener noreferrer" class="btn-featured btn-repo"
-                                aria-label="Ver repositorio en GitHub">
-                                <i class="fab fa-github" aria-hidden="true"></i> Repositorio
-                            </a>
-                            <a href="https://matnahuel.github.io/CIUTEAM-Anti-Social-Net" target="_blank"
-                                rel="noopener noreferrer" class="btn-featured btn-live"
-                                aria-label="Ver proyecto en vivo">
-                                <i class="fas fa-external-link-alt" aria-hidden="true"></i> Ver en Vivo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Proyecto Destacado: WalMat -->
-            <div class="featured-project" data-scroll-reveal="slide-right-massive">
-                <div class="featured-badge" data-translate-key="featured-project-badge">Proyecto Destacado</div>
-                <div class="featured-content">
-                    <div class="featured-preview">
-                        <iframe class="featured-iframe" src="https://matnahuel.github.io/WalMat---Tienda-Oficial/#/"
-                            title="Vista previa de WalMat - Tienda Oficial"
-                            sandbox="allow-same-origin allow-scripts allow-popups" loading="lazy">
-                        </iframe>
-                        <div class="featured-overlay" role="button" tabindex="0"
-                            aria-label="Abrir proyecto WalMat en pantalla completa"
-                            data-url="https://matnahuel.github.io/WalMat---Tienda-Oficial/#/">
-                            <i class="fas fa-expand" aria-hidden="true"></i>
-                            <span>Ver en vivo</span>
-                        </div>
-                    </div>
-                    <div class="featured-info">
-                        <h3>WalMat - Tienda Oficial</h3>
-                        <p data-translate-key="walmart-desc1">WalMat es una solución de comercio electrónico totalmente
-                            funcional, desarrollada como
-                            proyecto final del curso de React de TalentoTech. Este proyecto demuestra dominio en el
-                            desarrollo frontend moderno y la gestión de estados complejos.</p>
-                        <p data-translate-key="walmart-desc2">Un e-commerce completamente funcional con catálogo
-                            dinámico, gestión integral de carrito de
-                            compras y diseño responsive para una experiencia de usuario óptima en cualquier dispositivo.
-                        </p>
-                        <p data-translate-key="siga-credentials-label"><strong>Credenciales:</strong></p>
-                        <div class="credentials-grid">
-                            <div>
-                                <strong data-translate-key="siga-username-label">Usuario:</strong>
-                                <ul class="credentials-list">
-                                    <li><code>testuser</code></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <strong data-translate-key="siga-password-label">Contraseña:</strong>
-                                <ul class="credentials-list">
-                                    <li><code>password123</code></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="featured-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">CSS</span>
-                        </div>
-                        <div class="featured-links">
-                            <a href="https://github.com/Matnahuel/WalMat---Tienda-Oficial" target="_blank"
-                                rel="noopener noreferrer" class="btn-featured btn-repo"
-                                aria-label="Ver repositorio en GitHub">
-                                <i class="fab fa-github" aria-hidden="true"></i> Repositorio
-                            </a>
-                            <a href="https://matnahuel.github.io/WalMat---Tienda-Oficial/#/" target="_blank"
-                                rel="noopener noreferrer" class="btn-featured btn-live"
-                                aria-label="Ver proyecto en vivo">
-                                <i class="fas fa-external-link-alt" aria-hidden="true"></i> Ver en Vivo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="projects-container">
-            </div>
-        </section>
-
-        <!-- Modal de Servicios -->
-        <div id="services-modal" class="services-modal" role="dialog" aria-labelledby="services-modal-heading"
-            aria-hidden="true">
-            <div class="services-modal-overlay"></div>
-            <div class="services-modal-content">
-                <button id="services-modal-close" class="services-modal-close" aria-label="Cerrar modal de servicios">
-                    <i class="fas fa-times"></i>
-                </button>
-
-                <h2 id="services-modal-heading" data-translate-key="my-services-title">Mis Servicios</h2>
-                <p class="services-intro">
-                    <span data-translate-key="services-intro">Ofrecer soluciones profesionales adaptadas a tus
-                        necesidades. Ofrezco servicios integrales para dar vida a tus ideas.</span><br>
-                    <span class="services-instruction" data-translate-key="select-service-instruction">(Selecciona el
-                        servicio que necesites)</span>
-                </p>
-
-                <div class="services-grid">
-                    <div class="service-box" data-service="Desarrollo Web">
-                        <div class="service-icon-large">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <h3 data-translate-key="web-dev-service-title">Desarrollo Web</h3>
-                        <p data-translate-key="web-dev-service-desc">Sitios web personalizados construidos con
-                            tecnologías modernas. Diseño responsivo, optimización y una experiencia de usuario fluida.
-                        </p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> <span data-translate-key="web-dev-feature-1">Desarrollo
-                                    Frontend</span></li>
-                            <li><i class="fas fa-check"></i> <span data-translate-key="web-dev-feature-2">Integración
-                                    Backend</span></li>
-                            <li><i class="fas fa-check"></i> <span data-translate-key="web-dev-feature-3">Diseño
-                                    Responsive</span></li>
-                            <li><i class="fas fa-check"></i> <span data-translate-key="web-dev-feature-4">Optimización
-                                    del Rendimiento</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="service-box" data-service="Diseño UI/UX">
-                        <div class="service-icon-large">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                        <h3 data-translate-key="ui-ux-service-title">Diseño UI/UX</h3>
-                        <p data-translate-key="ui-ux-service-desc">Crear interfaces de usuario intuitivas y atractivas
-                            que mejoren la experiencia de usuario.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> <span data-translate-key="ui-ux-feature-1">Sistema de
-                                    Diseño</span></li>
-                            <li><i class="fas fa-check"></i> <span
-                                    data-translate-key="ui-ux-feature-2">Prototipado</span></li>
-                            <li><i class="fas fa-check"></i> <span data-translate-key="ui-ux-feature-3">Experiencia de
-                                    Usuario</span></li>
-                            <li><i class="fas fa-check"></i> <span data-translate-key="ui-ux-feature-4">Diseño de
-                                    Interfaces</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="service-box" data-service="Desarrollo de Software">
-                        <div class="service-icon-large">
-                            <i class="fas fa-gears"></i>
-                        </div>
-                        <h3 data-translate-key="software-dev-service-title">Desarrollo de Software</h3>
-                        <p data-translate-key="software-dev-service-desc">Soluciones de software personalizadas para
-                            satisfacer las necesidades específicas de tu negocio.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> <span
-                                    data-translate-key="software-dev-feature-1">Aplicaciones de Escritorio</span></li>
-                            <li><i class="fas fa-check"></i> <span
-                                    data-translate-key="software-dev-feature-2">Integración de Sistemas</span></li>
-                            <li><i class="fas fa-check"></i> <span
-                                    data-translate-key="software-dev-feature-3">Desarrollo de APIs</span></li>
-                            <li><i class="fas fa-check"></i> <span data-translate-key="software-dev-feature-4">Diseño de
-                                    Bases de Datos</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <section id="habtec" aria-labelledby="habtec-heading" data-scroll-reveal="slide-right-scale">
-            <div class="habtec-header">
-                <i class="fas fa-boxes" aria-hidden="true"></i>
-                <h2 id="habtec-heading" data-translate-key="technical-skills-title">Mis habilidades técnicas</h2>
-            </div>
-            <div class="habtec-grid" data-scroll-reveal="stagger">
-                <div class="habtec-column" data-scroll-reveal="slide-left">
-                    <ul>
-                        <li><span class="categoria" data-translate-key="languages-category">Lenguajes</span></li>
-                    </ul>
-                    <ul class="indent-list">
-                        <li><span class="sub-categoria">Frontend</span></li>
-                        <li>CSS</li>
-                        <li>HTML</li>
-                        <li>JavaScript</li>
-                        <li>TypeScript</li>
-                    </ul>
-                    <ul class="indent-list">
-                        <li><span class="sub-categoria">Backend</span></li>
-                        <li>Java</li>
-                        <li>JavaScript</li>
-                        <li>NodeJS</li>
-                        <li>Python</li>
-                    </ul>
-                    <ul>
-                        <li><span class="categoria" data-translate-key="frameworks-category">Frameworks</span></li>
-                        <li>Bootstrap</li>
-                        <li>React</li>
-                        <li>Tailwind</li>
-                    </ul>
-                </div>
-                <div class="habtec-column" data-scroll-reveal="slide-right">
-                    <ul>
-                        <li><span class="categoria" data-translate-key="databases-category">Bases de Datos</span></li>
-                        <li>MongoDB</li>
-                        <li>MySQL</li>
-                        <li>PostgreSQL</li>
-                    </ul>
-                    <ul>
-                        <li><span class="categoria" data-translate-key="tools-category">Herramientas</span></li>
-                        <li>Figma</li>
-                        <li>Git</li>
-                        <li>GitHub</li>
-                        <li>Postman</li>
-                    </ul>
-                    <p data-translate-key="learning-more">Y puedo aprender más...</p>
                 </div>
             </div>
         </section>
 
         <section id="certifications" aria-labelledby="certifications-heading" data-scroll-reveal="slide-right-scale">
             <div class="certifications-header">
-                <i class="fas fa-award certifications-icon" aria-hidden="true"></i>
+                <i class="fas fa-certificate certifications-icon" aria-hidden="true"></i>
                 <h2 id="certifications-heading" data-translate-key="certifications-title">Certificaciones</h2>
             </div>
 
             <div class="certifications-list" data-scroll-reveal="stagger">
                 <div class="certification-item">
-                    <p data-translate-key="cert-frontend-dev"><strong>Desarrollador Front-end.</strong>
-                        ProgramAR/Ticmas, Certificado.</p>
-                    <button type="button" class="cert-btn" data-image="assets/certificaciones/frontend.jpeg">Certificado</button>
-                </div>
-                <div class="certification-item">
-                    <p data-translate-key="cert-python-intro"><strong>Introducción a Python.</strong> UNAHUR/CTTP,
-                        Certificado.</p>
-                    <button type="button" class="cert-btn" data-image="assets/certificaciones/Introducción a Python.jpg">Certificado</button>
-                </div>
-                <div class="certification-item">
-                    <p data-translate-key="cert-javascript"><strong>JavaScript.</strong> CEIT/UNAHUR, Certificado.</p>
-                    <button type="button" class="cert-btn" data-image="assets/certificaciones/JavaScript.jpg">Certificado</button>
-                </div>
-                <div class="certification-item">
-                    <p data-translate-key="cert-python-data-processing"><strong>Procesamiento de datos con
-                            Python.</strong> ProgramAR/Ticmas, Certificado.</p>
-                    <button type="button" class="cert-btn" data-image="assets/certificaciones/procesamiento de datos python.jpeg">Certificado</button>
-                </div>
-                <div class="certification-item">
-                    <p data-translate-key="cert-project-management"><strong>Project Management.</strong> CEIT/UNAHUR,
-                        Certificado.</p>
-                    <button type="button" class="cert-btn" data-image="assets/certificaciones/Project Management.jpg">Certificado</button>
-                </div>
-                <div class="certification-item">
-                    <p data-translate-key="cert-reactjs"><strong>ReactJS.</strong> TalentoTech, Certificado.</p>
+                    <p data-translate-key="cert-reactjs"><strong>ReactJS.</strong> TalentoTech (2025).</p>
                     <button type="button" class="cert-btn" data-image="assets/certificaciones/reactjs.jpg">Certificado</button>
                 </div>
                 <div class="certification-item">
-                    <p data-translate-key="cert-automated-testing"><strong>Testing 2 (Automatizado).</strong>
-                        UNAHUR/CTTP, Certificado.</p>
+                    <p data-translate-key="cert-testing-qa"><strong>Testing QA.</strong> TalentoTech (2025).</p>
+                    <button type="button" class="cert-btn" data-image="assets/certificaciones/QA_-_Certificacin_page-0001.jpg">Certificado</button>
+                </div>
+                <div class="certification-item">
+                    <p data-translate-key="cert-javascript"><strong>JavaScript.</strong> UNAHUR &amp; CEIT (2024).</p>
+                    <button type="button" class="cert-btn" data-image="assets/certificaciones/JavaScript.jpg">Certificado</button>
+                </div>
+                <div class="certification-item">
+                    <p data-translate-key="cert-automated-testing"><strong>Testing 2.</strong> UNAHUR &amp; CTTP (2025).</p>
                     <button type="button" class="cert-btn" data-image="assets/certificaciones/Testing 2.jpg">Certificado</button>
                 </div>
                 <div class="certification-item">
-                    <p data-translate-key="cert-testing-qa"><strong>Testing QA.</strong> Talento Tech, Certificado.</p>
-                    <button type="button" class="cert-btn" data-image="assets/certificaciones/QA_-_Certificacin_page-0001.jpg">Certificado</button>
+                    <p data-translate-key="cert-frontend-dev"><strong>Desarrollador Front-end.</strong> ProgramAR &amp; Ticmas (2023).</p>
+                    <button type="button" class="cert-btn" data-image="assets/certificaciones/frontend.jpeg">Certificado</button>
+                </div>
+                <div class="certification-item">
+                    <p data-translate-key="cert-python-data-processing"><strong>Procesamiento de datos con Python.</strong> ProgramAR &amp; Ticmas (2025).</p>
+                    <button type="button" class="cert-btn" data-image="assets/certificaciones/procesamiento de datos python.jpeg">Certificado</button>
+                </div>
+                <div class="certification-item">
+                    <p data-translate-key="cert-project-management"><strong>Project Management.</strong> UNAHUR &amp; CEIT (2025).</p>
+                    <button type="button" class="cert-btn" data-image="assets/certificaciones/Project Management.jpg">Certificado</button>
+                </div>
+                <div class="certification-item">
+                    <p data-translate-key="cert-python-intro"><strong>Introducción a Python.</strong> UNAHUR/CTTP, Certificado.</p>
+                    <button type="button" class="cert-btn" data-image="assets/certificaciones/Introducción a Python.jpg">Certificado</button>
                 </div>
             </div>
         </section>
@@ -647,7 +568,7 @@
         <section id="languages" aria-labelledby="languages-heading" data-scroll-reveal="slide-left">
             <div class="languages-header">
                 <div class="lang-icon-circle" aria-hidden="true">
-                    <i class="fas fa-language lang-icon"></i>
+                    <i class="fas fa-globe lang-icon"></i>
                 </div>
                 <h2 id="languages-heading" data-translate-key="languages-title">Idiomas</h2>
             </div>
@@ -671,26 +592,20 @@
             <h2 id="services-heading" data-translate-key="what-im-doing-title">LO QUE ESTOY HACIENDO</h2>
             <div class="services-container">
                 <div class="service-card" data-scroll-reveal="slide-left">
-                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <div class="service-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
                     <div class="service-content">
-                        <h4 data-translate-key="web-development-title">Desarrollo Web/Software</h4>
-                        <p data-translate-key="web-development-text">Brindar servicios de desarrollo web y software de
-                            alta calidad, creando soluciones Front-end, Back-end y de negocio robustas y eficientes.</p>
+                        <h4 data-translate-key="web-development-title">Desarrollo Web Full Stack y Software</h4>
+                        <p data-translate-key="web-development-text">Desarrollo de aplicaciones web, e-commerce y APIs REST con React, TypeScript, Node.js, Express, PostgreSQL y MongoDB, además de despliegue en Linux/Docker.</p>
                     </div>
                 </div>
 
                 <div class="service-card" data-scroll-reveal="slide-right">
-                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <div class="service-icon"><i class="fas fa-mobile-screen-button" aria-hidden="true"></i></div>
                     <div class="service-content">
-                        <h4 data-translate-key="responsive-design-title">Diseño Responsivo</h4>
-                        <p data-translate-key="responsive-design-text">Crear interfaces de usuario que se adapten a
-                            cualquier dispositivo, utilizando tecnologías
-                            como
-                            CSS, Bootstrap y Tailwind.</p>
+                        <h4 data-translate-key="responsive-design-title">Diseño Responsivo y Calidad (QA)</h4>
+                        <p data-translate-key="responsive-design-text">Interfaces adaptables a mobile, tablet y desktop con Tailwind CSS, Bootstrap y MUI, respaldadas por testing funcional y automatizado.</p>
                     </div>
                 </div>
-
-
             </div>
         </section>
     </main>
@@ -698,17 +613,17 @@
     <footer role="contentinfo" id="footer-Contacto">
         <div class="footer-content">
             <div class="footer-section" id="footer-main">
-                <h3>Matías Nahuel Carabajal</h3>
-                <p data-translate-key="footer-job-title">Desarrollador Full Stack</p>
+                <h3>Matias Nahuel Carabajal</h3>
+                <p data-translate-key="footer-job-title">Desarrollador Full Stack | Técnico Universitario en Programación</p>
                 <div class="footer-action-buttons">
                     <a href="https://calendly.com/matias-carabajal-estudiantes/30min" target="_blank"
                         rel="noopener noreferrer" class="btn-footer-calendar"
-                        aria-label="Agendar una entrevista con Matías Carabajal"
+                        aria-label="Agendar una entrevista con Matias Carabajal"
                         data-translate-key="schedule-interview">
-                        <i class="fas fa-calendar-alt" aria-hidden="true"></i> Agendar Entrevista
+                        <i class="fas fa-calendar-check" aria-hidden="true"></i> Agendar Entrevista
                     </a>
-                    <a href="mailto:matias.carabajal.trabajo@gmail.com?subject=Propuesta%20de%20Trabajo&body=Hola%20Matías,%0A%0AMe%20interesa%20discutir%20una%20oportunidad%20de%20trabajo%20contigo.%0A%0ASaludos"
-                        class="btn-footer-hire" aria-label="Enviar propuesta de trabajo a Matías Carabajal"
+                    <a href="mailto:matias.carabajal.trabajo@gmail.com?subject=Propuesta%20de%20Trabajo&body=Hola%20Matias,%0A%0AMe%20interesa%20discutir%20una%20oportunidad%20de%20trabajo%20contigo.%0A%0ASaludos"
+                        class="btn-footer-hire" aria-label="Enviar propuesta de trabajo a Matias Carabajal"
                         data-translate-key="hire-me">
                         <i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar Propuesta
                     </a>
@@ -722,7 +637,7 @@
                 <h4 data-translate-key="footer-contact-title">Contacto</h4>
                 <div class="footer-links" role="list">
                     <a href="mailto:matias.carabajal.trabajo@gmail.com"
-                        aria-label="Enviar correo electrónico a Matías Carabajal" role="listitem">
+                        aria-label="Enviar correo electrónico a Matias Carabajal" role="listitem">
                         <i class="fas fa-envelope" aria-hidden="true"></i> Email
                     </a>
                     <a href="https://wa.me/+5491130022107" target="_blank" rel="noopener noreferrer"
@@ -735,31 +650,26 @@
                 <h4 data-translate-key="footer-social-title">Redes Sociales</h4>
                 <div class="footer-social-links" role="list" aria-label="Enlaces a redes sociales">
                     <a href="https://www.linkedin.com/in/matiasncarabajal/" target="_blank" rel="noopener noreferrer"
-                        aria-label="Visitar perfil de LinkedIn de Matías Carabajal" role="listitem">
+                        aria-label="Visitar perfil de LinkedIn de Matias Carabajal" role="listitem">
                         <i class="fab fa-linkedin" aria-hidden="true"></i>
                         <span class="sr-only">LinkedIn</span>
                     </a>
                     <a href="https://github.com/Matnahuel" target="_blank" rel="noopener noreferrer"
-                        aria-label="Visitar perfil de GitHub de Matías Carabajal" role="listitem">
+                        aria-label="Visitar perfil de GitHub de Matias Carabajal" role="listitem">
                         <i class="fab fa-github" aria-hidden="true"></i>
                         <span class="sr-only">GitHub</span>
                     </a>
                 </div>
             </div>
             <div class="footer-section footer-feedback-section" aria-labelledby="feedback-heading">
-                <h4 id="feedback-heading" data-translate-key="feedback-heading">Si llegaste hasta acá, me interesa tu
-                    devolución para poder seguir
-                    mejorando.</h4>
+                <h4 id="feedback-heading" data-translate-key="feedback-heading">Si llegaste hasta acá, me interesa tu devolución para poder seguir mejorando.</h4>
 
-                <form id="feedback-form" novalidate
-                    aria-label="Formulario de opinión">
-                    <label for="feedback-email" class="sr-only" data-translate-key="feedback-email-label">Correo
-                        electrónico</label>
+                <form id="feedback-form" novalidate aria-label="Formulario de opinión">
+                    <label for="feedback-email" class="sr-only" data-translate-key="feedback-email-label">Correo electrónico</label>
                     <input id="feedback-email" name="email" type="email" placeholder="Ingresar correo" required
                         aria-required="true" data-placeholder-key="feedback-email-placeholder">
 
-                    <label for="feedback-message" class="sr-only"
-                        data-translate-key="feedback-message-label">Sugerencia</label>
+                    <label for="feedback-message" class="sr-only" data-translate-key="feedback-message-label">Sugerencia</label>
                     <textarea id="feedback-message" name="message" placeholder="Me interesa tu opinion..." rows="3"
                         minlength="5" required aria-required="true"
                         data-placeholder-key="feedback-message-placeholder"></textarea>
@@ -771,8 +681,7 @@
                 </form>
             </div>
             <div class="footer-bottom">
-                <p data-translate-key="footer-rights-reserved">© 2025 Matias Nahuel Carabajal. Todos los
-                    derechos reservados.</p>
+                <p data-translate-key="footer-rights-reserved">© 2026 Matias Nahuel Carabajal. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
@@ -780,68 +689,68 @@
     <!-- Botón Flotante FAB con Chatbot MatIAs -->
     <div class="fab-container fab-bottom-right" id="fab-container">
         <button class="fab-main" id="fab-main" aria-label="Abrir chatbot MatIAs" aria-expanded="false">
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-comment-dots" aria-hidden="true"></i>
         </button>
-        
+
         <div class="chat-container hidden" id="chat-container">
             <div class="chat-header">
-                <h3><i class="fas fa-robot"></i> MatIAs</h3>
+                <h3><i class="fas fa-comment-dots" aria-hidden="true"></i> MatIAs</h3>
                 <button class="chat-close" id="chat-close" aria-label="Cerrar chat">
-                    <i class="fas fa-times"></i>
+                    <i class="fas fa-xmark" aria-hidden="true"></i>
                 </button>
             </div>
-            
+
             <div class="chat-content">
                 <div class="chat-message bot-message">
                     <p>¡Hola! Soy MatIAs, tu asistente personal. ¿En qué puedo ayudarte?</p>
                 </div>
-                
+
                 <div class="chat-suggestions" id="chat-suggestions">
                     <button class="suggestion-btn" data-target="#projects">
-                        <i class="fas fa-folder-open"></i>
-                        <span>¿Cuales son tus proyectos?</span>
+                        <i class="fas fa-folder-open" aria-hidden="true"></i>
+                        <span>¿Cuáles son tus proyectos?</span>
                     </button>
-                    
+
                     <button class="suggestion-btn" data-target="#habtec">
-                        <i class="fas fa-laptop-code"></i>
+                        <i class="fas fa-laptop-code" aria-hidden="true"></i>
                         <span>¿Qué habilidades técnicas tienes?</span>
                     </button>
-                    
+
                     <button class="suggestion-btn" data-target="#certifications">
-                        <i class="fas fa-certificate"></i>
+                        <i class="fas fa-certificate" aria-hidden="true"></i>
                         <span>¿Qué certificaciones tienes?</span>
                     </button>
-                    
+
                     <button class="suggestion-btn" data-target="#" id="services-chat-btn">
-                        <i class="fas fa-briefcase"></i>
-                        <span>¿Cuales son tus servicios?</span>
+                        <i class="fas fa-briefcase" aria-hidden="true"></i>
+                        <span>¿Cuáles son tus servicios?</span>
                     </button>
-                    
+
                     <button class="suggestion-btn" data-target="#footer-Contacto">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
                         <span>¿Cómo puedo contactarte?</span>
                     </button>
-                    
+
                     <button class="suggestion-btn" id="download-cv-chat-btn">
-                        <i class="fas fa-file-pdf"></i>
+                        <i class="fas fa-file-pdf" aria-hidden="true"></i>
                         <span>Descargar mi CV ATS</span>
                     </button>
                 </div>
             </div>
-            
+
             <div class="chat-footer">
                 <p class="footer-text">O conecta directamente:</p>
                 <div class="chat-social-links">
                     <a href="https://www.linkedin.com/in/matiasncarabajal/" target="_blank" rel="noopener noreferrer" class="chat-social fab-linkedin" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-linkedin" aria-hidden="true"></i>
                     </a>
-                    
+
                     <a href="https://github.com/Matnahuel" target="_blank" rel="noopener noreferrer" class="chat-social fab-github" title="GitHub">
-                        <i class="fab fa-github"></i>
+                        <i class="fab fa-github" aria-hidden="true"></i>
                     </a>
-                    
+
                     <a href="https://wa.me/5491130022107" target="_blank" rel="noopener noreferrer" class="chat-social fab-whatsapp" title="WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
@@ -853,8 +762,6 @@
         <i class="fas fa-arrow-up" aria-hidden="true"></i>
         <span class="sr-only" data-translate-key="back-to-top">Volver arriba</span>
     </button>
-
-    <script src="script.js"></script>
 </body>
 
 </html>
