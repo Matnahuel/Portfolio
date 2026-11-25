@@ -620,3 +620,82 @@
 .chat-content::-webkit-scrollbar-thumb:hover {
     background: var(--accent-color);
 }
+
+/* Botones estilo offset con paleta propia */
+.cv-download-button, .hire-button, .calendar-button, .btn-featured, .btn-footer, .btn-footer-hire, .btn-footer-calendar, .btn-footer-services, .cert-btn, .toggle-button,
+.profile-card .profile-top-actions .cv-download-button,
+.profile-card .profile-top-actions .hire-button,
+.profile-card .profile-top-actions .calendar-button,
+.profile-card .profile-top-actions .toggle-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border-radius: 7px;
+  padding: 9px 16px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.cv-download-button, .hire-button, .btn-featured.btn-live, .btn-footer, .btn-footer-hire,
+.profile-card .profile-top-actions .cv-download-button,
+.profile-card .profile-top-actions .hire-button,
+.profile-card .profile-top-actions .calendar-button {
+  background-color: var(--primary-color) !important;
+  color: #f6f4ec !important;
+  border: 1px solid var(--primary-color) !important;
+  box-shadow: 3px 3px 0 var(--surface), 3px 3px 0 1px var(--border-color) !important;
+}
+
+.cv-download-button:hover, .hire-button:hover, .btn-featured.btn-live:hover, .btn-footer:hover, .btn-footer-hire:hover,
+.profile-card .profile-top-actions .cv-download-button:hover,
+.profile-card .profile-top-actions .hire-button:hover,
+.profile-card .profile-top-actions .calendar-button:hover {
+  background-color: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--surface), 2px 2px 0 1px var(--border-color) !important;
+}
+
+.calendar-button, .btn-featured.btn-repo, .btn-footer-calendar, .btn-footer-services, .cert-btn, .toggle-button,
+.profile-card .profile-top-actions .toggle-button {
+  background-color: var(--bg-color) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 3px 3px 0 var(--surface), 3px 3px 0 1px var(--border-color) !important;
+}
+
+.calendar-button:hover, .btn-featured.btn-repo:hover, .btn-footer-calendar:hover, .btn-footer-services:hover, .cert-btn:hover, .toggle-button:hover,
+.profile-card .profile-top-actions .toggle-button:hover {
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--surface), 2px 2px 0 1px var(--border-color) !important;
+}
+
+body.dark-mode .cv-download-button, body.dark-mode .hire-button, body.dark-mode .btn-featured.btn-live, body.dark-mode .btn-footer, body.dark-mode .btn-footer-hire,
+body.dark-mode .profile-card .profile-top-actions .cv-download-button,
+body.dark-mode .profile-card .profile-top-actions .hire-button,
+body.dark-mode .profile-card .profile-top-actions .calendar-button {
+  color: #18171d !important;
+  font-weight: 600;
+}
+
+body.dark-mode .cv-download-button:hover, body.dark-mode .hire-button:hover, body.dark-mode .btn-featured.btn-live:hover, body.dark-mode .btn-footer:hover, body.dark-mode .btn-footer-hire:hover,
+body.dark-mode .profile-card .profile-top-actions .cv-download-button:hover,
+body.dark-mode .profile-card .profile-top-actions .hire-button:hover,
+body.dark-mode .profile-card .profile-top-actions .calendar-button:hover {
+  color: #141318 !important;
+}
+
+body.dark-mode .calendar-button:hover, body.dark-mode .btn-featured.btn-repo:hover, body.dark-mode .btn-footer-calendar:hover, body.dark-mode .btn-footer-services:hover, body.dark-mode .cert-btn:hover, body.dark-mode .toggle-button:hover,
+body.dark-mode .profile-card .profile-top-actions .toggle-button:hover {
+  border-color: var(--accent-color) !important;
+  color: var(--accent-color) !important;
+}

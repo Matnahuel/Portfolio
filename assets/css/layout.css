@@ -529,3 +529,207 @@ body.dark-mode .feedback-status--error {
 .back-to-top:active {
     transform: translateY(-1px) scale(0.96);
 }
+/* Header: logo MC al centro y controles a la derecha */
+.mc-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.mc-svg {
+  height: 52px;
+  width: auto;
+  display: block;
+}
+.mc-initials {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  fill: currentColor;
+  letter-spacing: 2.5px;
+}
+.mc-rule {
+  stroke: currentColor;
+  stroke-width: 1.1;
+  opacity: 0.75;
+}
+.mc-fullname {
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  fill: var(--text-primary);
+}
+
+header nav,
+.navbar,
+.nav-container,
+.header-inner {
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.mc-brand-logo,
+.nav-brand {
+  grid-column: 2 !important;
+  justify-self: center !important;
+  margin: 0 auto !important;
+}
+
+.header-right-controls,
+.nav-controls,
+.header-actions {
+  grid-column: 3 !important;
+  justify-self: end !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+#nav-links {
+  grid-column: 1 / -1 !important;
+  justify-self: center !important;
+}
+
+@media (max-width: 768px) {
+  .mc-svg {
+    height: 44px;
+  }
+}
+
+
+
+/* Header 3 columnas: menu izq, MC centro, controles der */
+header nav,
+header .nav-container,
+header .navbar {
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 1320px !important;
+  margin: 0 auto !important;
+  padding: 12px 24px !important;
+  gap: 16px !important;
+}
+
+/* Columna 1 (izquierda): enlaces del menú */
+header nav > ul,
+header #nav-links {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  justify-self: start !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Columna 2 (centro): logo MC MATIAS CARABAJAL */
+header nav > *:has(.mc-svg),
+header nav > .mc-brand-logo,
+header nav > .nav-brand,
+header nav > h1 {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  justify-self: center !important;
+  margin: 0 auto !important;
+}
+
+/* Columna 3 (derecha): selector de idioma + tema */
+header nav > .header-right-controls,
+header nav > *:has(#theme-toggle),
+header nav > *:has(.theme-toggle),
+header nav > *:has(#language-selector),
+header nav > *:has(.language-selector) {
+  grid-column: 3 !important;
+  grid-row: 1 !important;
+  justify-self: end !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-left: auto !important;
+}
+
+@media (max-width: 1024px) {
+  header nav,
+  header .nav-container,
+  header .navbar {
+    grid-template-columns: 1fr auto !important;
+    padding: 10px 16px !important;
+  }
+  header nav > *:has(.mc-svg),
+  header nav > .mc-brand-logo,
+  header nav > .nav-brand,
+  header nav > h1 {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    justify-self: start !important;
+    margin: 0 !important;
+  }
+  header nav > .header-right-controls,
+  header nav > *:has(#theme-toggle),
+  header nav > *:has(.theme-toggle) {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    justify-self: end !important;
+  }
+  header nav > ul,
+  header #nav-links {
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    justify-self: start !important;
+    gap: 12px !important;
+  }
+}
+
+
+/* Gris sobrio forzado en todos los íconos */
+:is(.profile-card, .contact-item, .profile-contact-item, .social-links, .footer-social-links, .habtec-header, section, footer) :is(i, svg):not(.mc-svg) {
+  color: #5f665f !important;
+  fill: #5f665f !important;
+  stroke: #5f665f !important;
+}
+
+:is(.profile-card, .contact-item, .profile-contact-item, .social-links, .footer-social-links, .habtec-header, section, footer) svg:not(.mc-svg) :is(path, circle, rect, polygon, line, polyline, ellipse) {
+  fill: #5f665f !important;
+}
+
+:is(.social-links, .footer-social-links) a {
+  background-color: var(--bg-color) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px;
+}
+
+:is(.social-links, .footer-social-links) a:hover {
+  border-color: var(--primary-color) !important;
+  transform: translateY(-1px);
+}
+
+:is(.social-links, .footer-social-links) a:hover :is(i, svg, path, circle, rect, polygon) {
+  color: var(--primary-color) !important;
+  fill: var(--primary-color) !important;
+}
+
+body.dark-mode :is(.profile-card, .contact-item, .profile-contact-item, .social-links, .footer-social-links, .habtec-header, section, footer) :is(i, svg):not(.mc-svg) {
+  color: #9592a6 !important;
+  fill: #9592a6 !important;
+  stroke: #9592a6 !important;
+}
+
+body.dark-mode :is(.profile-card, .contact-item, .profile-contact-item, .social-links, .footer-social-links, .habtec-header, section, footer) svg:not(.mc-svg) :is(path, circle, rect, polygon, line, polyline, ellipse) {
+  fill: #9592a6 !important;
+}
+
+body.dark-mode :is(.social-links, .footer-social-links) a:hover {
+  border-color: var(--accent-color) !important;
+}
+
+body.dark-mode :is(.social-links, .footer-social-links) a:hover :is(i, svg, path, circle, rect, polygon) {
+  color: var(--accent-color) !important;
+  fill: var(--accent-color) !important;
+}

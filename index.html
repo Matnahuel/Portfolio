@@ -81,13 +81,11 @@
         <nav role="navigation" aria-label="Navegación principal">
             <div class="nav-left">
                 <ul id="nav-links" role="menubar">
-                    <li role="none"><a href="#about" role="menuitem" data-translate-key="about-me-title">Sobre Mí</a></li>
                     <li role="none"><a href="#experience" role="menuitem" data-translate-key="experience-title">Experiencia</a></li>
                     <li role="none"><a href="#projects" role="menuitem" data-translate-key="projects-title">Proyectos</a></li>
-                    <li role="none"><a href="#habtec" role="menuitem" data-translate-key="technical-skills-title">Mis Habilidades</a></li>
                     <li role="none"><a href="#certifications" role="menuitem" data-translate-key="certifications-title">Certificaciones</a></li>
                     <li role="none"><a href="#footer-Contacto" role="menuitem" data-translate-key="footer-contact-title">Contacto</a></li>
-                    <li role="none"><a href="#" id="services-trigger" role="menuitem" data-translate-key="my-services-title">Mis Servicios</a></li>
+                    <li role="none"><a href="#" id="services-trigger" role="menuitem" data-translate-key="my-services-title">Servicios</a></li>
                 </ul>
                 <button id="hamburger" aria-label="Abrir menú de navegación" aria-expanded="false"
                     aria-controls="nav-links">
@@ -97,22 +95,19 @@
                 </button>
             </div>
             <div class="nav-center">
-                <div class="language-selector-container">
+                <div class="header-right-controls"><div class="language-selector-container">
                     <i class="fas fa-globe" aria-hidden="true"></i>
                     <select id="language-selector" aria-label="Seleccionar idioma">
                         <option value="esp">ESP</option>
                         <option value="eng">ENG</option>
                     </select>
-                </div>
-                <button id="theme-toggle" aria-label="Activar modo oscuro" aria-live="polite">
+                </div><button id="theme-toggle" aria-label="Activar modo oscuro" aria-live="polite">
                     <i class="far fa-moon" aria-hidden="true"></i>
-                </button>
+                </button></div>
             </div>
             <div class="nav-right">
                 <span class="nav-brand">
-                    <a href="#profile-card" aria-label="Ir al inicio del portfolio" class="nav-link-clean">
-                        Matias Carabajal
-                    </a>
+                    <a href="#profile-card" aria-label="Ir al inicio del portfolio" class="nav-link-clean"><svg class="mc-svg" viewBox="0 0 180 54" width="180" height="54" role="img" aria-label="MC - Matias Carabajal"><text x="90" y="24" text-anchor="middle" class="mc-initials">MC</text><line x1="22" y1="30" x2="158" y2="30" class="mc-rule" /><text x="90" y="45" text-anchor="middle" class="mc-fullname">MATIAS CARABAJAL</text></svg></a>
                 </span>
             </div>
         </nav>
@@ -136,10 +131,11 @@
                         alt="Foto de perfil de Matias Nahuel Carabajal, Desarrollador Web Full Stack"
                         class="profile-picture" width="150" height="150">
                     <div class="profile-info">
-                        <h1>Matias Nahuel Carabajal</h1>
-                        <p class="title" data-translate-key="university-technician">Técnico Universitario en Programación</p>
-                        <p class="role" data-translate-key="full-stack-developer">Desarrollador Full Stack</p>
-                    </div>
+<h1>Matias Nahuel Carabajal</h1>
+<p class="role" data-translate-key="full-stack-developer">Desarrollador Full Stack</p>
+<p class="title" data-translate-key="university-technician">Técnico Universitario en Programación</p>
+<p class="hero-stack-inline" aria-label="Stack principal">React · Node.js · TypeScript · PostgreSQL · MongoDB</p>
+</div>
                 </div>
 
                 <div class="profile-details hidden" role="region" aria-label="Detalles de contacto">
@@ -199,17 +195,10 @@
         </section>
 
         <section id="about" aria-labelledby="about-heading" data-scroll-reveal="slide-left-scale">
-            <h2 id="about-heading" data-translate-key="about-me-title">Sobre Mí</h2>
-            <p class="about-me-text" data-translate-key="about-me-text">
-                <strong>Matias Nahuel Carabajal: Desarrollador Full Stack</strong>
-                <br><br>
-                Soy <b>Desarrollador Full Stack</b> y <b>Técnico Universitario en Programación</b> (UNAHUR), además de estudiante avanzado de la <b>Licenciatura en Informática</b> en la misma universidad. Cuento con experiencia en el ecosistema <b>JavaScript</b> (<b>React</b>, <b>Node.js</b>, <b>Express</b>) y bases de datos relacionales (<b>PostgreSQL</b>) y no relacionales (<b>MongoDB</b>).
-                <br><br>
-                En mi pasantía en <b>INTA</b> (proyecto SIGA) migré bases de datos de <b>SQL Server</b> a <b>PostgreSQL con PostGIS</b> y desarrollé <b>APIs REST</b> para la gestión de información geoespacial, y en <b>Olla Vegana</b> (vía <b>OESTACK</b>) desarrollé una plataforma full stack con pasarela de pagos, control de concurrencia de stock y despliegue en servidor Linux con túneles de Cloudflare.
-                <br><br>
-                Busco sumarme a un equipo de desarrollo donde aportar tanto en frontend como en backend, trabajando con metodologías ágiles (<b>Scrum</b>) y buenas prácticas de calidad y testing.
-            </p>
-        </section>
+<p>Soy <strong>Desarrollador Full Stack</strong> y <strong>Técnico Universitario en Programación</strong> (UNAHUR), además de estudiante avanzado de la <strong>Licenciatura en Informática</strong> en la misma universidad. Cuento con experiencia en el ecosistema <strong>JavaScript</strong> (<strong>React</strong>, <strong>Node.js</strong>, <strong>Express</strong>) y bases de datos relacionales (<strong>PostgreSQL</strong>) y no relacionales (<strong>MongoDB</strong>).</p>
+<p>En mi pasantía en <strong>INTA</strong> (proyecto SIGA) migré bases de datos de <strong>SQL Server</strong> a <strong>PostgreSQL con PostGIS</strong> y desarrollé <strong>APIs REST</strong> para la gestión de información geoespacial, y en <strong>Olla Vegana</strong> (vía <strong>OESTACK</strong>) desarrollé una plataforma full stack con pasarela de pagos, control de concurrencia de stock y despliegue en servidor Linux con túneles de Cloudflare.</p>
+<p>Busco sumarme a un equipo de desarrollo donde aportar tanto en frontend como en backend, trabajando con metodologías ágiles (<strong>Scrum</strong>) y buenas prácticas de calidad y testing.</p>
+</section>
 
         <section id="experience" aria-labelledby="experience-heading" data-scroll-reveal="slide-left-scale">
             <div class="experience-header">
