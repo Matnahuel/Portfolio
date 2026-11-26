@@ -75,3 +75,21 @@ body.dark-mode header #theme-toggle:hover,body.dark-mode .theme-toggle:hover{bor
   header,header nav,header .nav-container,header .navbar,header .nav-left,header .nav-center,header .header-right-controls,header #nav-links{max-width:100%!important;min-width:0!important;box-sizing:border-box!important}
   header{overflow-x:clip!important}
 }
+
+/* Fix scaled iframe inside laptop mockup */
+.laptop-viewport{overflow:hidden!important;position:relative!important}
+.laptop-viewport iframe{position:absolute!important;top:0!important;left:0!important;max-width:none!important;border:0!important;display:block!important}
+
+/* Mobile projects header & laptop viewport framing */
+@media (max-width:768px){
+  #projects .section-header,.projects-header,.proyectos-header{display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;max-width:100%!important}
+  #projects .pagination,.projects-pagination,.project-tabs,.carousel-dots{max-width:100%!important;overflow-x:auto!important;flex-wrap:nowrap!important;gap:4px!important;padding:4px 6px!important;box-sizing:border-box!important}
+  .laptop-viewport{aspect-ratio:16/10!important;height:auto!important;min-height:175px!important;overflow:hidden!important}
+}
+
+/* Keep laptop card framed below 1015px */
+@media (max-width:1015px){
+  .laptop-wrapper{width:100%!important;max-width:100%!important;min-width:0!important;margin:0 auto!important;box-sizing:border-box!important}
+  .laptop-mockup{width:100%!important;max-width:100%!important;box-sizing:border-box!important}
+  .laptop-viewport{width:100%!important;overflow:hidden!important;position:relative!important}
+}

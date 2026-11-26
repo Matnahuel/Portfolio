@@ -94,3 +94,37 @@ export class PhoneProjectCard extends HTMLElement {
 if (!customElements.get('phone-project-card')) {
     customElements.define('phone-project-card', PhoneProjectCard);
 }
+
+// Auto-fit laptop iframe scale to viewport
+function fitLaptopViewports() {
+  const baseW = 1280;
+  document.querySelectorAll(".laptop-viewport").forEach((vp) => {
+    const iframe = vp.querySelector("iframe");
+    if (!iframe) return;
+    const vw = vp.getBoundingClientRect().width || vp.clientWidth;
+    if (!vw) return;
+    const targetH = Math.round(vw * 0.625);
+    if (window.innerWidth <= 1024) {
+      vp.style.setProperty("height", targetH + "px", "important");
+    } else {
+      vp.style.removeProperty("height");
+    }
+    const vh = vp.getBoundingClientRect().height || vp.clientHeight || targetH;
+    const scale = vw / baseW;
+    const fullH = Math.ceil(vh / scale);
+    iframe.style.setProperty("width", baseW + "px", "important");
+    iframe.style.setProperty("height", fullH + "px", "important");
+    iframe.style.setProperty("min-height", fullH + "px", "important");
+    iframe.style.setProperty("max-width", "none", "important");
+    iframe.style.setProperty("transform-origin", "0 0", "important");
+    iframe.style.setProperty("transform", "scale(" + scale + ")", "important");
+  });
+}
+window.addEventListener("load", fitLaptopViewports);
+window.addEventListener("resize", fitLaptopViewports);
+if (typeof ResizeObserver !== "undefined") {
+  const ro = new ResizeObserver(fitLaptopViewports);
+  document.querySelectorAll(".laptop-viewport").forEach((vp) => ro.observe(vp));
+}
+setTimeout(fitLaptopViewports, 100);
+setTimeout(fitLaptopViewports, 600);
