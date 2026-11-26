@@ -69,3 +69,9 @@ body.dark-mode header #theme-toggle:hover,body.dark-mode .theme-toggle:hover{bor
   .profile-card,.project-card,.certification-card,.skill-card,.service-card{max-width:100%!important;min-width:0!important;box-sizing:border-box!important}
   .projects-grid,.skills-grid,.certifications-grid,.services-grid{grid-template-columns:minmax(0,1fr)!important;gap:14px!important}
 }
+
+/* Contain header children width in mobile & tablet */
+@media (max-width:1024px){
+  header,header nav,header .nav-container,header .navbar,header .nav-left,header .nav-center,header .header-right-controls,header #nav-links{max-width:100%!important;min-width:0!important;box-sizing:border-box!important}
+  header{overflow-x:clip!important}
+}
