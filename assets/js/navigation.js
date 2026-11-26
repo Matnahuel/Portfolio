@@ -1,25 +1,17 @@
 import { translations } from './translations.js';
 
 export function initNavigation() {
-    const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
     const toggleButton = document.getElementById('toggle-profile');
     const profileCard = document.getElementById('profile-card');
     const profileDetails = document.querySelector('.profile-details');
     const backToTopButton = document.getElementById('back-to-top');
 
-    // Menú hamburguesa
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', () => {
-            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-            hamburger.setAttribute('aria-expanded', String(!isExpanded));
-            navLinks.classList.toggle('active');
-        });
-
+    // Navegación principal (píldoras superiores en mobile)
+    if (navLinks) {
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
-                hamburger.setAttribute('aria-expanded', 'false');
             });
         });
     }
