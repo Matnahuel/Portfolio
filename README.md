@@ -1,31 +1,31 @@
 # Matias Nahuel Carabajal · Portfolio
 
-Personal site of Matias Nahuel Carabajal, Full Stack Developer & University Technician in Programming (React · Node.js · TypeScript · PostgreSQL · MongoDB).  
-Live: https://matnahuel.github.io/Portfolio/
+Sitio personal de Matias Nahuel Carabajal, Desarrollador Full Stack y Técnico Universitario en Programación (React · Node.js · TypeScript · PostgreSQL · MongoDB).  
+En vivo: https://matnahuel.github.io/Portfolio/
 
 ## Stack
 
-- **Frontend & Markup:** Semantic HTML5, CSS3 modular (`base.css`, `layout.css`, `components.css`, `sections.css`, `animations.css`, `responsive.css`) and vanilla ES Modules (`main.js`, `navigation.js`, `translations.js`, `theme.js`, `phoneProjectCard.js`).
-- **Bilingual Support (`ES` / `EN`):** Instant client-side translation dictionary in `assets/js/translations.js` with a compact pill toggle (`ES` / `EN`) and `localStorage` persistence.
-- **Light & Dark Themes:** Theme switcher (`#theme-toggle`) persisting user selection in `localStorage` with CSS custom properties across desktop, tablet, and mobile.
-- **Responsive Architecture:** Dedicated mobile and tablet overrides in `assets/css/responsive.css` (`@media (max-width: 1024px)` and `@media (max-width: 768px)`), keeping desktop layout isolated and preventing horizontal overflow.
-- **Deployment & Custom Domain:** Hosted via GitHub Pages (`main` branch) with a root `CNAME` configuration and custom domain routing.
+- **Frontend y marcado:** HTML5 semántico, CSS3 modular (`base.css`, `layout.css`, `components.css`, `sections.css`, `animations.css`, `responsive.css`) y ES Modules nativos (`main.js`, `navigation.js`, `translations.js`, `theme.js`, `phoneProjectCard.js`).
+- **Soporte bilingüe (`ES` / `EN`):** Diccionario de traducción en el cliente dentro de `assets/js/translations.js` con botón tipo cápsula (`ES` / `EN`) y persistencia en `localStorage`.
+- **Temas claro y oscuro:** Selector de tema (`#theme-toggle`) con persistencia en `localStorage` y variables CSS en escritorio, tablet y mobile.
+- **Arquitectura responsive:** Reglas específicas para tablet y mobile en `assets/css/responsive.css` (`@media (max-width: 1024px)` y `@media (max-width: 768px)`), manteniendo aislado el diseño de escritorio y evitando desbordes horizontales.
+- **Despliegue y dominio:** Publicado en GitHub Pages (`main`) con archivo `CNAME` en la raíz y configuración de dominio personalizado.
 
-## Architecture Decisions
+## Decisiones de arquitectura
 
-- **Decoupled Mobile & Desktop Rules:** Mobile and tablet layout adjustments live in `assets/css/responsive.css` without altering desktop styles, including a 5-slot mobile navigation bar with centered `MC` badge, reordered mobile footer blocks, and width containment (`max-width: 100%`, `min-width: 0`).
-- **Modular JS Responsibilities:** Each behavior is isolated in its own module—language state in `translations.js`, dark/light mode in `theme.js`, section navigation in `navigation.js`, and interactive project cards in `phoneProjectCard.js`.
-- **Single-Source Copy & Translations:** Headings, experience bullets, project details, and UI labels are mapped through `data-translate-key` attributes and synchronized across Spanish (`esp`) and English (`eng`).
-- **Zero Heavy Framework Overhead:** Static asset delivery without runtime bundler bloat, keeping load times fast on mobile connections.
-- **SEO & Social Metadata:** Open Graph tags, descriptive meta tags, and semantic landmarks (`<header>`, `<main>`, `<footer>`) in `index.html`.
+- **Separación entre mobile/tablet y escritorio:** Los ajustes de diseño en mobile y tablet se concentran en `assets/css/responsive.css` sin alterar la vista de escritorio, incluyendo la barra superior mobile de 5 slots con `MC` al centro, el reordenamiento del footer y la contención de anchos (`max-width: 100%`, `min-width: 0`).
+- **Módulos JavaScript acotados:** Cada funcionalidad vive en su propio módulo: idioma en `translations.js`, modo claro/oscuro en `theme.js`, navegación en `navigation.js` y tarjetas interactivas de proyectos en `phoneProjectCard.js`.
+- **Textos y traducciones centralizados:** Títulos, viñetas de experiencia, detalles de proyectos y etiquetas de interfaz se vinculan mediante `data-translate-key` entre español (`esp`) e inglés (`eng`).
+- **Sin peso extra de frameworks:** Entrega de archivos estáticos sin dependencias pesadas en tiempo de ejecución, favoreciendo tiempos de carga ágiles en conexiones móviles.
+- **SEO y metadatos:** Etiquetas Open Graph, meta descripciones y estructura semántica (`<header>`, `<main>`, `<footer>`) en `index.html`.
 
-## Getting Started
+## Cómo ejecutarlo en local
 
-Run a local static server from the project root (`Portfolio/`) so ES modules (`type="module"`) load properly:
+Levantá un servidor estático desde la raíz del proyecto (`Portfolio/`) para que los ES Modules (`type="module"`) carguen sin bloqueos del navegador:
 
 ```bash
-# Using Node.js (npx)
+# Con Node.js (npx)
 npx serve .
 
-# Or using Python
+# O con Python
 python -m http.server 8080
