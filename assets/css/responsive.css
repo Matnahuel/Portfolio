@@ -25,3 +25,13 @@
   body.dark-mode header #nav-links li:not(.nav-center-mc-item) a:hover,body.dark-mode header #nav-links li:not(.nav-center-mc-item) a:focus-visible{background:rgba(149,146,166,0.14)!important;color:var(--accent-color)!important}
   section{padding-top:142px!important}
 }
+
+/* Compact language pill & 30px circular theme button */
+.lang-pill-btn{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:6px!important;height:30px!important;padding:0 11px!important;border-radius:999px!important;background:var(--bg-card)!important;color:var(--text-primary)!important;border:1px solid var(--border-color)!important;font-family:"Space Grotesk",sans-serif!important;font-size:0.74rem!important;font-weight:700!important;letter-spacing:0.04em!important;cursor:pointer!important;line-height:1!important;box-shadow:none!important;transition:border-color 0.16s ease,color 0.16s ease,background-color 0.16s ease!important}
+.lang-pill-btn i{font-size:0.76rem!important;color:var(--primary-color)!important}
+body.dark-mode .lang-pill-btn i{color:var(--accent-color)!important}
+.lang-pill-btn:hover,.lang-pill-btn:focus-visible{border-color:var(--primary-color)!important;color:var(--primary-color)!important}
+body.dark-mode .lang-pill-btn:hover,.lang-pill-btn:focus-visible{border-color:var(--accent-color)!important;color:var(--accent-color)!important}
+header #theme-toggle,.theme-toggle{width:30px!important;height:30px!important;min-width:30px!important;padding:0!important;margin-left:0!important;border-radius:999px!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;background:var(--bg-card)!important;color:var(--text-primary)!important;border:1px solid var(--border-color)!important;font-size:0.82rem!important;line-height:1!important;box-shadow:none!important}
+header #theme-toggle:hover,.theme-toggle:hover{border-color:var(--primary-color)!important;color:var(--primary-color)!important}
+body.dark-mode header #theme-toggle:hover,body.dark-mode .theme-toggle:hover{border-color:var(--accent-color)!important;color:var(--accent-color)!important}
