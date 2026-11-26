@@ -56,3 +56,16 @@ body.dark-mode header #theme-toggle:hover,body.dark-mode .theme-toggle:hover{bor
   footer .footer-col-contact{grid-template-columns:1fr!important;justify-items:center!important}
   footer .footer-col-contact .footer-links,footer .footer-col-contact .footer-action-buttons{grid-column:1/-1!important;align-items:center!important;width:100%!important;max-width:340px!important}
 }
+
+/* Tablet & mobile responsive polish without altering desktop */
+@media (max-width:1024px){
+  html,body{overflow-x:hidden!important;max-width:100%!important}
+  section .container,main .container,.projects-grid,.skills-grid,.certifications-grid,.services-grid{max-width:100%!important;box-sizing:border-box!important}
+  section [style*="grid-template-columns"],.projects-grid,.certifications-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))!important}
+  img,svg,video,iframe{max-width:100%!important;height:auto!important}
+}
+@media (max-width:768px){
+  section{padding-left:14px!important;padding-right:14px!important}
+  .profile-card,.project-card,.certification-card,.skill-card,.service-card{max-width:100%!important;min-width:0!important;box-sizing:border-box!important}
+  .projects-grid,.skills-grid,.certifications-grid,.services-grid{grid-template-columns:minmax(0,1fr)!important;gap:14px!important}
+}
