@@ -497,3 +497,67 @@
         height: 500px;
     }
 }
+
+/* Foto arriba y más grande SOLO cuando la tarjeta está extendida */
+.profile-card.expanded .profile-header {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: 16px !important;
+  padding-right: 0 !important;
+  align-self: start !important;
+  width: 100% !important;
+}
+
+.profile-card.expanded .profile-header .profile-picture {
+  width: 190px !important;
+  height: 190px !important;
+  max-width: 100% !important;
+  flex: 0 0 auto !important;
+  order: -1 !important;
+}
+
+.profile-card.expanded .profile-header .profile-info {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+@media (max-width: 480px) {
+  .profile-card.expanded .profile-header .profile-picture {
+    width: 150px !important;
+    height: 150px !important;
+  }
+}
+
+/* Foto arriba y mas grande solo al expandir */
+.profile-card.expanded > .profile-header {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: 16px !important;
+  padding-right: 0 !important;
+  width: 100% !important;
+}
+
+.profile-card.expanded > .profile-header > .profile-picture {
+  width: 190px !important;
+  height: 190px !important;
+  max-width: 190px !important;
+  max-height: 190px !important;
+  flex: 0 0 190px !important;
+}
+
+.profile-card.expanded > .profile-header > .profile-info {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}

@@ -601,9 +601,27 @@
 
     <footer role="contentinfo" id="footer-Contacto">
         <div class="footer-content">
-            <div class="footer-section" id="footer-main">
-                <h3>Matias Nahuel Carabajal</h3>
-                <p data-translate-key="footer-job-title">Desarrollador Full Stack | Técnico Universitario en Programación</p>
+            <div class="footer-section footer-col-contact" id="footer-contact">
+                <h4 data-translate-key="footer-contact-title">Contacto</h4>
+                <div class="footer-links" role="list">
+                    <a href="mailto:matias.carabajal.trabajo@gmail.com"
+                        aria-label="Enviar correo electrónico a Matias Carabajal" role="listitem">
+                        <i class="fas fa-envelope" aria-hidden="true"></i> Email
+                    </a>
+                    <a href="https://wa.me/+5491130022107" target="_blank" rel="noopener noreferrer"
+                        aria-label="Contactar por WhatsApp al número +549 11 3002 2107" role="listitem">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                    </a>
+                    <a href="https://www.linkedin.com/in/matiasncarabajal/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Visitar perfil de LinkedIn de Matias Carabajal" role="listitem">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/Matnahuel" target="_blank" rel="noopener noreferrer"
+                        aria-label="Visitar perfil de GitHub de Matias Carabajal" role="listitem">
+                        <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                    </a>
+                </div>
+
                 <div class="footer-action-buttons">
                     <a href="https://calendly.com/matias-carabajal-estudiantes/30min" target="_blank"
                         rel="noopener noreferrer" class="btn-footer-calendar"
@@ -616,41 +634,16 @@
                         data-translate-key="hire-me">
                         <i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar Propuesta
                     </a>
-                    <button id="services-btn-footer" class="btn-footer-services"
-                        aria-label="Ver mis servicios profesionales" data-translate-key="my-services-title">
-                        <i class="fas fa-briefcase" aria-hidden="true"></i> Mis Servicios
-                    </button>
                 </div>
             </div>
-            <div class="footer-section" id="footer-contact">
-                <h4 data-translate-key="footer-contact-title">Contacto</h4>
-                <div class="footer-links" role="list">
-                    <a href="mailto:matias.carabajal.trabajo@gmail.com"
-                        aria-label="Enviar correo electrónico a Matias Carabajal" role="listitem">
-                        <i class="fas fa-envelope" aria-hidden="true"></i> Email
-                    </a>
-                    <a href="https://wa.me/+5491130022107" target="_blank" rel="noopener noreferrer"
-                        aria-label="Contactar por WhatsApp al número +549 11 3002 2107" role="listitem">
-                        <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
-                    </a>
-                </div>
+
+            <div class="footer-section footer-col-identity" id="footer-main">
+                <h3 class="footer-identity-name">Matias Nahuel Carabajal</h3>
+                <p class="footer-role-line" data-translate-key="full-stack-developer">Desarrollador Full Stack</p>
+                <p class="footer-degree-line" data-translate-key="university-technician">Técnico Universitario en Programación</p>
             </div>
-            <div class="footer-section">
-                <h4 data-translate-key="footer-social-title">Redes Sociales</h4>
-                <div class="footer-social-links" role="list" aria-label="Enlaces a redes sociales">
-                    <a href="https://www.linkedin.com/in/matiasncarabajal/" target="_blank" rel="noopener noreferrer"
-                        aria-label="Visitar perfil de LinkedIn de Matias Carabajal" role="listitem">
-                        <i class="fab fa-linkedin" aria-hidden="true"></i>
-                        <span class="sr-only">LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/Matnahuel" target="_blank" rel="noopener noreferrer"
-                        aria-label="Visitar perfil de GitHub de Matias Carabajal" role="listitem">
-                        <i class="fab fa-github" aria-hidden="true"></i>
-                        <span class="sr-only">GitHub</span>
-                    </a>
-                </div>
-            </div>
-            <div class="footer-section footer-feedback-section" aria-labelledby="feedback-heading">
+
+            <div class="footer-section footer-col-form footer-feedback-section" aria-labelledby="feedback-heading">
                 <h4 id="feedback-heading" data-translate-key="feedback-heading">Si llegaste hasta acá, me interesa tu devolución para poder seguir mejorando.</h4>
 
                 <form id="feedback-form" novalidate aria-label="Formulario de opinión">
@@ -669,9 +662,10 @@
                     <div id="feedback-status" role="status" aria-live="polite" class="feedback-status"></div>
                 </form>
             </div>
-            <div class="footer-bottom">
-                <p data-translate-key="footer-rights-reserved">© 2026 Matias Nahuel Carabajal. Todos los derechos reservados.</p>
-            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p data-translate-key="footer-rights-reserved">© 2026 Matias Nahuel Carabajal. Todos los derechos reservados.</p>
         </div>
     </footer>
 

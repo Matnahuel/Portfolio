@@ -28,8 +28,10 @@ export function initNavigation() {
     if (toggleButton && profileCard && profileDetails) {
         toggleButton.addEventListener('click', () => {
             const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+            const nextExpanded = !isExpanded;
             profileDetails.classList.toggle('hidden');
-            toggleButton.setAttribute('aria-expanded', String(!isExpanded));
+            profileCard.classList.toggle('expanded', nextExpanded);
+            toggleButton.setAttribute('aria-expanded', String(nextExpanded));
 
             const currentLang = localStorage.getItem('language') || 'esp';
             toggleButton.textContent = profileDetails.classList.contains('hidden')

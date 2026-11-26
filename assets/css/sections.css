@@ -1786,3 +1786,77 @@ body.dark-mode .profile-card .profile-top-actions .toggle-button:hover {
   font-size: 0.88rem !important;
   color: var(--accent-color) !important;
 }
+
+/* Compactar espacios de la sección Sobre Mí */
+#about,
+section[aria-label*="Sobre Mí"],
+.about-section {
+  padding: 20px 24px !important;
+  margin-top: 12px !important;
+  margin-bottom: 16px !important;
+  min-height: auto !important;
+}
+
+#about > *:first-child,
+section[aria-label*="Sobre Mí"] > *:first-child,
+.about-section > *:first-child {
+  margin-top: 0 !important;
+}
+
+#about p,
+section[aria-label*="Sobre Mí"] p,
+.about-section p {
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;
+  line-height: 1.5 !important;
+}
+
+#about p:last-child,
+section[aria-label*="Sobre Mí"] p:last-child,
+.about-section p:last-child {
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 768px) {
+  #about,
+  section[aria-label*="Sobre Mí"],
+  .about-section {
+    padding: 16px 16px !important;
+  }
+}
+
+/* Foto arriba y más grande SOLO cuando la tarjeta está extendida */
+.profile-card.expanded .profile-header {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: 16px !important;
+  padding-right: 0 !important;
+  align-self: start !important;
+  width: 100% !important;
+}
+
+.profile-card.expanded .profile-header .profile-picture {
+  width: 190px !important;
+  height: 190px !important;
+  max-width: 100% !important;
+  flex: 0 0 auto !important;
+  order: -1 !important;
+}
+
+.profile-card.expanded .profile-header .profile-info {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+@media (max-width: 480px) {
+  .profile-card.expanded .profile-header .profile-picture {
+    width: 150px !important;
+    height: 150px !important;
+  }
+}
