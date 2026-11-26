@@ -295,16 +295,11 @@ export function initLanguage() {
 
         document.documentElement.lang = lang === 'eng' ? 'en' : 'es';
         localStorage.setItem('language', lang);
-        if (languageSelector) {
-            languageSelector.value = lang;
-        }
+        if (languageSelector) { languageSelector.dataset.lang = lang; languageSelector.value = lang; const codeEl = languageSelector.querySelector("#lang-code") || languageSelector.querySelector("span"); if (codeEl) codeEl.textContent = lang === "eng" ? "EN" : "ES"; }
     };
 
     if (languageSelector) {
-        languageSelector.addEventListener('change', (event) => {
-            setLanguage(event.target.value);
-        });
-    }
+        languageSelector.addEventListener("click", () => { const current = languageSelector.dataset.lang || languageSelector.value || localStorage.getItem("language") || "esp"; const next = current === "esp" ? "eng" : "esp"; setLanguage(next); languageSelector.dispatchEvent(new Event("change")); }); }
 
     const savedLang = localStorage.getItem('language') || 'esp';
     setLanguage(savedLang);
