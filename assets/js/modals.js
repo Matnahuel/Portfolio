@@ -83,66 +83,6 @@ export function initModals() {
     prevModalButton.addEventListener('click', () => navigateModal('prev'));
     nextModalButton.addEventListener('click', () => navigateModal('next'));
 
-    // --- Modal de Servicios ---
-    const servicesTrigger = document.getElementById('services-trigger');
-    const servicesModal = document.getElementById('services-modal');
-    const servicesModalClose = document.getElementById('services-modal-close');
-    const servicesModalOverlay = document.querySelector('.services-modal-overlay');
-    const servicesBtnFooter = document.getElementById('services-btn-footer');
-
-    const openServicesModal = () => {
-        if (!servicesModal) return;
-        servicesModal.classList.add('active');
-        body.style.overflow = 'hidden';
-        servicesModal.setAttribute('aria-hidden', 'false');
-        document.querySelector('header')?.classList.add('header-hidden');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-
-    const closeServicesModal = () => {
-        if (!servicesModal) return;
-        servicesModal.classList.remove('active');
-        body.style.overflow = 'auto';
-        servicesModal.setAttribute('aria-hidden', 'true');
-        document.querySelector('header')?.classList.remove('header-hidden');
-    };
-
-    if (servicesTrigger) {
-        servicesTrigger.addEventListener('click', (e) => {
-            e.preventDefault();
-            openServicesModal();
-        });
-    }
-
-    servicesBtnFooter?.addEventListener('click', openServicesModal);
-    servicesModalClose?.addEventListener('click', closeServicesModal);
-    servicesModalOverlay?.addEventListener('click', closeServicesModal);
-
-    // Atajos de teclado globales para ambos modales
-    document.addEventListener('keydown', (event) => {
-        if (modal.classList.contains('show')) {
-            if (event.key === 'ArrowLeft') navigateModal('prev');
-            else if (event.key === 'ArrowRight') navigateModal('next');
-            else if (event.key === 'Escape') closeLightbox();
-        }
-        if (event.key === 'Escape' && servicesModal?.classList.contains('active')) {
-            closeServicesModal();
-        }
-    });
-
-    // Click en tarjetas de servicios
-    const myEmail = 'matias.carabajal.trabajo@gmail.com';
-    document.querySelectorAll('.services-modal-content .service-box').forEach(box => {
-        box.addEventListener('click', () => {
-            const serviceName = box.getAttribute('data-service');
-            const subject = encodeURIComponent(`Interés en servicio: ${serviceName}`);
-            const bodyText = encodeURIComponent(
-                `Hola Matias,\n\nEstoy interesado en el servicio de ${serviceName}.\n\nSoy...\n\n(Por favor completa tu información aquí)\n\nSaludos.`
-            );
-            window.location.href = `mailto:${myEmail}?subject=${subject}&body=${bodyText}`;
-        });
-    });
-
     // Vista previa de proyectos destacados
     document.querySelectorAll('.featured-overlay').forEach(overlay => {
         const openLive = () => {
